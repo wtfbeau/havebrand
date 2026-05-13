@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-cream-bg: #FAFAF7;
+  --color-cream-panel: #F2EDE3;
+  --color-cream-border: #E5DDD0;
+  --color-ink: #1C1814;
+  --color-ink-mid: #6B6358;
+  --color-ink-light: #A89F93;
+  --color-gold: #C44B5F;
+  --color-gold-light: #EDA0AE;
+  --color-gold-dark: #8B2337;
+  --color-dark-section: #1C1814;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Keyframes ─── */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(36px); }
+}
+
+@keyframes drawRing {
+  from { stroke-dashoffset: 314.16; }
+}
+
+@keyframes growBar {
+  from { width: 0%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.35; transform: scale(0.7); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes scanPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196,75,95,0.3), 0 0 20px rgba(196,75,95,0.15); }
+  50%       { box-shadow: 0 0 0 22px rgba(196,75,95,0), 0 0 40px rgba(196,75,95,0.25); }
+}
+
+@keyframes drawConnector {
+  from { stroke-dashoffset: 100; opacity: 0; }
+  to   { stroke-dashoffset: 0;   opacity: 1; }
+}
+
+@keyframes driftFloat {
+  0%, 100% { transform: translate(0px, 0px); }
+  33%       { transform: translate(3px, -5px); }
+  66%       { transform: translate(-3px, 4px); }
+}
+
+@keyframes scanLine {
+  from { top: 0%; opacity: 1; }
+  80%  { opacity: 0.6; }
+  to   { top: 100%; opacity: 0; }
+}
+
+@keyframes expandRing {
+  0%   { transform: translate(-50%, -50%) scale(0.5); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(4);   opacity: 0; }
+}
+
+@keyframes flowDash {
+  from { stroke-dashoffset: 24; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes brainGlow {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.08); }
+}
+
+@keyframes typeSlide {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typeSlideOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-12px); }
+}
+
+@keyframes atmosphericPulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.12); }
+}
+
+@keyframes liveCounterTick {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.2); color: #EDA0AE; }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
+/* ─── Base ─── */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAFAF7;
+  color: #1C1814;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
