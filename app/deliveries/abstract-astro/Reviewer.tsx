@@ -6,6 +6,8 @@ import type { Board, Block } from "./copy";
 type Boards = Record<"advertorial" | "sales", Board>;
 type Notes = Record<string, string>;
 const KEY = "aa-tw-notes-v2";
+const DOC = "abstract-astro";
+type Sync = "local" | "syncing" | "synced" | "error";
 const BOARD_W = 860;
 const GAP = 300;
 const RULES_W = 760;
@@ -90,6 +92,9 @@ export default function Reviewer({ boards }: { boards: Boards }) {
   const [toast, setToast] = useState<string | null>(null);
   const [view, setView] = useState({ x: 40, y: 40, s: 0.5 });
   const [space, setSpace] = useState(false);
+  const [sync, setSync] = useState<Sync>("local");
+  const [showList, setShowList] = useState(false);
+  const timers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
   const vp = useRef<HTMLDivElement>(null);
   const drag = useRef<{ x: number; y: number; vx: number; vy: number } | null>(null);
 
@@ -98,13 +103,44 @@ export default function Reviewer({ boards }: { boards: Boards }) {
       const raw = localStorage.getItem(KEY);
       if (raw) setNotes(JSON.parse(raw));
     } catch {}
+    fetch(`/api/deliveries/notes?doc=${DOC}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (j?.ok) {
+          setNotes(j.notes);
+          setSync("synced");
+          try {
+            localStorage.setItem(KEY, JSON.stringify(j.notes));
+          } catch {}
+        }
+      })
+      .catch(() => {});
   }, []);
 
-  const save = (n: Notes) => {
+  const push = (id: string, text: string) => {
+    clearTimeout(timers.current[id]);
+    timers.current[id] = setTimeout(async () => {
+      setSync((s) => (s === "local" ? s : "syncing"));
+      try {
+        const r = await fetch("/api/deliveries/notes", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ doc: DOC, id, text }),
+        });
+        if (r.status === 503) setSync("local");
+        else setSync(r.ok ? "synced" : "error");
+      } catch {
+        setSync("error");
+      }
+    }, 600);
+  };
+
+  const save = (n: Notes, changed?: string) => {
     setNotes(n);
     try {
       localStorage.setItem(KEY, JSON.stringify(n));
     } catch {}
+    if (changed) push(changed, n[changed] ?? "");
   };
   const flash = (m: string) => {
     setToast(m);
@@ -213,8 +249,20 @@ export default function Reviewer({ boards }: { boards: Boards }) {
           <div className="text-[15px] font-bold leading-tight">Transformation Window Report · advertorial and sales page</div>
         </div>
         <div className="hidden text-[12px] text-[#b8b0a2] md:block">
-          Drag the background to move · ⌘ or Ctrl + scroll to zoom · Hover a block to copy or note · Notes save as you type; send them with Copy all notes
+          Drag the background to move · ⌘ or Ctrl + scroll to zoom · Hover a block to copy or note ·{" "}
+          {sync === "synced" && "Notes save as you type and are shared"}
+          {sync === "syncing" && "Saving…"}
+          {sync === "local" && "Notes save in this browser; send them with Copy all notes"}
+          {sync === "error" && "Notes saved in this browser; sharing failed"}
         </div>
+        {noteCount > 0 && (
+          <button
+            onClick={() => setShowList((v) => !v)}
+            className="rounded-full border border-[#6a645c] px-3 py-1.5 text-[12px] font-semibold text-[#f3efe6] hover:bg-[#4a453e]"
+          >
+            {showList ? "Back to canvas" : "List notes"}
+          </button>
+        )}
         <div className="flex items-center gap-1 rounded-full border border-[#6a645c] bg-[#4a453e] p-0.5 text-[12px] font-semibold text-[#f3efe6]">
           <button onClick={() => zoomBy(1 / 1.25)} className="h-7 w-7 rounded-full hover:bg-[#5a544c]">−</button>
           <button onClick={fit} className="h-7 min-w-[52px] rounded-full px-2 hover:bg-[#5a544c]">{pct}%</button>
@@ -223,6 +271,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
         {noteCount > 0 && (
           <button
             onClick={() => {
+              Object.keys(notes).forEach((id) => push(id, ""));
               save({});
               setOpen(null);
               flash("Notes cleared");
@@ -315,7 +364,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
                                   <textarea
                                     autoFocus
                                     value={note}
-                                    onChange={(e) => save({ ...notes, [id]: e.target.value })}
+                                    onChange={(e) => save({ ...notes, [id]: e.target.value }, id)}
                                     onKeyDown={(e) => {
                                       if (e.key === "Escape" || (e.key === "Enter" && (e.metaKey || e.ctrlKey))) setOpen(null);
                                     }}
@@ -323,7 +372,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
                                       if (!note.trim()) {
                                         const n = { ...notes };
                                         delete n[id];
-                                        save(n);
+                                        save(n, id);
                                       }
                                       setOpen(null);
                                     }}
@@ -340,7 +389,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
                                         e.stopPropagation();
                                         const n = { ...notes };
                                         delete n[id];
-                                        save(n);
+                                        save(n, id);
                                         setOpen(null);
                                       }}
                                       className="text-[#8a7a62] hover:text-[#9c3d22]"
@@ -376,6 +425,31 @@ export default function Reviewer({ boards }: { boards: Boards }) {
           </div>
         </div>
       </div>
+
+      {showList && (
+        <div className="absolute inset-x-0 bottom-0 top-[52px] z-20 overflow-auto bg-[#f3efe6] px-6 py-6 text-[#1c1814]">
+          <div className="mx-auto max-w-[820px]">
+            {(Object.keys(boards) as (keyof Boards)[]).map((k) => {
+              const b = boards[k];
+              const mine = b.blocks.filter((bl) => notes[`${k}:${bl.id}`]?.trim());
+              if (!mine.length) return null;
+              return (
+                <section key={k} className="mb-8">
+                  <h2 className="mb-3 text-[13px] font-bold uppercase tracking-[.12em] text-[#8a7a62]">{b.title}</h2>
+                  {mine.map((bl) => (
+                    <div key={bl.id} className="mb-3 rounded-md border border-[#d9d2c5] bg-white p-4">
+                      <div className="mb-2 text-[12px] text-[#6b6358]">
+                        <span className="font-bold text-[#1c1814]">{bl.id}</span> · {bl.text.length > 140 ? bl.text.slice(0, 140) + "…" : bl.text}
+                      </div>
+                      <div className="whitespace-pre-wrap text-[15px] leading-snug">{notes[`${k}:${bl.id}`]}</div>
+                    </div>
+                  ))}
+                </section>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {toast && (
         <div className="fixed bottom-6 left-1/2 z-40 -translate-x-1/2 rounded-full bg-[#1c1814] px-4 py-2 text-[13px] font-semibold text-white shadow-lg">{toast}</div>
@@ -413,7 +487,7 @@ function Placeholders() {
         <li>The Jupiter window runs <strong>September 28 to October 10, 2026</strong>, with the peak on October 3. Use US Eastern time. No other date on either page changes.</li>
         <li>Before September 28, N is the number of days until September 28. On September 27, write <em>tomorrow</em> instead of <em>in 1 days</em>.</li>
         <li>From September 28 through October 10, use the <em>open</em> column.</li>
-        <li>After October 10, the pages move on to the next window. The next planet to cross the spot is Mars (November 2 to 6), then Jupiter again (February 19 to March 8, 2027). Those versions swap the planet, the length and the dates; the placeholder logic stays the same. Copy for them is a separate delivery.</li>
+        <li>After October 10, the pages move on to the next window. The next planet to cross the spot is Mars (November 2 to 6), then Jupiter again (February 19 to March 8, 2027). Those versions swap the planet, the length and the dates; the placeholder logic stays the same.</li>
         <li>The placeholder always carries its own verb. Only the rust words change; the text around them never does.</li>
       </ul>
       <div className="mt-3 overflow-hidden rounded border border-[#e5ddd0]">
