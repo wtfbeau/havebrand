@@ -63,7 +63,10 @@
 /* Testimonials */
 .wf .tstbox{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .wf .tst{border:1px solid #e5e5e5;border-radius:12px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:8px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.04);}
-.wf .tst::before{content:"★★★★★";color:#f5b301;font-size:15px;letter-spacing:.06em;}
+.wf .tstr{color:#f5b301;font-size:15px;letter-spacing:.06em;line-height:1;}
+.wf .tstr .dim{color:#ded8c9;}
+.wf .tstr .hf{background:linear-gradient(90deg,#f5b301 50%,#ded8c9 50%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.wf .tstrn{font-size:13px;font-weight:800;color:#777;letter-spacing:0;margin-left:8px;}
 .wf .tstq{font-size:16px;line-height:1.55;color:#262626;}
 .wf .tstn{font-size:13px;font-weight:800;color:#555;}
 .wf .tstn::before{content:"";display:inline-block;width:22px;height:22px;border-radius:50%;background:#d8d3c8;vertical-align:middle;margin-right:8px;}
