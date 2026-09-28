@@ -617,7 +617,7 @@ function Placeholders() {
               <td className={td}>
                 <ul className="list-disc space-y-1 pl-4">
                   <li><strong>Love</strong> · As shown on the page.</li>
-                  <li><strong>Work</strong> · For work, the one to watch is Mercury. From October 24 to November 13, pitch all you want, but get every yes in writing and read it twice.</li>
+                  <li><strong>Work</strong> · For work, the one to watch is Mercury. From October 24 to November 13, double-check everything, and don’t take anyone’s word as final until Mercury turns around.</li>
                   <li><strong>Finance</strong> · For money, the one to watch is Venus. Until November 13, hold off on big buys and anything you can’t take back.</li>
                   <li><strong>General</strong> · If you only watch one, watch Venus. Until November 13, go after what you want, but don’t lock anything in.</li>
                 </ul>
