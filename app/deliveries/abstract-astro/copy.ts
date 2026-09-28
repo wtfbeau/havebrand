@@ -845,8 +845,8 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope', Board> = {
    },
    {
     "id": "13",
-    "html": "<p class=\"p\">This is what the sky does between now and the end of the year. These dates are the same for everyone alive. How hard each one hits you is not.</p>",
-    "text": "This is what the sky does between now and the end of the year. These dates are the same for everyone alive. How hard each one hits you is not."
+    "html": "<p class=\"p\">Here’s what’s coming between now and the end of the year. 4 of these you can plan around starting today. The top one is the biggest you’ll get in 12 years.</p>",
+    "text": "Here’s what’s coming between now and the end of the year. 4 of these you can plan around starting today. The top one is the biggest you’ll get in 12 years."
    },
    {
     "id": "14",
