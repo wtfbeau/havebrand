@@ -550,7 +550,8 @@ function Placeholders() {
 
       <h3 className="mt-8 text-[15px] font-bold">Version 3 · Horoscope first</h3>
       <ul className="mt-2 list-disc space-y-1 pl-5 text-[13px] leading-snug">
-        <li><span className={code}>NAME</span>, <span className={code}>BIRTH_DATE</span>, <span className={code}>AGE_2038</span> and <span className={code}>WINDOW_STATE</span> work exactly as on the sales page. <span className={code}>WINDOW_STATE</span> appears in the headline ("starts in N days" / "is happening right now"), the Jupiter section ("gets there in N days" / "is there right now"), the stat row, report item 01, the closing section and the P.S.</li>
+        <li><span className={code}>NAME</span>, <span className={code}>BIRTH_DATE</span>, <span className={code}>AGE_2038</span> and <span className={code}>WINDOW_STATE</span> work exactly as on the sales page. <span className={code}>WINDOW_STATE</span> appears in the headline ("starts in N days" / "is happening right now"), the Jupiter section ("gets there in N days" / "is there right now"), the stat row, the top row of the 3-month calendar ("IN N DAYS" / "OPEN NOW"), report item 01, the closing section and the P.S.</li>
+        <li>The 3-month calendar is the same for every reader. Its dates are astronomy (see PRD). Venus shows as "OCT – NOV 13" on purpose: printing October 3 would give away the big day, which the report sells.</li>
         <li>The opening says the full horoscope is on its way to her inbox. That has to be true: the horoscope email must go out as the quiz promised.</li>
         <li>Every slot below comes from an answer she already gave in the quiz. Nothing new is asked.</li>
       </ul>
@@ -607,6 +608,18 @@ function Placeholders() {
                 <ul className="list-disc space-y-1 pl-4">
                   <li><strong>Yes / Sometimes</strong> · As shown on the page.</li>
                   <li><strong>Not really</strong> · You’re careful about where your time and energy go. This fall, that matters more than usual.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr className="border-b border-[#efe9dd]">
+              <td className={td}><span className={code}>SEASON_LINE</span></td>
+              <td className={td}>From "What matters most to you right now?". Sits under the 3-month calendar.</td>
+              <td className={td}>
+                <ul className="list-disc space-y-1 pl-4">
+                  <li><strong>Love</strong> · As shown on the page.</li>
+                  <li><strong>Work</strong> · For work, the one to watch is Mercury. From October 24 to November 13, pitch all you want, but get every yes in writing and read it twice.</li>
+                  <li><strong>Finance</strong> · For money, the one to watch is Venus. Until November 13, hold off on big buys and anything you can’t take back.</li>
+                  <li><strong>General</strong> · If you only watch one, watch Venus. Until November 13, go after what you want, but don’t lock anything in.</li>
                 </ul>
               </td>
             </tr>

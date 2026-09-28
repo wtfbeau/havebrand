@@ -835,178 +835,178 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope', Board> = {
    },
    {
     "id": "11",
-    "html": "<p class=\"p\"><strong><span class=\"fill\">[PATTERN_LINE: And you said the same situations keep coming back in your life.]</span> That’s the part of your chart that matters most right now, because for 12 days this fall, the loop can break.</strong></p>",
-    "text": "[PATTERN_LINE: And you said the same situations keep coming back in your life.] That’s the part of your chart that matters most right now, because for 12 days this fall, the loop can break."
+    "html": "<p class=\"p\"><strong><span class=\"fill\">[PATTERN_LINE: And you said the same situations keep coming back in your life.]</span> That’s the part of your chart that matters most right now. For 12 days this fall, you get your best shot in 12 years at breaking it.</strong></p>",
+    "text": "[PATTERN_LINE: And you said the same situations keep coming back in your life.] That’s the part of your chart that matters most right now. For 12 days this fall, you get your best shot in 12 years at breaking it."
    },
    {
     "id": "12",
+    "html": "<div class=\"sh\">Your next 3 months, <span class=\"fill\">[SIGN: Pisces]</span></div>",
+    "text": "Your next 3 months, [SIGN: Pisces]"
+   },
+   {
+    "id": "13",
+    "html": "<p class=\"p\">This is what the sky does between now and the end of the year. These dates are the same for everyone alive. How hard each one hits you is not.</p>",
+    "text": "This is what the sky does between now and the end of the year. These dates are the same for everyone alive. How hard each one hits you is not."
+   },
+   {
+    "id": "14",
+    "html": "<div class=\"wrow\"><div class=\"wn\"><span class=\"fill\">[WINDOW_STATE: IN 13 DAYS]</span></div><div class=\"wd\">Your Transformation Window · Jupiter · 12 days</div><div class=\"wsLive\">THE BIG ONE</div></div>",
+    "text": "[WINDOW_STATE: IN 13 DAYS] Your Transformation Window · Jupiter · 12 days THE BIG ONE"
+   },
+   {
+    "id": "15",
+    "html": "<div class=\"wrow\"><div class=\"wn\">OCT – NOV 13</div><div class=\"wd\">Venus goes backward. Go after it, don’t make it final.</div><div class=\"wsGone\">WAIT TO COMMIT</div></div>",
+    "text": "OCT – NOV 13 Venus goes backward. Go after it, don’t make it final. WAIT TO COMMIT"
+   },
+   {
+    "id": "16",
+    "html": "<div class=\"wrow\"><div class=\"wn\">OCT 24 – NOV 13</div><div class=\"wd\">Mercury goes backward. Say less, read everything twice.</div><div class=\"wsGone\">SLOW DOWN</div></div>",
+    "text": "OCT 24 – NOV 13 Mercury goes backward. Say less, read everything twice. SLOW DOWN"
+   },
+   {
+    "id": "17",
+    "html": "<div class=\"wrow\"><div class=\"wn\">NOV 2 – 6</div><div class=\"wd\">Mars crosses the eclipse spot. Short fuses, fast moves.</div><div class=\"wsGone\">HEADS UP</div></div>",
+    "text": "NOV 2 – 6 Mars crosses the eclipse spot. Short fuses, fast moves. HEADS UP"
+   },
+   {
+    "id": "18",
+    "html": "<div class=\"wrow\"><div class=\"wn\">DEC 13</div><div class=\"wd\">Jupiter turns backward. What you started gets tested.</div><div class=\"wsGone\">HOLD STEADY</div></div>",
+    "text": "DEC 13 Jupiter turns backward. What you started gets tested. HOLD STEADY"
+   },
+   {
+    "id": "19",
+    "html": "<p class=\"p\"><span class=\"fill\">[SEASON_LINE: For love, the one to watch is Venus. Until November 13, reach out, flirt, say how you feel. Just don’t make it official until Venus turns around.]</span></p>",
+    "text": "[SEASON_LINE: For love, the one to watch is Venus. Until November 13, reach out, flirt, say how you feel. Just don’t make it official until Venus turns around.]"
+   },
+   {
+    "id": "20",
+    "html": "<p class=\"p\"><strong>The top row is the one that matters. Which part of your life it opens, and what to do on its biggest day, are the 2 things this calendar can’t tell you. Your report does.</strong></p>",
+    "text": "The top row is the one that matters. Which part of your life it opens, and what to do on its biggest day, are the 2 things this calendar can’t tell you. Your report does."
+   },
+   {
+    "id": "21",
     "html": "<div style=\"height:2px;background:#2f2620\"></div>",
     "text": ""
    },
    {
-    "id": "13",
+    "id": "22",
     "html": "<div class=\"sh\">For 12 days, Jupiter crosses a spot in your chart it only reaches once every 12 years</div>",
     "text": "For 12 days, Jupiter crosses a spot in your chart it only reaches once every 12 years"
    },
    {
-    "id": "14",
+    "id": "23",
     "html": "<p class=\"p\">Jupiter is the planet that gets you a yes. It’s slow. It takes 12 years to get around the sky, so it reaches any one spot in your chart once every 12 years. The last time it crossed this one was the fall of 2014. The next time, you’ll be <span class=\"fill\">[AGE_2038: 59]</span>.</p>",
     "text": "Jupiter is the planet that gets you a yes. It’s slow. It takes 12 years to get around the sky, so it reaches any one spot in your chart once every 12 years. The last time it crossed this one was the fall of 2014. The next time, you’ll be [AGE_2038: 59] ."
    },
    {
-    "id": "15",
+    "id": "24",
     "html": "<p class=\"p\">The spot was marked by the August eclipse. An eclipse doesn’t do anything the night it happens. It marks a spot and waits for a planet to cross it. Jupiter <span class=\"fill\">[WINDOW_STATE: gets there in 13 days]</span>.</p>",
     "text": "The spot was marked by the August eclipse. An eclipse doesn’t do anything the night it happens. It marks a spot and waits for a planet to cross it. Jupiter [WINDOW_STATE: gets there in 13 days] ."
    },
    {
-    "id": "16",
+    "id": "25",
     "html": "<p class=\"p\">Those 12 days are your Transformation Window. While it’s open, what you ask for gets a warmer answer than it would any other month of the year.</p>",
     "text": "Those 12 days are your Transformation Window. While it’s open, what you ask for gets a warmer answer than it would any other month of the year."
    },
    {
-    "id": "17",
+    "id": "26",
     "html": "<div class=\"stat\">\n  <div><span class=\"statlab\">WINDOW</span><span class=\"statval\"><span class=\"fill\">[WINDOW_STATE: Opens in 13 days]</span></span></div>\n  <div><span class=\"statlab\">LENGTH</span><span class=\"statval\">12 days</span></div>\n  <div><span class=\"statlab\">PLANET</span><span class=\"statval\">Jupiter</span></div>\n  <div><span class=\"statlab\">NEXT ONE</span><span class=\"statval\">2038</span></div>\n</div>",
     "text": "WINDOW [WINDOW_STATE: Opens in 13 days] LENGTH 12 days PLANET Jupiter NEXT ONE 2038"
    },
    {
-    "id": "18",
-    "html": "<p class=\"p\">The same situations coming back around, the same effort getting the same answer: that’s what the long stretch between windows feels like. A window is your best shot at breaking it, because for once the timing is on your side instead of against you.</p>",
-    "text": "The same situations coming back around, the same effort getting the same answer: that’s what the long stretch between windows feels like. A window is your best shot at breaking it, because for once the timing is on your side instead of against you."
-   },
-   {
-    "id": "19",
+    "id": "27",
     "html": "<div class=\"cta\">» Get my Transformation Window Report · $39</div>",
     "text": "» Get my Transformation Window Report · $39"
    },
    {
-    "id": "20",
+    "id": "28",
     "html": "<p class=\"small\" style=\"text-align:center\">Worked out from your chart · In your inbox within 24 hours · Full refund within 60 days</p>",
     "text": "Worked out from your chart · In your inbox within 24 hours · Full refund within 60 days"
    },
    {
-    "id": "21",
+    "id": "29",
     "html": "<div class=\"sh\">You said <span class=\"fill\">[AREA: love]</span>. Your window might say something else.</div>",
     "text": "You said [AREA: love] . Your window might say something else."
    },
    {
-    "id": "22",
+    "id": "30",
     "html": "<p class=\"p\">Your window opens on one part of your life: your work, your money, your home, or one particular person. What you want doesn’t pick it. Where the spot sits in your chart does.</p>",
     "text": "Your window opens on one part of your life: your work, your money, your home, or one particular person. What you want doesn’t pick it. Where the spot sits in your chart does."
    },
    {
-    "id": "23",
-    "html": "<p class=\"p\">Jupiter’s timing is the same for everyone alive. Where it lands is not. Your horoscope was written for everyone born under <span class=\"fill\">[SIGN: Pisces]</span>. Your report is worked out from your own chart.</p>",
-    "text": "Jupiter’s timing is the same for everyone alive. Where it lands is not. Your horoscope was written for everyone born under [SIGN: Pisces] . Your report is worked out from your own chart."
-   },
-   {
-    "id": "24",
+    "id": "31",
     "html": "<p class=\"p\"><strong>If it lands on <span class=\"fill\">[AREA: love]</span>, you need to know which day to make your move. If it lands somewhere else, you need to know that even more, or you’ll spend the best 12 days you’ll get in 12 years pushing on the wrong door.</strong></p>",
     "text": "If it lands on [AREA: love] , you need to know which day to make your move. If it lands somewhere else, you need to know that even more, or you’ll spend the best 12 days you’ll get in 12 years pushing on the wrong door."
    },
    {
-    "id": "25",
+    "id": "32",
     "html": "<div class=\"sh\">Your best day to go for it is also the worst day to make anything final</div>",
     "text": "Your best day to go for it is also the worst day to make anything final"
    },
    {
-    "id": "26",
-    "html": "<p class=\"p\">A few hours before Jupiter peaks, Venus stops and goes backward for 6 weeks. Jupiter is for going after it. Venus is for locking it in, and anything you lock in while Venus is backward has a way of coming undone.</p>",
-    "text": "A few hours before Jupiter peaks, Venus stops and goes backward for 6 weeks. Jupiter is for going after it. Venus is for locking it in, and anything you lock in while Venus is backward has a way of coming undone."
+    "id": "33",
+    "html": "<p class=\"p\">A few hours before Jupiter peaks, Venus stops and goes backward for 6 weeks. Jupiter is for going after it. Venus is for locking it in, and anything you lock in while Venus is backward tends to fall apart.</p>",
+    "text": "A few hours before Jupiter peaks, Venus stops and goes backward for 6 weeks. Jupiter is for going after it. Venus is for locking it in, and anything you lock in while Venus is backward tends to fall apart."
    },
    {
-    "id": "27",
+    "id": "34",
     "html": "<p class=\"p\"><strong>Go for it on the right day. Hold off on making it final until Venus turns around. Your report marks which days are which.</strong></p>",
     "text": "Go for it on the right day. Hold off on making it final until Venus turns around. Your report marks which days are which."
    },
    {
-    "id": "28",
+    "id": "35",
     "html": "<div class=\"sh\">What’s in your Transformation Window Report</div>",
     "text": "What’s in your Transformation Window Report"
    },
    {
-    "id": "29",
+    "id": "36",
     "html": "<div class=\"num\"><div class=\"numn\">01</div><div><div class=\"numt\">Which part of your life this window opens</div><div class=\"numd\">Your work, your money, your home, or one particular person. If it’s more than one, the strongest comes first, so you know where to aim from day one.</div><div class=\"lab\" style=\"margin-top:8px\">12 DAYS · <span class=\"fill\">[WINDOW_STATE: OPENS IN 13 DAYS]</span></div></div></div>",
     "text": "01 Which part of your life this window opens Your work, your money, your home, or one particular person. If it’s more than one, the strongest comes first, so you know where to aim from day one. 12 DAYS · [WINDOW_STATE: OPENS IN 13 DAYS]"
    },
    {
-    "id": "30",
+    "id": "37",
     "html": "<div class=\"num\"><div class=\"numn\">02</div><div><div class=\"numt\">Your big day</div><div class=\"numd\">The one day out of 12 to make your move, and the best hours of that day to make it.</div><div class=\"lab\" style=\"margin-top:8px\">ONE DAY · NAMED IN YOUR REPORT</div></div></div>",
     "text": "02 Your big day The one day out of 12 to make your move, and the best hours of that day to make it. ONE DAY · NAMED IN YOUR REPORT"
    },
    {
-    "id": "31",
+    "id": "38",
     "html": "<div class=\"num\"><div class=\"numn\">03</div><div><div class=\"numt\">Your go days and your wait days</div><div class=\"numd\">Which days are for making your move, and which days to hold off before you make anything final. All on one calendar.</div><div class=\"lab\" style=\"margin-top:8px\">6 WEEKS · MARKED IN YOUR REPORT</div></div></div>",
     "text": "03 Your go days and your wait days Which days are for making your move, and which days to hold off before you make anything final. All on one calendar. 6 WEEKS · MARKED IN YOUR REPORT"
    },
    {
-    "id": "32",
-    "html": "<div class=\"num\" style=\"border-bottom:none\"><div class=\"numn\">04</div><div><div class=\"numt\">Your 2 follow-up windows</div><div class=\"numd\">Jupiter crosses your spot 3 times in 8 months, and this is the first. It comes back in February and again in May, and then it’s gone for 12 years. Your report covers both, so you know what to have ready for each.</div><div class=\"lab\" style=\"margin-top:8px\">FEBRUARY AND MAY · 2 MORE WINDOWS</div></div></div>",
-    "text": "04 Your 2 follow-up windows Jupiter crosses your spot 3 times in 8 months, and this is the first. It comes back in February and again in May, and then it’s gone for 12 years. Your report covers both, so you know what to have ready for each. FEBRUARY AND MAY · 2 MORE WINDOWS"
+    "id": "39",
+    "html": "<div class=\"num\" style=\"border-bottom:none\"><div class=\"numn\">04</div><div><div class=\"numt\">Your 2 follow-up windows</div><div class=\"numd\">Jupiter comes back to your spot in February and again in May, then it’s gone for 12 years. Your report covers both.</div><div class=\"lab\" style=\"margin-top:8px\">FEBRUARY AND MAY · 2 MORE WINDOWS</div></div></div>",
+    "text": "04 Your 2 follow-up windows Jupiter comes back to your spot in February and again in May, then it’s gone for 12 years. Your report covers both. FEBRUARY AND MAY · 2 MORE WINDOWS"
    },
    {
-    "id": "33",
+    "id": "40",
     "html": "<div class=\"rule\"></div>",
     "text": ""
    },
    {
-    "id": "34",
+    "id": "41",
     "html": "<div class=\"h1\" style=\"font-size:52px\">$39</div>",
     "text": "$39"
    },
    {
-    "id": "35",
+    "id": "42",
     "html": "<p class=\"p\">$39, once. Nothing else, ever.</p>",
     "text": "$39, once. Nothing else, ever."
    },
    {
-    "id": "36",
+    "id": "43",
+    "html": "<p class=\"p\"><strong>Your horoscope is about your sign. Your report is about your chart.</strong></p>",
+    "text": "Your horoscope is about your sign. Your report is about your chart."
+   },
+   {
+    "id": "44",
     "html": "<p class=\"p\">An hour with an astrologer starts at $150, if you can get one before the window closes. You don’t need your whole chart explained. You need to know which part of your life these 12 days are about, which day is the big one, and which days to hold off.</p>",
     "text": "An hour with an astrologer starts at $150, if you can get one before the window closes. You don’t need your whole chart explained. You need to know which part of your life these 12 days are about, which day is the big one, and which days to hold off."
    },
    {
-    "id": "37",
+    "id": "45",
     "html": "<p class=\"p\"><strong>The report costs the same whenever you order it. The window doesn’t. Every day you wait is one less day to use.</strong></p>",
     "text": "The report costs the same whenever you order it. The window doesn’t. Every day you wait is one less day to use."
-   },
-   {
-    "id": "38",
-    "html": "<div class=\"cta\">» Get my Transformation Window Report · $39</div>",
-    "text": "» Get my Transformation Window Report · $39"
-   },
-   {
-    "id": "39",
-    "html": "<div class=\"pen\" style=\"padding:22px 24px;display:flex;flex-direction:column;gap:12px\">\n  <div class=\"lab\" style=\"color:#9c3d22\">If it doesn’t ring true, you keep the report and your money</div>\n  <p class=\"p\">One email within 60 days puts the $39 back on your card. You keep the report. No forms, no questions.</p>\n</div>",
-    "text": "If it doesn’t ring true, you keep the report and your money One email within 60 days puts the $39 back on your card. You keep the report. No forms, no questions."
-   },
-   {
-    "id": "40",
-    "html": "<div class=\"sh\">What people said about theirs</div>",
-    "text": "What people said about theirs"
-   },
-   {
-    "id": "41",
-    "html": "<div class=\"tstbox\">\n  <div class=\"tst\"><div class=\"tstr\">★★★★★<span class=\"tstrn\">5.0</span></div><div class=\"tstq\">“I did the quiz for fun. Then I read the part about giving and giving and nobody noticing, and I had to put my phone down for a minute. The report was more of that, just about the next 2 weeks.”</div><div class=\"tstn\">Colleen D., Fort Wayne IN</div></div>\n  <div class=\"tst\"><div class=\"tstr\">★★★★★<span class=\"tstrn\">5.0</span></div><div class=\"tstq\">“Mine landed on work, not love. Not what I wanted to hear. It’s also the one I’ve been scared of for 3 years. My big day is circled.”</div><div class=\"tstn\">Monica A., El Paso TX</div></div>\n  <div class=\"tst\"><div class=\"tstr\">★★★★<span class=\"hf\">★</span><span class=\"tstrn\">4.5</span></div><div class=\"tstq\">“I’ve been stuck in the same place for 2 years. Knowing a stretch is coming where it can actually move is the first good night’s sleep I’ve had in a while. Wish it came as a printable calendar.”</div><div class=\"tstn\">Sherry L., Knoxville TN</div></div>\n  <div class=\"tst\"><div class=\"tstr\">★★★★<span class=\"dim\">★</span><span class=\"tstrn\">4.0</span></div><div class=\"tstq\">“Shorter than I expected for $39. But it told me the one day to go for it and the days to keep my mouth shut, and honestly that’s all I needed.”</div><div class=\"tstn\">Pam G., Omaha NE</div></div>\n</div>",
-    "text": "★★★★★ 5.0 “I did the quiz for fun. Then I read the part about giving and giving and nobody noticing, and I had to put my phone down for a minute. The report was more of that, just about the next 2 weeks.” Colleen D., Fort Wayne IN ★★★★★ 5.0 “Mine landed on work, not love. Not what I wanted to hear. It’s also the one I’ve been scared of for 3 years. My big day is circled.” Monica A., El Paso TX ★★★★ ★ 4.5 “I’ve been stuck in the same place for 2 years. Knowing a stretch is coming where it can actually move is the first good night’s sleep I’ve had in a while. Wish it came as a printable calendar.” Sherry L., Knoxville TN ★★★★ ★ 4.0 “Shorter than I expected for $39. But it told me the one day to go for it and the days to keep my mouth shut, and honestly that’s all I needed.” Pam G., Omaha NE"
-   },
-   {
-    "id": "42",
-    "html": "<div style=\"height:2px;background:#2f2620\"></div>",
-    "text": ""
-   },
-   {
-    "id": "43",
-    "html": "<div class=\"sh\" style=\"font-size:28px\">Your horoscope tells you what kind of year it’s been. Your report tells you what to do with the best 12 days of it.</div>",
-    "text": "Your horoscope tells you what kind of year it’s been. Your report tells you what to do with the best 12 days of it."
-   },
-   {
-    "id": "44",
-    "html": "<p class=\"p\">Your window <span class=\"fill\">[WINDOW_STATE: opens in 13 days]</span>, lasts 12 days, and closes whether you used it or not. Then Jupiter doesn’t come back to this spot until you’re <span class=\"fill\">[AGE_2038: 59]</span>.</p>",
-    "text": "Your window [WINDOW_STATE: opens in 13 days] , lasts 12 days, and closes whether you used it or not. Then Jupiter doesn’t come back to this spot until you’re [AGE_2038: 59] ."
-   },
-   {
-    "id": "45",
-    "html": "<p class=\"p\"><strong>The report is $39. The window is once every 12 years.</strong></p>",
-    "text": "The report is $39. The window is once every 12 years."
    },
    {
     "id": "46",
@@ -1015,31 +1015,76 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope', Board> = {
    },
    {
     "id": "47",
+    "html": "<div class=\"pen\" style=\"padding:22px 24px;display:flex;flex-direction:column;gap:12px\">\n  <div class=\"lab\" style=\"color:#9c3d22\">If it doesn’t ring true, you keep the report and your money</div>\n  <p class=\"p\">One email within 60 days puts the $39 back on your card. You keep the report. No forms, no questions.</p>\n</div>",
+    "text": "If it doesn’t ring true, you keep the report and your money One email within 60 days puts the $39 back on your card. You keep the report. No forms, no questions."
+   },
+   {
+    "id": "48",
+    "html": "<div class=\"sh\">What people said about theirs</div>",
+    "text": "What people said about theirs"
+   },
+   {
+    "id": "49",
+    "html": "<div class=\"tstbox\">\n  <div class=\"tst\"><div class=\"tstr\">★★★★★<span class=\"tstrn\">5.0</span></div><div class=\"tstq\">“I did the quiz for fun. Then I read the part about giving and giving and nobody noticing, and I had to put my phone down for a minute. The report was more of that, just about the next 2 weeks.”</div><div class=\"tstn\">Colleen D., Fort Wayne IN</div></div>\n  <div class=\"tst\"><div class=\"tstr\">★★★★★<span class=\"tstrn\">5.0</span></div><div class=\"tstq\">“Mine landed on work, not love. Not what I wanted to hear. It’s also the one I’ve been scared of for 3 years. My big day is circled.”</div><div class=\"tstn\">Monica A., El Paso TX</div></div>\n  <div class=\"tst\"><div class=\"tstr\">★★★★<span class=\"dim\">★</span><span class=\"tstrn\">4.0</span></div><div class=\"tstq\">“Shorter than I expected for $39. But it told me the one day to go for it and the days to keep my mouth shut, and honestly that’s all I needed.”</div><div class=\"tstn\">Pam G., Omaha NE</div></div>\n</div>",
+    "text": "★★★★★ 5.0 “I did the quiz for fun. Then I read the part about giving and giving and nobody noticing, and I had to put my phone down for a minute. The report was more of that, just about the next 2 weeks.” Colleen D., Fort Wayne IN ★★★★★ 5.0 “Mine landed on work, not love. Not what I wanted to hear. It’s also the one I’ve been scared of for 3 years. My big day is circled.” Monica A., El Paso TX ★★★★ ★ 4.0 “Shorter than I expected for $39. But it told me the one day to go for it and the days to keep my mouth shut, and honestly that’s all I needed.” Pam G., Omaha NE"
+   },
+   {
+    "id": "50",
+    "html": "<div style=\"height:2px;background:#2f2620\"></div>",
+    "text": ""
+   },
+   {
+    "id": "51",
+    "html": "<div class=\"sh\" style=\"font-size:28px\">Your horoscope tells you what kind of year it’s been. Your report tells you what to do with the best 12 days of it.</div>",
+    "text": "Your horoscope tells you what kind of year it’s been. Your report tells you what to do with the best 12 days of it."
+   },
+   {
+    "id": "52",
+    "html": "<p class=\"p\">Your window <span class=\"fill\">[WINDOW_STATE: opens in 13 days]</span>, lasts 12 days, and closes whether you used it or not. Then Jupiter doesn’t come back to this spot until you’re <span class=\"fill\">[AGE_2038: 59]</span>.</p>",
+    "text": "Your window [WINDOW_STATE: opens in 13 days] , lasts 12 days, and closes whether you used it or not. Then Jupiter doesn’t come back to this spot until you’re [AGE_2038: 59] ."
+   },
+   {
+    "id": "53",
+    "html": "<p class=\"p\">You can walk in knowing which part of your life it’s for and what to do on the big day. Or you can find out in November what it was for, the way most people do.</p>",
+    "text": "You can walk in knowing which part of your life it’s for and what to do on the big day. Or you can find out in November what it was for, the way most people do."
+   },
+   {
+    "id": "54",
+    "html": "<p class=\"p\"><strong>The report is $39. The window is once every 12 years.</strong></p>",
+    "text": "The report is $39. The window is once every 12 years."
+   },
+   {
+    "id": "55",
+    "html": "<div class=\"cta\">» Get my Transformation Window Report · $39</div>",
+    "text": "» Get my Transformation Window Report · $39"
+   },
+   {
+    "id": "56",
     "html": "<p class=\"small\" style=\"text-align:center\">One-time payment · Worked out from your chart · Full refund within 60 days</p>",
     "text": "One-time payment · Worked out from your chart · Full refund within 60 days"
    },
    {
-    "id": "48",
+    "id": "57",
     "html": "<div class=\"band\">\n  <p class=\"p\"><strong>P.S.</strong> You told us the same situations keep coming back. They will, right up until a window opens and you know what it’s for. The next one <span class=\"fill\">[WINDOW_STATE: opens in 13 days]</span>, and it’s the biggest one you’ll get until 2038.</p>\n</div>",
     "text": "P.S. You told us the same situations keep coming back. They will, right up until a window opens and you know what it’s for. The next one [WINDOW_STATE: opens in 13 days] , and it’s the biggest one you’ll get until 2038."
    },
    {
-    "id": "49",
+    "id": "58",
     "html": "<div class=\"rule\"></div>",
     "text": ""
    },
    {
-    "id": "50",
+    "id": "59",
     "html": "<p class=\"small\">Astrology is offered for entertainment and personal reflection. The dates are astronomy and every one of them can be checked. What happens on them is not something we predict, and none of this is a substitute for medical, legal, financial or psychological advice.</p>",
     "text": "Astrology is offered for entertainment and personal reflection. The dates are astronomy and every one of them can be checked. What happens on them is not something we predict, and none of this is a substitute for medical, legal, financial or psychological advice."
    },
    {
-    "id": "51",
+    "id": "60",
     "html": "<p class=\"small\">The Transformation Window Report is a product of AstroVeo. Testimonials are individual experiences and are not a promise that you will get the same result. The report tells you what the sky is doing and when; it does not cause anything to happen. You must be 18 or older to buy. AstroVeo is an independent company and is not affiliated with, endorsed by or sponsored by any platform this advertisement appears on.</p>",
     "text": "The Transformation Window Report is a product of AstroVeo. Testimonials are individual experiences and are not a promise that you will get the same result. The report tells you what the sky is doing and when; it does not cause anything to happen. You must be 18 or older to buy. AstroVeo is an independent company and is not affiliated with, endorsed by or sponsored by any platform this advertisement appears on."
    },
    {
-    "id": "52",
+    "id": "61",
     "html": "<p class=\"small\">© 2026 <span class=\"fill\">[ASTROVEO_LEGAL_NAME]</span>, <span class=\"fill\">[ASTROVEO_ADDRESS]</span>. Questions and refunds: <span class=\"fill\">[SUPPORT_EMAIL]</span>. <a href=\"#\">Terms</a> · <a href=\"#\">Privacy</a> · <a href=\"#\">Contact</a></p>",
     "text": "© 2026 [ASTROVEO_LEGAL_NAME] , [ASTROVEO_ADDRESS] . Questions and refunds: [SUPPORT_EMAIL] . Terms · Privacy · Contact"
    }
