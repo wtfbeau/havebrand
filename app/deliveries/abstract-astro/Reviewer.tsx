@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Board, Block } from "./copy";
 
-type Boards = Record<"advertorial" | "sales", Board>;
+type Boards = Record<"advertorial" | "sales" | "horoscope", Board>;
 type Notes = Record<string, string>;
 const KEY = "aa-tw-notes-v2";
 const DOC = "abstract-astro";
@@ -148,7 +148,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
   };
   const noteCount = useMemo(() => Object.values(notes).filter((v) => v.trim()).length, [notes]);
 
-  const worldW = BOARD_W * 2 + RULES_W + GAP * 2 + 80;
+  const worldW = BOARD_W * 3 + RULES_W + GAP * 3 + 80;
 
   const fit = useCallback(() => {
     const el = vp.current;
@@ -246,7 +246,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
       <header className="z-30 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#55504a] bg-[#3f3a34] px-4 py-2.5 text-[#f3efe6]">
         <div className="mr-auto">
           <div className="text-[10px] font-bold uppercase tracking-[.14em] text-[#b8b0a2]">Abstract Astro</div>
-          <div className="text-[15px] font-bold leading-tight">Transformation Window Report · advertorial and sales page</div>
+          <div className="text-[15px] font-bold leading-tight">Transformation Window Report · advertorial, sales page and version 3</div>
         </div>
         <div className="hidden text-[12px] text-[#b8b0a2] md:block">
           Drag the background to move · ⌘ or Ctrl + scroll to zoom · Hover a block to copy or note ·{" "}
@@ -414,7 +414,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
             );
           })}
 
-          <div className="absolute top-0" style={{ left: 2 * (BOARD_W + GAP), width: RULES_W }}>
+          <div className="absolute top-0" style={{ left: 3 * (BOARD_W + GAP), width: RULES_W }}>
             <div className="mb-2 px-0.5">
               <div className="text-[14px] font-bold text-[#f3efe6]">Placeholders</div>
               <div className="text-[12px] text-[#b8b0a2]">Rust words on the pages are filled in for each reader.</div>
@@ -543,6 +543,82 @@ function Placeholders() {
                 About 2 readers in 3 get a sentence.
               </td>
               <td className={td}>Remove the whole paragraph. Never print a substitute sentence.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 className="mt-8 text-[15px] font-bold">Version 3 · Horoscope first</h3>
+      <ul className="mt-2 list-disc space-y-1 pl-5 text-[13px] leading-snug">
+        <li><span className={code}>NAME</span>, <span className={code}>BIRTH_DATE</span>, <span className={code}>AGE_2038</span> and <span className={code}>WINDOW_STATE</span> work exactly as on the sales page. <span className={code}>WINDOW_STATE</span> appears in the headline ("starts in N days" / "is happening right now"), the Jupiter section ("gets there in N days" / "is there right now"), the stat row, report item 01, the closing section and the P.S.</li>
+        <li>The opening says the full horoscope is on its way to her inbox. That has to be true: the horoscope email must go out as the quiz promised.</li>
+        <li>Every slot below comes from an answer she already gave in the quiz. Nothing new is asked.</li>
+      </ul>
+      <div className="mt-3 overflow-hidden rounded border border-[#e5ddd0]">
+        <table className="w-full border-collapse">
+          <thead className="border-b border-[#e5ddd0] bg-[#faf8f3]">
+            <tr><th className={th}>Placeholder</th><th className={th}>Value</th><th className={th}>Versions</th></tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-[#efe9dd]">
+              <td className={td}><span className={code}>SIGN</span> · <span className={code}>ELEMENT</span></td>
+              <td className={td}>Sun sign and its element, from the birth date. The quiz already works these out.</td>
+              <td className={td}>12 signs, 4 elements.</td>
+            </tr>
+            <tr className="border-b border-[#efe9dd]">
+              <td className={td}><span className={code}>ELEMENT_LINE</span></td>
+              <td className={td}>One paragraph per element.</td>
+              <td className={td}>
+                <ul className="list-disc space-y-1 pl-4">
+                  <li><strong>Fire</strong> · You’re a fire sign. You move first and think about it on the way, and when you’re in, you’re all in. That’s a gift. It’s also why a year that won’t move hits you harder than most.</li>
+                  <li><strong>Earth</strong> · You’re an earth sign. You build things slowly and you build them to last, and you’re the one everybody leans on. That’s a gift. It’s also why you hate waiting on things you can’t control.</li>
+                  <li><strong>Air</strong> · You’re an air sign. Your mind is always 3 steps ahead, and you can talk yourself into or out of anything. That’s a gift. It’s also why you second-guess the moves that matter most.</li>
+                  <li><strong>Water</strong> · As shown on the page.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr className="border-b border-[#efe9dd]">
+              <td className={td}><span className={code}>AREA</span> · <span className={code}>AREA_LINE</span></td>
+              <td className={td}>From "What matters most to you right now?". <span className={code}>AREA</span> is the word, <span className={code}>AREA_LINE</span> the paragraph.</td>
+              <td className={td}>
+                <ul className="list-disc space-y-1 pl-4">
+                  <li><strong>Love</strong> → <em>love</em> · As shown on the page.</li>
+                  <li><strong>Work</strong> → <em>work</em> · You picked work. For you, work has run stop-and-start this year. You’ve put in the effort and watched it go unnoticed, or go to somebody else, and you’re tired of waiting to be picked.</li>
+                  <li><strong>Finance</strong> → <em>money</em> · You picked money. For you, money has come in and gone out this year without ever quite adding up. Every time you got a little ahead, something came along and took it back.</li>
+                  <li><strong>General</strong> → <em>a bit of everything</em> · You picked a bit of everything, which usually means more than one thing needs to move. For you, 2026 has been a year of almost: close on a few fronts, finished on none.</li>
+                </ul>
+                For <strong>General</strong>, the bold line in the "Your window might say something else" section becomes: <em>Whatever it lands on, you need to know which day to make your move, or you’ll spend the best 12 days you’ll get in 12 years pushing on the wrong door.</em>
+              </td>
+            </tr>
+            <tr className="border-b border-[#efe9dd]">
+              <td className={td}><span className={code}>DEPTH_LINE</span></td>
+              <td className={td}>From "Do you sometimes feel others don’t fully see your depth?"</td>
+              <td className={td}>
+                <ul className="list-disc space-y-1 pl-4">
+                  <li><strong>Yes / Sometimes</strong> · As shown on the page.</li>
+                  <li><strong>Not really</strong> · You told us people mostly get you. That’s rarer than you’d think, and it means that when you finally ask for something, people listen.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr className="border-b border-[#efe9dd]">
+              <td className={td}><span className={code}>GIVING_LINE</span></td>
+              <td className={td}>From "Do you tend to give a lot of your time and energy to others?"</td>
+              <td className={td}>
+                <ul className="list-disc space-y-1 pl-4">
+                  <li><strong>Yes / Sometimes</strong> · As shown on the page.</li>
+                  <li><strong>Not really</strong> · You’re careful about where your time and energy go. This fall, that matters more than usual.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td className={td}><span className={code}>PATTERN_LINE</span></td>
+              <td className={td}>From "Have you noticed certain situations repeating in your life?". The sentence after it stays the same.</td>
+              <td className={td}>
+                <ul className="list-disc space-y-1 pl-4">
+                  <li><strong>Yes / Sometimes</strong> · As shown on the page.</li>
+                  <li><strong>Not really</strong> · Most people hit the same wall more than once, even when they don’t call it a pattern.</li>
+                </ul>
+              </td>
             </tr>
           </tbody>
         </table>
