@@ -247,7 +247,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
       <header className="z-30 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#55504a] bg-[#3f3a34] px-4 py-2.5 text-[#f3efe6]">
         <div className="mr-auto">
           <div className="text-[10px] font-bold uppercase tracking-[.14em] text-[#b8b0a2]">Abstract Astro</div>
-          <div className="text-[15px] font-bold leading-tight">Transformation Window Report · advertorial, sales page, version 3 and pop-ups</div>
+          <div className="text-[15px] font-bold leading-tight">Transformation Window Report · advertorial, sales page, version 3 and its pop-ups</div>
         </div>
         <div className="hidden text-[12px] text-[#b8b0a2] md:block">
           Drag the background to move · ⌘ or Ctrl + scroll to zoom · Hover a block to copy or note ·{" "}

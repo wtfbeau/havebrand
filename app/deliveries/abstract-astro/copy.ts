@@ -33,7 +33,7 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "06",
-    "html": "<div data-pop=\"A1\" class=\"byline\"><div class=\"avatar\">NK</div><div class=\"lab\">By Nora Keating, astrologer</div></div>",
+    "html": "<div class=\"byline\"><div class=\"avatar\">NK</div><div class=\"lab\">By Nora Keating, astrologer</div></div>",
     "text": "NK By Nora Keating, astrologer"
    },
    {
@@ -153,12 +153,12 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "30",
-    "html": "<div data-pop=\"A2\" class=\"wrow\"><div class=\"wn\">AUG 20–21</div><div class=\"wd\">20 hours</div><div class=\"wsGone\">GONE</div></div>",
+    "html": "<div class=\"wrow\"><div class=\"wn\">AUG 20–21</div><div class=\"wd\">20 hours</div><div class=\"wsGone\">GONE</div></div>",
     "text": "AUG 20–21 20 hours GONE"
    },
    {
     "id": "31",
-    "html": "<div data-pop=\"A3\" class=\"wrow\"><div class=\"wn\"><span class=\"fill\">[WINDOW_STATE: IN 13 DAYS]</span></div><div class=\"wd\">12 days · Jupiter · next one in 2038</div><div class=\"wsLive\">STILL AHEAD OF YOU</div></div>",
+    "html": "<div class=\"wrow\"><div class=\"wn\"><span class=\"fill\">[WINDOW_STATE: IN 13 DAYS]</span></div><div class=\"wd\">12 days · Jupiter · next one in 2038</div><div class=\"wsLive\">STILL AHEAD OF YOU</div></div>",
     "text": "[WINDOW_STATE: IN 13 DAYS] 12 days · Jupiter · next one in 2038 STILL AHEAD OF YOU"
    },
    {
@@ -258,17 +258,17 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "51",
-    "html": "<div data-pop=\"A4\" class=\"num\"><div class=\"numn\">01</div><div><div class=\"numt\">Is this window about your work, your money, your home, or one particular person?</div><div class=\"numd\">Usually it’s one of them. Sometimes it’s all of them at once, and that’s the window you wait 12 years for. Aim at the right one and these 2 weeks can change your year.</div></div></div>",
+    "html": "<div class=\"num\"><div class=\"numn\">01</div><div><div class=\"numt\">Is this window about your work, your money, your home, or one particular person?</div><div class=\"numd\">Usually it’s one of them. Sometimes it’s all of them at once, and that’s the window you wait 12 years for. Aim at the right one and these 2 weeks can change your year.</div></div></div>",
     "text": "01 Is this window about your work, your money, your home, or one particular person? Usually it’s one of them. Sometimes it’s all of them at once, and that’s the window you wait 12 years for. Aim at the right one and these 2 weeks can change your year."
    },
    {
     "id": "52",
-    "html": "<div data-pop=\"A4\" class=\"num\"><div class=\"numn\">02</div><div><div class=\"numt\">Which day is the big one?</div><div class=\"numd\">Jupiter peaks on one day. Make your move that day and you get the best answer you’ll get all year. Make it early and you don’t.</div></div></div>",
+    "html": "<div class=\"num\"><div class=\"numn\">02</div><div><div class=\"numt\">Which day is the big one?</div><div class=\"numd\">Jupiter peaks on one day. Make your move that day and you get the best answer you’ll get all year. Make it early and you don’t.</div></div></div>",
     "text": "02 Which day is the big one? Jupiter peaks on one day. Make your move that day and you get the best answer you’ll get all year. Make it early and you don’t."
    },
    {
     "id": "53",
-    "html": "<div data-pop=\"A4\" class=\"num\" style=\"border-bottom:none\"><div class=\"numn\">03</div><div><div class=\"numt\">Which days are for making your move, and which days are for waiting?</div><div class=\"numd\">Venus goes backward for 6 weeks right after your big day, and anything you lock in while it’s backward tends to come undone. Your report marks those days, so you know when to go for it and when to hold off.</div></div></div>",
+    "html": "<div class=\"num\" style=\"border-bottom:none\"><div class=\"numn\">03</div><div><div class=\"numt\">Which days are for making your move, and which days are for waiting?</div><div class=\"numd\">Venus goes backward for 6 weeks right after your big day, and anything you lock in while it’s backward tends to come undone. Your report marks those days, so you know when to go for it and when to hold off.</div></div></div>",
     "text": "03 Which days are for making your move, and which days are for waiting? Venus goes backward for 6 weeks right after your big day, and anything you lock in while it’s backward tends to come undone. Your report marks those days, so you know when to go for it and when to hold off."
    },
    {
@@ -283,7 +283,7 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "56",
-    "html": "<div data-pop=\"A5\" class=\"bul\">\n  <div><strong>Every part of your life this window lights up.</strong> Work, money, home, one particular person, and in some charts 2 or 3 of them at once. The strongest comes first, and it’s what you go after on day one.</div>\n  <div><strong>Your big day.</strong> The one day out of 12 when a yes comes easiest. The day to send the email, make the call, say the number out loud.</div>\n  <div><strong>Your big day, hour by hour.</strong> When to make your move, and what to have wrapped up before the day is over.</div>\n  <div><strong>What this window says yes to.</strong> The kind of ask it’s built for, so you spend your 12 days going after the right thing instead of guessing.</div>\n  <div><strong>Your go days and your wait days.</strong> Which days of your window are for making your move, and which days to hold off, on one calendar.</div>\n  <div><strong>How to be ready before it opens.</strong> What to line up in the days before, so when the door swings open you walk straight through it.</div>\n</div>",
+    "html": "<div class=\"bul\">\n  <div><strong>Every part of your life this window lights up.</strong> Work, money, home, one particular person, and in some charts 2 or 3 of them at once. The strongest comes first, and it’s what you go after on day one.</div>\n  <div><strong>Your big day.</strong> The one day out of 12 when a yes comes easiest. The day to send the email, make the call, say the number out loud.</div>\n  <div><strong>Your big day, hour by hour.</strong> When to make your move, and what to have wrapped up before the day is over.</div>\n  <div><strong>What this window says yes to.</strong> The kind of ask it’s built for, so you spend your 12 days going after the right thing instead of guessing.</div>\n  <div><strong>Your go days and your wait days.</strong> Which days of your window are for making your move, and which days to hold off, on one calendar.</div>\n  <div><strong>How to be ready before it opens.</strong> What to line up in the days before, so when the door swings open you walk straight through it.</div>\n</div>",
     "text": "Every part of your life this window lights up. Work, money, home, one particular person, and in some charts 2 or 3 of them at once. The strongest comes first, and it’s what you go after on day one. Your big day. The one day out of 12 when a yes comes easiest. The day to send the email, make the call, say the number out loud. Your big day, hour by hour. When to make your move, and what to have wrapped up before the day is over. What this window says yes to. The kind of ask it’s built for, so you spend your 12 days going after the right thing instead of guessing. Your go days and your wait days. Which days of your window are for making your move, and which days to hold off, on one calendar. How to be ready before it opens. What to line up in the days before, so when the door swings open you walk straight through it."
    },
    {
@@ -429,7 +429,7 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
   "blocks": [
    {
     "id": "01",
-    "html": "<div data-pop=\"S1\" style=\"display:flex;justify-content:space-between;align-items:center\">\n  <div class=\"strip\">PREPARED FOR <span class=\"fill\">[NAME: SARAH]</span></div>\n  <div class=\"strip\">YOUR WINDOW <span class=\"fill\">[WINDOW_STATE: OPENS IN 13 DAYS]</span></div>\n</div>",
+    "html": "<div style=\"display:flex;justify-content:space-between;align-items:center\">\n  <div class=\"strip\">PREPARED FOR <span class=\"fill\">[NAME: SARAH]</span></div>\n  <div class=\"strip\">YOUR WINDOW <span class=\"fill\">[WINDOW_STATE: OPENS IN 13 DAYS]</span></div>\n</div>",
     "text": "PREPARED FOR [NAME: SARAH] YOUR WINDOW [WINDOW_STATE: OPENS IN 13 DAYS]"
    },
    {
@@ -449,7 +449,7 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "05",
-    "html": "<div data-pop=\"S2\" class=\"stat\">\n  <div><span class=\"statlab\">WINDOW</span><span class=\"statval\"><span class=\"fill\">[WINDOW_STATE: Opens in 13 days]</span></span></div>\n  <div><span class=\"statlab\">LENGTH</span><span class=\"statval\">12 days</span></div>\n  <div><span class=\"statlab\">PLANET</span><span class=\"statval\">Jupiter</span></div>\n  <div><span class=\"statlab\">NEXT ONE</span><span class=\"statval\">2038</span></div>\n</div>",
+    "html": "<div class=\"stat\">\n  <div><span class=\"statlab\">WINDOW</span><span class=\"statval\"><span class=\"fill\">[WINDOW_STATE: Opens in 13 days]</span></span></div>\n  <div><span class=\"statlab\">LENGTH</span><span class=\"statval\">12 days</span></div>\n  <div><span class=\"statlab\">PLANET</span><span class=\"statval\">Jupiter</span></div>\n  <div><span class=\"statlab\">NEXT ONE</span><span class=\"statval\">2038</span></div>\n</div>",
     "text": "WINDOW [WINDOW_STATE: Opens in 13 days] LENGTH 12 days PLANET Jupiter NEXT ONE 2038"
    },
    {
@@ -569,12 +569,12 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "29",
-    "html": "<div data-pop=\"S3\" class=\"wrow\"><div class=\"wn\">AUG 20–21</div><div class=\"wd\">Mercury · 20 hours</div><div class=\"wsGone\">MISSED</div></div>",
+    "html": "<div class=\"wrow\"><div class=\"wn\">AUG 20–21</div><div class=\"wd\">Mercury · 20 hours</div><div class=\"wsGone\">MISSED</div></div>",
     "text": "AUG 20–21 Mercury · 20 hours MISSED"
    },
    {
     "id": "30",
-    "html": "<div data-pop=\"S4\" class=\"wrow\"><div class=\"wn\"><span class=\"fill\">[WINDOW_STATE: IN 13 DAYS]</span></div><div class=\"wd\">Jupiter · 12 days · the big one</div><div class=\"wsLive\">YOURS TO USE</div></div>",
+    "html": "<div class=\"wrow\"><div class=\"wn\"><span class=\"fill\">[WINDOW_STATE: IN 13 DAYS]</span></div><div class=\"wd\">Jupiter · 12 days · the big one</div><div class=\"wsLive\">YOURS TO USE</div></div>",
     "text": "[WINDOW_STATE: IN 13 DAYS] Jupiter · 12 days · the big one YOURS TO USE"
    },
    {
@@ -614,27 +614,27 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "38",
-    "html": "<div data-pop=\"S5\" class=\"num\"><div class=\"numn\">01</div><div><div class=\"numt\">Which part of your life this window opens</div><div class=\"numd\">Your work, your money, your home, or one particular person. If it’s more than one, the strongest comes first, so you know exactly where to aim from day one.</div><div class=\"lab\" style=\"margin-top:8px\">12 DAYS · <span class=\"fill\">[WINDOW_STATE: OPENS IN 13 DAYS]</span></div></div></div>",
+    "html": "<div class=\"num\"><div class=\"numn\">01</div><div><div class=\"numt\">Which part of your life this window opens</div><div class=\"numd\">Your work, your money, your home, or one particular person. If it’s more than one, the strongest comes first, so you know exactly where to aim from day one.</div><div class=\"lab\" style=\"margin-top:8px\">12 DAYS · <span class=\"fill\">[WINDOW_STATE: OPENS IN 13 DAYS]</span></div></div></div>",
     "text": "01 Which part of your life this window opens Your work, your money, your home, or one particular person. If it’s more than one, the strongest comes first, so you know exactly where to aim from day one. 12 DAYS · [WINDOW_STATE: OPENS IN 13 DAYS]"
    },
    {
     "id": "39",
-    "html": "<div data-pop=\"S5\" class=\"num\"><div class=\"numn\">02</div><div><div class=\"numt\">Your big day</div><div class=\"numd\">The one day out of 12 to make your move, and the best hours of that day to make it.</div><div class=\"lab\" style=\"margin-top:8px\">ONE DAY · NAMED IN YOUR REPORT</div></div></div>",
+    "html": "<div class=\"num\"><div class=\"numn\">02</div><div><div class=\"numt\">Your big day</div><div class=\"numd\">The one day out of 12 to make your move, and the best hours of that day to make it.</div><div class=\"lab\" style=\"margin-top:8px\">ONE DAY · NAMED IN YOUR REPORT</div></div></div>",
     "text": "02 Your big day The one day out of 12 to make your move, and the best hours of that day to make it. ONE DAY · NAMED IN YOUR REPORT"
    },
    {
     "id": "40",
-    "html": "<div data-pop=\"S5\" class=\"num\"><div class=\"numn\">03</div><div><div class=\"numt\">Your go days and your wait days</div><div class=\"numd\">Which days of your window are for making your move, and which days to hold off before you make anything final. All on one calendar.</div><div class=\"lab\" style=\"margin-top:8px\">6 WEEKS · MARKED IN YOUR REPORT</div></div></div>",
+    "html": "<div class=\"num\"><div class=\"numn\">03</div><div><div class=\"numt\">Your go days and your wait days</div><div class=\"numd\">Which days of your window are for making your move, and which days to hold off before you make anything final. All on one calendar.</div><div class=\"lab\" style=\"margin-top:8px\">6 WEEKS · MARKED IN YOUR REPORT</div></div></div>",
     "text": "03 Your go days and your wait days Which days of your window are for making your move, and which days to hold off before you make anything final. All on one calendar. 6 WEEKS · MARKED IN YOUR REPORT"
    },
    {
     "id": "41",
-    "html": "<div data-pop=\"S5\" class=\"num\"><div class=\"numn\">04</div><div><div class=\"numt\">Your 2 follow-up windows</div><div class=\"numd\">Jupiter doesn’t cross your spot once. It crosses it 3 times in 8 months, and this is the first. It comes back in February and again in May, and then it’s gone for 12 years. Whatever you start in this window gets a second push in February and settles in May. Both of those windows are in your report, so you know when the next 2 pushes come and what to have ready for each.</div><div class=\"lab\" style=\"margin-top:8px\">FEBRUARY AND MAY · 2 MORE WINDOWS</div></div></div>",
+    "html": "<div class=\"num\"><div class=\"numn\">04</div><div><div class=\"numt\">Your 2 follow-up windows</div><div class=\"numd\">Jupiter doesn’t cross your spot once. It crosses it 3 times in 8 months, and this is the first. It comes back in February and again in May, and then it’s gone for 12 years. Whatever you start in this window gets a second push in February and settles in May. Both of those windows are in your report, so you know when the next 2 pushes come and what to have ready for each.</div><div class=\"lab\" style=\"margin-top:8px\">FEBRUARY AND MAY · 2 MORE WINDOWS</div></div></div>",
     "text": "04 Your 2 follow-up windows Jupiter doesn’t cross your spot once. It crosses it 3 times in 8 months, and this is the first. It comes back in February and again in May, and then it’s gone for 12 years. Whatever you start in this window gets a second push in February and settles in May. Both of those windows are in your report, so you know when the next 2 pushes come and what to have ready for each. FEBRUARY AND MAY · 2 MORE WINDOWS"
    },
    {
     "id": "42",
-    "html": "<div data-pop=\"S5\" class=\"num\" style=\"border-bottom:none\"><div class=\"numn\">05</div><div><div class=\"numt\">How to be ready before it opens</div><div class=\"numd\">What to line up in the days before, and what to have wrapped up before the peak day is over, so when the door swings open you’re already standing at it.</div><div class=\"lab\" style=\"margin-top:8px\">THE WEEK BEFORE · THE PEAK DAY</div></div></div>",
+    "html": "<div class=\"num\" style=\"border-bottom:none\"><div class=\"numn\">05</div><div><div class=\"numt\">How to be ready before it opens</div><div class=\"numd\">What to line up in the days before, and what to have wrapped up before the peak day is over, so when the door swings open you’re already standing at it.</div><div class=\"lab\" style=\"margin-top:8px\">THE WEEK BEFORE · THE PEAK DAY</div></div></div>",
     "text": "05 How to be ready before it opens What to line up in the days before, and what to have wrapped up before the peak day is over, so when the door swings open you’re already standing at it. THE WEEK BEFORE · THE PEAK DAY"
    },
    {
@@ -1091,153 +1091,73 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
   ]
  },
  "popups": {
-  "title": "Pop-ups · all 3 pages",
+  "title": "Pop-ups · Version 3",
   "sub": "What opens when she taps an orange-numbered spot.",
   "blocks": [
    {
     "id": "01",
-    "html": "<p class=\"p\">People tap lists, names and pictures thinking they open. Every orange number on the 3 boards to the left is a spot to make tappable, and its pop-up is here. Each one slides up from the bottom, gives her 1 true thing, blurs the rest, and has 1 button that goes where the page’s main button goes. The pop-ups use the same placeholders as the pages, so they move to the Mars version with them.</p>",
-    "text": "People tap lists, names and pictures thinking they open. Every orange number on the 3 boards to the left is a spot to make tappable, and its pop-up is here. Each one slides up from the bottom, gives her 1 true thing, blurs the rest, and has 1 button that goes where the page’s main button goes. The pop-ups use the same placeholders as the pages, so they move to the Mars version with them."
+    "html": "<p class=\"p\">People tap lists, names and pictures thinking they open. Every orange number on the Version 3 board is a spot to make tappable, and its pop-up is here. Each one slides up from the bottom, gives her 1 true thing, blurs the rest, and has 1 button that goes where the page’s main button goes. The pop-ups use the same placeholders as the pages, so they move to the Mars version with them.</p>",
+    "text": "People tap lists, names and pictures thinking they open. Every orange number on the Version 3 board is a spot to make tappable, and its pop-up is here. Each one slides up from the bottom, gives her 1 true thing, blurs the rest, and has 1 button that goes where the page’s main button goes. The pop-ups use the same placeholders as the pages, so they move to the Mars version with them."
    },
    {
     "id": "02",
-    "html": "<div class=\"sh\">Advertorial</div>",
-    "text": "Advertorial"
-   },
-   {
-    "id": "03",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">A1</span><span class=\"lab\">Byline, the astrologer’s name and photo</span></div><div class=\"pop\"><div class=\"popt\"><span class=\"fill\">[ASTROLOGER: Nora Keating]</span>, astrologer</div><p class=\"p\">18 years reading charts, and booked solid into <span class=\"fill\">[MONTH_AHEAD: November]</span>. Her report tells you which part of your life your Transformation Window opens, and which day to make your move.</p><div class=\"cta\">» Get her report · $39</div></div></div>",
-    "text": "A1 Byline, the astrologer’s name and photo [ASTROLOGER: Nora Keating] , astrologer 18 years reading charts, and booked solid into [MONTH_AHEAD: November] . Her report tells you which part of your life your Transformation Window opens, and which day to make your move. » Get her report · $39"
-   },
-   {
-    "id": "04",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">A2</span><span class=\"lab\">Window table, the Mercury row</span></div><div class=\"pop\"><div class=\"popt\">Mercury · August 20</div><p class=\"p\">This one’s gone. It lasted 20 hours, and most people never knew it opened.</p><div class=\"cta\">» Don’t miss the next one</div></div></div>",
-    "text": "A2 Window table, the Mercury row Mercury · August 20 This one’s gone. It lasted 20 hours, and most people never knew it opened. » Don’t miss the next one"
-   },
-   {
-    "id": "05",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">A3</span><span class=\"lab\">Window table, the Jupiter row</span></div><div class=\"pop\"><div class=\"popt\">Jupiter · 12 days</div><p class=\"p\">Jupiter <span class=\"fill\">[WINDOW_STATE: reaches the spot in 13 days]</span> and stays for 12 days. 1 of those days is the big one, and your chart decides which.</p><div class=\"blur\">Your big day: ███████ ██ · Your part of life: ██████</div><div class=\"cta\">» Find my big day</div></div></div>",
-    "text": "A3 Window table, the Jupiter row Jupiter · 12 days Jupiter [WINDOW_STATE: reaches the spot in 13 days] and stays for 12 days. 1 of those days is the big one, and your chart decides which. Your big day: ███████ ██ · Your part of life: ██████ » Find my big day"
-   },
-   {
-    "id": "06",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">A4</span><span class=\"lab\">Question 01</span></div><div class=\"pop\"><div class=\"popt\">Is this window about your work, your money, your home, or 1 specific person?</div><p class=\"p\">Usually it’s 1 of them, and your chart decides which.</p><div class=\"blur\">Your window opens: your ██████</div><div class=\"cta\">» See which part of my life</div></div></div>",
-    "text": "A4 Question 01 Is this window about your work, your money, your home, or 1 specific person? Usually it’s 1 of them, and your chart decides which. Your window opens: your ██████ » See which part of my life"
-   },
-   {
-    "id": "07",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">A4</span><span class=\"lab\">Question 02</span></div><div class=\"pop\"><div class=\"popt\">Which day is the big one?</div><p class=\"p\">Jupiter peaks on 1 day, and the best hours to make your move on it depend on your chart.</p><div class=\"blur\">Big day: ███ ██ · Best hours: █:██ to █:██</div><div class=\"cta\">» Find my big day</div></div></div>",
-    "text": "A4 Question 02 Which day is the big one? Jupiter peaks on 1 day, and the best hours to make your move on it depend on your chart. Big day: ███ ██ · Best hours: █:██ to █:██ » Find my big day"
-   },
-   {
-    "id": "08",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">A4</span><span class=\"lab\">Question 03</span></div><div class=\"pop\"><div class=\"popt\">Which days are for moving, and which are for waiting?</div><p class=\"p\">Venus goes backward for 6 weeks right in the middle of your window, so some days are for making your move and some are for holding off.</p><div class=\"blur\">Go: ███ ██, ███ ██ · Wait: ███ ██</div><div class=\"cta\">» Get my go and wait days</div></div></div>",
-    "text": "A4 Question 03 Which days are for moving, and which are for waiting? Venus goes backward for 6 weeks right in the middle of your window, so some days are for making your move and some are for holding off. Go: ███ ██, ███ ██ · Wait: ███ ██ » Get my go and wait days"
-   },
-   {
-    "id": "09",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">A5</span><span class=\"lab\">The “what’s in it” list</span></div><div class=\"pop\"><div class=\"popt\">A look inside your report</div><p class=\"p\">Every report is worked out from 1 chart, yours, and starts with the part of your life this window opens.</p><div class=\"blur\">Your window opens your ████ · Big day: ███ ██</div><div class=\"cta\">» Get my report · $39</div></div></div>",
-    "text": "A5 The “what’s in it” list A look inside your report Every report is worked out from 1 chart, yours, and starts with the part of your life this window opens. Your window opens your ████ · Big day: ███ ██ » Get my report · $39"
-   },
-   {
-    "id": "10",
-    "html": "<div class=\"sh\">Sales page</div>",
-    "text": "Sales page"
-   },
-   {
-    "id": "11",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">S1</span><span class=\"lab\">Top strip with her name</span></div><div class=\"pop\"><div class=\"popt\">Prepared for <span class=\"fill\">[NAME: Sarah]</span></div><p class=\"p\">Your report is worked out from your birth date, <span class=\"fill\">[BIRTH_DATE: March 4, 1979]</span>. Your window <span class=\"fill\">[WINDOW_STATE: opens in 13 days]</span>.</p><div class=\"blur\">It opens your ██████ · Your big day: ███ ██</div><div class=\"cta\">» Get my report · $39</div></div></div>",
-    "text": "S1 Top strip with her name Prepared for [NAME: Sarah] Your report is worked out from your birth date, [BIRTH_DATE: March 4, 1979] . Your window [WINDOW_STATE: opens in 13 days] . It opens your ██████ · Your big day: ███ ██ » Get my report · $39"
-   },
-   {
-    "id": "12",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">S2</span><span class=\"lab\">Stat row, any of the 4</span></div><div class=\"pop\"><div class=\"popt\">Your Transformation Window</div><p class=\"p\">12 days of Jupiter on the spot the August eclipse marked. The next time is 2038, when you’ll be <span class=\"fill\">[AGE_2038: 59]</span>.</p><div class=\"blur\">Your big day: ███████ ██ · Best hours: █:██ to █:██</div><div class=\"cta\">» Find my big day</div></div></div>",
-    "text": "S2 Stat row, any of the 4 Your Transformation Window 12 days of Jupiter on the spot the August eclipse marked. The next time is 2038, when you’ll be [AGE_2038: 59] . Your big day: ███████ ██ · Best hours: █:██ to █:██ » Find my big day"
-   },
-   {
-    "id": "13",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">S3</span><span class=\"lab\">Window table, the Mercury row</span></div><div class=\"pop\"><div class=\"popt\">Mercury · August 20</div><p class=\"p\">This one’s gone. It lasted 20 hours, and most people never knew it opened.</p><div class=\"cta\">» Don’t miss the next one</div></div></div>",
-    "text": "S3 Window table, the Mercury row Mercury · August 20 This one’s gone. It lasted 20 hours, and most people never knew it opened. » Don’t miss the next one"
-   },
-   {
-    "id": "14",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">S4</span><span class=\"lab\">Window table, the Jupiter row</span></div><div class=\"pop\"><div class=\"popt\">Jupiter · 12 days</div><p class=\"p\">Jupiter <span class=\"fill\">[WINDOW_STATE: reaches the spot in 13 days]</span> and stays for 12 days. 1 of those days is the big one, and your chart decides which.</p><div class=\"blur\">Your big day: ███████ ██ · Your part of life: ██████</div><div class=\"cta\">» Find my big day</div></div></div>",
-    "text": "S4 Window table, the Jupiter row Jupiter · 12 days Jupiter [WINDOW_STATE: reaches the spot in 13 days] and stays for 12 days. 1 of those days is the big one, and your chart decides which. Your big day: ███████ ██ · Your part of life: ██████ » Find my big day"
-   },
-   {
-    "id": "15",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">S5</span><span class=\"lab\">Report item 01</span></div><div class=\"pop\"><div class=\"popt\">Which part of your life this window opens</div><p class=\"p\">Your work, your money, your home, or 1 specific person. If it’s more than one, the strongest comes first.</p><div class=\"blur\">Strongest: your ██████ · Then: your ████</div><div class=\"cta\">» See which part of my life</div></div></div>",
-    "text": "S5 Report item 01 Which part of your life this window opens Your work, your money, your home, or 1 specific person. If it’s more than one, the strongest comes first. Strongest: your ██████ · Then: your ████ » See which part of my life"
-   },
-   {
-    "id": "16",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">S5</span><span class=\"lab\">Report item 02</span></div><div class=\"pop\"><div class=\"popt\">Your big day</div><p class=\"p\">1 day out of 12, and the best hours to make your move on it.</p><div class=\"blur\">███████ ██ · █:██ to █:██</div><div class=\"cta\">» Find my big day</div></div></div>",
-    "text": "S5 Report item 02 Your big day 1 day out of 12, and the best hours to make your move on it. ███████ ██ · █:██ to █:██ » Find my big day"
-   },
-   {
-    "id": "17",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">S5</span><span class=\"lab\">Report item 03</span></div><div class=\"pop\"><div class=\"popt\">Your go days and wait days</div><p class=\"p\">Venus goes backward partway through your window. Go days are for making your move. Wait days are for holding off on making it final.</p><div class=\"blur\">Go: ███ ██, ███ ██ · Wait: ███ ██ to ███ ██</div><div class=\"cta\">» Get my go and wait days</div></div></div>",
-    "text": "S5 Report item 03 Your go days and wait days Venus goes backward partway through your window. Go days are for making your move. Wait days are for holding off on making it final. Go: ███ ██, ███ ██ · Wait: ███ ██ to ███ ██ » Get my go and wait days"
-   },
-   {
-    "id": "18",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">S5</span><span class=\"lab\">Report item 04</span></div><div class=\"pop\"><div class=\"popt\">Your 2 follow-up windows</div><p class=\"p\">Jupiter crosses your spot 3 times in 8 months. The next 2 are in February and May, then it’s gone for 12 years.</p><div class=\"blur\">February ██ to March █ · May ██ to June █</div><div class=\"cta\">» Get all 3 windows</div></div></div>",
-    "text": "S5 Report item 04 Your 2 follow-up windows Jupiter crosses your spot 3 times in 8 months. The next 2 are in February and May, then it’s gone for 12 years. February ██ to March █ · May ██ to June █ » Get all 3 windows"
-   },
-   {
-    "id": "19",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">S5</span><span class=\"lab\">Report item 05</span></div><div class=\"pop\"><div class=\"popt\">How to be ready</div><p class=\"p\">What to line up in the days before your window opens, and what to have wrapped up first.</p><div class=\"blur\">Line up: ██████████ · Wrap up: ████████</div><div class=\"cta\">» Get my report · $39</div></div></div>",
-    "text": "S5 Report item 05 How to be ready What to line up in the days before your window opens, and what to have wrapped up first. Line up: ██████████ · Wrap up: ████████ » Get my report · $39"
-   },
-   {
-    "id": "20",
-    "html": "<div class=\"sh\">Version 3 · Horoscope first</div>",
-    "text": "Version 3 · Horoscope first"
-   },
-   {
-    "id": "21",
     "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H1</span><span class=\"lab\">Top strip with her name and sign</span></div><div class=\"pop\"><div class=\"popt\"><span class=\"fill\">[NAME: Sarah]</span>, <span class=\"fill\">[SIGN: Pisces]</span></div><p class=\"p\">Your full horoscope is on its way to your inbox. The biggest thing in it is your Transformation Window, and it lands on 1 part of your life.</p><div class=\"blur\">It lands on your ██████</div><div class=\"cta\">» See which part of my life</div></div></div>",
     "text": "H1 Top strip with her name and sign [NAME: Sarah] , [SIGN: Pisces] Your full horoscope is on its way to your inbox. The biggest thing in it is your Transformation Window, and it lands on 1 part of your life. It lands on your ██████ » See which part of my life"
    },
    {
-    "id": "22",
+    "id": "03",
     "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H2</span><span class=\"lab\">Zodiac sign image</span></div><div class=\"pop\"><div class=\"popt\"><span class=\"fill\">[SIGN: Pisces]</span></div><p class=\"p\">You’re a <span class=\"fill\">[ELEMENT: water]</span> sign. Your sign says how you move. Your chart says which day of your window is the big one.</p><div class=\"blur\">Your big day: ███ ██ · Best hours: █:██</div><div class=\"cta\">» Find my big day</div></div></div>",
     "text": "H2 Zodiac sign image [SIGN: Pisces] You’re a [ELEMENT: water] sign. Your sign says how you move. Your chart says which day of your window is the big one. Your big day: ███ ██ · Best hours: █:██ » Find my big day"
    },
    {
-    "id": "23",
+    "id": "04",
     "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H3</span><span class=\"lab\">Calendar, row 1 (Jupiter)</span></div><div class=\"pop\"><div class=\"popt\">Jupiter · 12 days</div><p class=\"p\">Jupiter <span class=\"fill\">[WINDOW_STATE: reaches the spot in 13 days]</span> and stays for 12 days. 1 of those days is the big one, and your chart decides which.</p><div class=\"blur\">Your big day: ███████ ██ · Your part of life: ██████</div><div class=\"cta\">» Find my big day</div></div></div>",
     "text": "H3 Calendar, row 1 (Jupiter) Jupiter · 12 days Jupiter [WINDOW_STATE: reaches the spot in 13 days] and stays for 12 days. 1 of those days is the big one, and your chart decides which. Your big day: ███████ ██ · Your part of life: ██████ » Find my big day"
    },
    {
-    "id": "24",
+    "id": "05",
     "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H3</span><span class=\"lab\">Calendar, row 2 (Venus)</span></div><div class=\"pop\"><div class=\"popt\">Venus goes backward</div><p class=\"p\">For 6 weeks this fall, go after what you want, and wait to make it final until Venus turns around.</p><div class=\"blur\">Your wait days: ███ ██, ███ ██, ███ ██</div><div class=\"cta\">» Get my go and wait days</div></div></div>",
     "text": "H3 Calendar, row 2 (Venus) Venus goes backward For 6 weeks this fall, go after what you want, and wait to make it final until Venus turns around. Your wait days: ███ ██, ███ ██, ███ ██ » Get my go and wait days"
    },
    {
-    "id": "25",
+    "id": "06",
     "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H3</span><span class=\"lab\">Calendar, row 3 (Mercury)</span></div><div class=\"pop\"><div class=\"popt\">Mercury goes backward · Oct 24 to Nov 13</div><p class=\"p\">Messages get crossed and plans slip. Say less and read everything twice.</p><div class=\"blur\">It hits your: ██████</div><div class=\"cta\">» See where it hits me</div></div></div>",
     "text": "H3 Calendar, row 3 (Mercury) Mercury goes backward · Oct 24 to Nov 13 Messages get crossed and plans slip. Say less and read everything twice. It hits your: ██████ » See where it hits me"
    },
    {
-    "id": "26",
+    "id": "07",
     "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H3</span><span class=\"lab\">Calendar, row 4 (Mars)</span></div><div class=\"pop\"><div class=\"popt\">Mars crosses the eclipse spot · Nov 2 to 6</div><p class=\"p\">The same spot Jupiter crossed, hit again by the planet that makes you move. Short fuses, fast moves.</p><div class=\"blur\">In your chart: your ██████</div><div class=\"cta\">» See where it hits me</div></div></div>",
     "text": "H3 Calendar, row 4 (Mars) Mars crosses the eclipse spot · Nov 2 to 6 The same spot Jupiter crossed, hit again by the planet that makes you move. Short fuses, fast moves. In your chart: your ██████ » See where it hits me"
    },
    {
-    "id": "27",
+    "id": "08",
     "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H3</span><span class=\"lab\">Calendar, row 5 (Jupiter turns)</span></div><div class=\"pop\"><div class=\"popt\">Jupiter turns backward · Dec 13</div><p class=\"p\">Whatever you started in your window gets tested.</p><div class=\"blur\">What gets tested: your ██████</div><div class=\"cta\">» Get my report · $39</div></div></div>",
     "text": "H3 Calendar, row 5 (Jupiter turns) Jupiter turns backward · Dec 13 Whatever you started in your window gets tested. What gets tested: your ██████ » Get my report · $39"
    },
    {
-    "id": "28",
+    "id": "09",
     "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H4</span><span class=\"lab\">Stat row, any of the 4</span></div><div class=\"pop\"><div class=\"popt\">Your Transformation Window</div><p class=\"p\">12 days of Jupiter on the spot the August eclipse marked. The next time is 2038, when you’ll be <span class=\"fill\">[AGE_2038: 59]</span>.</p><div class=\"blur\">Your big day: ███████ ██ · Best hours: █:██ to █:██</div><div class=\"cta\">» Find my big day</div></div></div>",
     "text": "H4 Stat row, any of the 4 Your Transformation Window 12 days of Jupiter on the spot the August eclipse marked. The next time is 2038, when you’ll be [AGE_2038: 59] . Your big day: ███████ ██ · Best hours: █:██ to █:██ » Find my big day"
    },
    {
-    "id": "29",
-    "html": "<p class=\"p\"><strong>H5 · Report items 01 to 04</strong> use the same pop-ups as S5 items 01 to 04 above.</p>",
-    "text": "H5 · Report items 01 to 04 use the same pop-ups as S5 items 01 to 04 above."
+    "id": "10",
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H5</span><span class=\"lab\">Report item 01</span></div><div class=\"pop\"><div class=\"popt\">Which part of your life this window opens</div><p class=\"p\">Your work, your money, your home, or 1 specific person. If it’s more than one, the strongest comes first.</p><div class=\"blur\">Strongest: your ██████ · Then: your ████</div><div class=\"cta\">» See which part of my life</div></div></div>",
+    "text": "H5 Report item 01 Which part of your life this window opens Your work, your money, your home, or 1 specific person. If it’s more than one, the strongest comes first. Strongest: your ██████ · Then: your ████ » See which part of my life"
+   },
+   {
+    "id": "11",
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H5</span><span class=\"lab\">Report item 02</span></div><div class=\"pop\"><div class=\"popt\">Your big day</div><p class=\"p\">1 day out of 12, and the best hours to make your move on it.</p><div class=\"blur\">███████ ██ · █:██ to █:██</div><div class=\"cta\">» Find my big day</div></div></div>",
+    "text": "H5 Report item 02 Your big day 1 day out of 12, and the best hours to make your move on it. ███████ ██ · █:██ to █:██ » Find my big day"
+   },
+   {
+    "id": "12",
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H5</span><span class=\"lab\">Report item 03</span></div><div class=\"pop\"><div class=\"popt\">Your go days and wait days</div><p class=\"p\">Venus goes backward partway through your window. Go days are for making your move. Wait days are for holding off on making it final.</p><div class=\"blur\">Go: ███ ██, ███ ██ · Wait: ███ ██ to ███ ██</div><div class=\"cta\">» Get my go and wait days</div></div></div>",
+    "text": "H5 Report item 03 Your go days and wait days Venus goes backward partway through your window. Go days are for making your move. Wait days are for holding off on making it final. Go: ███ ██, ███ ██ · Wait: ███ ██ to ███ ██ » Get my go and wait days"
+   },
+   {
+    "id": "13",
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H5</span><span class=\"lab\">Report item 04</span></div><div class=\"pop\"><div class=\"popt\">Your 2 follow-up windows</div><p class=\"p\">Jupiter crosses your spot 3 times in 8 months. The next 2 are in February and May, then it’s gone for 12 years.</p><div class=\"blur\">February ██ to March █ · May ██ to June █</div><div class=\"cta\">» Get all 3 windows</div></div></div>",
+    "text": "H5 Report item 04 Your 2 follow-up windows Jupiter crosses your spot 3 times in 8 months. The next 2 are in February and May, then it’s gone for 12 years. February ██ to March █ · May ██ to June █ » Get all 3 windows"
    }
   ]
  }
