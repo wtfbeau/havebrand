@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Board, Block } from "./copy";
 
-type Boards = Record<"advertorial" | "sales" | "horoscope", Board>;
+type Boards = Record<"advertorial" | "sales" | "horoscope" | "popups", Board>;
 type Notes = Record<string, string>;
 const KEY = "aa-tw-notes-v2";
 const DOC = "abstract-astro";
@@ -148,7 +148,8 @@ export default function Reviewer({ boards }: { boards: Boards }) {
   };
   const noteCount = useMemo(() => Object.values(notes).filter((v) => v.trim()).length, [notes]);
 
-  const worldW = BOARD_W * 3 + RULES_W + GAP * 3 + 80;
+  const n = Object.keys(boards).length;
+  const worldW = BOARD_W * n + RULES_W + GAP * n + 80;
 
   const fit = useCallback(() => {
     const el = vp.current;
@@ -246,7 +247,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
       <header className="z-30 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#55504a] bg-[#3f3a34] px-4 py-2.5 text-[#f3efe6]">
         <div className="mr-auto">
           <div className="text-[10px] font-bold uppercase tracking-[.14em] text-[#b8b0a2]">Abstract Astro</div>
-          <div className="text-[15px] font-bold leading-tight">Transformation Window Report · advertorial, sales page and version 3</div>
+          <div className="text-[15px] font-bold leading-tight">Transformation Window Report · advertorial, sales page, version 3 and pop-ups</div>
         </div>
         <div className="hidden text-[12px] text-[#b8b0a2] md:block">
           Drag the background to move · ⌘ or Ctrl + scroll to zoom · Hover a block to copy or note ·{" "}
@@ -414,7 +415,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
             );
           })}
 
-          <div className="absolute top-0" style={{ left: 3 * (BOARD_W + GAP), width: RULES_W }}>
+          <div className="absolute top-0" style={{ left: n * (BOARD_W + GAP), width: RULES_W }}>
             <div className="mb-2 px-0.5">
               <div className="text-[14px] font-bold text-[#f3efe6]">Placeholders</div>
               <div className="text-[12px] text-[#b8b0a2]">Rust words on the pages are filled in for each reader.</div>

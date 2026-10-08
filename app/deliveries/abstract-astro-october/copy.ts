@@ -8,7 +8,7 @@ export const boards: Record<string, Board> = {
   "blocks": [
    {
     "id": "01",
-    "html": "<div style=\"display:flex;justify-content:space-between;align-items:center\">\n  <div class=\"strip tap\">YOUR 2026 HOROSCOPE · <span class=\"fill\">[NAME: SARAH]</span></div>\n  <div class=\"strip tap\"><span class=\"fill\">[SIGN: PISCES]</span> · <span class=\"fill\">[ELEMENT: WATER]</span> SIGN</div>\n</div>",
+    "html": "<div style=\"display:flex;justify-content:space-between;align-items:center\">\n  <div class=\"strip\" data-pop=\"1\">YOUR 2026 HOROSCOPE · <span class=\"fill\">[NAME: SARAH]</span></div>\n  <div class=\"strip\" data-pop=\"1\"><span class=\"fill\">[SIGN: PISCES]</span> · <span class=\"fill\">[ELEMENT: WATER]</span> SIGN</div>\n</div>",
     "text": "YOUR 2026 HOROSCOPE · [NAME: SARAH] [SIGN: PISCES] · [ELEMENT: WATER] SIGN"
    },
    {
@@ -23,88 +23,88 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<div class=\"dek\" style=\"font-weight:700;font-size:22px;color:#2f2620\">Your full horoscope is on its way to your inbox. Here’s the short version, read from your birth date, <span class=\"fill\">[BIRTH_DATE: March 4, 1979]</span>, and from what you told us matters most to you right now: <span class=\"fill\">[AREA: love]</span>.</div>",
-    "text": "Your full horoscope is on its way to your inbox. Here’s the short version, read from your birth date, [BIRTH_DATE: March 4, 1979] , and from what you told us matters most to you right now: [AREA: love] ."
+    "html": "<div class=\"dek\" style=\"font-weight:700;font-size:22px;color:#2f2620\">Your full horoscope is on its way to your inbox. This is the short version, read from your birth date, <span class=\"fill\">[BIRTH_DATE: March 4, 1979]</span>, and from the part of your life you said matters most right now: <span class=\"fill\">[AREA: love]</span>.</div>",
+    "text": "Your full horoscope is on its way to your inbox. This is the short version, read from your birth date, [BIRTH_DATE: March 4, 1979] , and from the part of your life you said matters most right now: [AREA: love] ."
    },
    {
     "id": "05",
+    "html": "<div class=\"chart\" data-pop=\"2\"><svg viewBox=\"0 0 520 520\" xmlns=\"http://www.w3.org/2000/svg\" class=\"chartsvg\" font-family=\"'Segoe UI Symbol','Apple Symbols','Noto Sans Symbols 2',serif\"><circle cx=\"260\" cy=\"260\" r=\"250\" fill=\"#fbf7ef\" stroke=\"#2f2620\" stroke-width=\"2\"/><circle cx=\"260\" cy=\"260\" r=\"212\" fill=\"#fff\" stroke=\"#2f2620\" stroke-width=\"1.2\"/><circle cx=\"260\" cy=\"260\" r=\"150\" fill=\"none\" stroke=\"#d8cfbf\" stroke-width=\"1\"/><circle cx=\"260\" cy=\"260\" r=\"60\" fill=\"#fbf7ef\" stroke=\"#d8cfbf\" stroke-width=\"1\"/><line x1=\"200.0\" y1=\"260.0\" x2=\"10.0\" y2=\"260.0\" stroke=\"#d8cfbf\"/><text x=\"36.9\" y=\"319.8\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♈︎</text><line x1=\"208.0\" y1=\"290.0\" x2=\"43.5\" y2=\"385.0\" stroke=\"#d8cfbf\"/><text x=\"96.7\" y=\"423.3\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♉︎</text><line x1=\"230.0\" y1=\"312.0\" x2=\"135.0\" y2=\"476.5\" stroke=\"#d8cfbf\"/><text x=\"200.2\" y=\"483.1\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♊︎</text><line x1=\"260.0\" y1=\"320.0\" x2=\"260.0\" y2=\"510.0\" stroke=\"#d8cfbf\"/><text x=\"319.8\" y=\"483.1\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♋︎</text><line x1=\"290.0\" y1=\"312.0\" x2=\"385.0\" y2=\"476.5\" stroke=\"#d8cfbf\"/><text x=\"423.3\" y=\"423.3\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♌︎</text><line x1=\"312.0\" y1=\"290.0\" x2=\"476.5\" y2=\"385.0\" stroke=\"#d8cfbf\"/><text x=\"483.1\" y=\"319.8\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♍︎</text><line x1=\"320.0\" y1=\"260.0\" x2=\"510.0\" y2=\"260.0\" stroke=\"#d8cfbf\"/><text x=\"483.1\" y=\"200.2\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♎︎</text><line x1=\"312.0\" y1=\"230.0\" x2=\"476.5\" y2=\"135.0\" stroke=\"#d8cfbf\"/><text x=\"423.3\" y=\"96.7\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♏︎</text><line x1=\"290.0\" y1=\"208.0\" x2=\"385.0\" y2=\"43.5\" stroke=\"#d8cfbf\"/><text x=\"319.8\" y=\"36.9\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♐︎</text><line x1=\"260.0\" y1=\"200.0\" x2=\"260.0\" y2=\"10.0\" stroke=\"#d8cfbf\"/><text x=\"200.2\" y=\"36.9\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♑︎</text><line x1=\"230.0\" y1=\"208.0\" x2=\"135.0\" y2=\"43.5\" stroke=\"#d8cfbf\"/><text x=\"96.7\" y=\"96.7\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♒︎</text><line x1=\"208.0\" y1=\"230.0\" x2=\"43.5\" y2=\"135.0\" stroke=\"#d8cfbf\"/><text x=\"36.9\" y=\"200.2\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♓︎</text><line x1=\"48.0\" y1=\"263.1\" x2=\"58.0\" y2=\"263.0\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"83.0\" y=\"262.6\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">☿︎</text><line x1=\"152.3\" y1=\"442.6\" x2=\"157.4\" y2=\"434.0\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"170.1\" y=\"412.5\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">☽︎</text><line x1=\"365.2\" y1=\"444.1\" x2=\"360.2\" y2=\"435.4\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"347.8\" y=\"413.7\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♃︎</text><line x1=\"459.6\" y1=\"331.4\" x2=\"450.2\" y2=\"328.0\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"426.7\" y=\"319.6\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♄︎</text><line x1=\"460.8\" y1=\"191.9\" x2=\"451.3\" y2=\"195.1\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"427.6\" y=\"203.1\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♇︎</text><line x1=\"393.5\" y1=\"95.3\" x2=\"387.2\" y2=\"103.1\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"371.5\" y=\"122.5\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♅︎</text><line x1=\"295.4\" y1=\"51.0\" x2=\"293.7\" y2=\"60.8\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"289.5\" y=\"85.5\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♆︎</text><line x1=\"151.1\" y1=\"78.1\" x2=\"156.2\" y2=\"86.7\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"169.1\" y=\"108.1\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♀︎</text><line x1=\"70.0\" y1=\"166.0\" x2=\"79.0\" y2=\"170.4\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"101.4\" y=\"181.5\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♂︎</text><line x1=\"56.9\" y1=\"199.1\" x2=\"66.5\" y2=\"202.0\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"90.5\" y=\"209.2\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">☉︎</text><circle cx=\"397.1\" cy=\"98.3\" r=\"17\" fill=\"#e4531d\"/><text x=\"397.1\" y=\"98.3\" font-size=\"19\" fill=\"#fff\" text-anchor=\"middle\" dominant-baseline=\"central\">☿︎</text><text x=\"347.9\" y=\"156.2\" font-size=\"14\" font-weight=\"700\" fill=\"#e4531d\" text-anchor=\"middle\" dominant-baseline=\"central\">℞</text><line x1=\"385.4\" y1=\"112.0\" x2=\"298.8\" y2=\"214.2\" stroke=\"#e4531d\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><circle cx=\"446.9\" cy=\"160.0\" r=\"17\" fill=\"#e4531d\"/><text x=\"446.9\" y=\"160.0\" font-size=\"19\" fill=\"#fff\" text-anchor=\"middle\" dominant-baseline=\"central\">♀︎</text><text x=\"379.9\" y=\"195.9\" font-size=\"14\" font-weight=\"700\" fill=\"#e4531d\" text-anchor=\"middle\" dominant-baseline=\"central\">℞</text><line x1=\"431.1\" y1=\"168.5\" x2=\"312.9\" y2=\"231.7\" stroke=\"#e4531d\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/></svg><div class=\"chartkey\"><span><i class=\"kd\"></i>Your planets the day you were born</span><span><i class=\"ko\"></i>Moving backward right now</span></div><div class=\"charthint\">Tap your chart to see what’s stuck <span class=\"chev\">›</span></div></div>",
+    "text": "♈︎ ♉︎ ♊︎ ♋︎ ♌︎ ♍︎ ♎︎ ♏︎ ♐︎ ♑︎ ♒︎ ♓︎ ☿︎ ☽︎ ♃︎ ♄︎ ♇︎ ♅︎ ♆︎ ♀︎ ♂︎ ☉︎ ☿︎ ℞ ♀︎ ℞ Your planets the day you were born Moving backward right now Tap your chart to see what’s stuck ›"
+   },
+   {
+    "id": "06",
     "html": "<div class=\"sh\">Your year so far, <span class=\"fill\">[SIGN: Pisces]</span></div>",
     "text": "Your year so far, [SIGN: Pisces]"
    },
    {
-    "id": "06",
+    "id": "07",
     "html": "<p class=\"p\"><span class=\"fill\">[ELEMENT_LINE: You’re a water sign. You feel a room before anyone says a word, and you usually know how something’s going to end long before it does. That’s a gift. It’s also why you get tired in a way other people don’t.]</span></p>",
     "text": "[ELEMENT_LINE: You’re a water sign. You feel a room before anyone says a word, and you usually know how something’s going to end long before it does. That’s a gift. It’s also why you get tired in a way other people don’t.]"
    },
    {
-    "id": "07",
+    "id": "08",
     "html": "<p class=\"p\"><span class=\"fill\">[VENUS_LINE: Your Venus is in Aries. You go after what you want and you don’t play games about it. Waiting on someone else to make up their mind is the one thing you can’t stand.]</span></p>",
     "text": "[VENUS_LINE: Your Venus is in Aries. You go after what you want and you don’t play games about it. Waiting on someone else to make up their mind is the one thing you can’t stand.]"
    },
    {
-    "id": "08",
+    "id": "09",
     "html": "<p class=\"p\"><span class=\"fill\">[DEPTH_LINE: You told us people don’t always see how much is going on under the surface. Your chart agrees. You show people the easy version of you and keep the rest back, and then it stings when nobody asks about it.]</span></p>",
     "text": "[DEPTH_LINE: You told us people don’t always see how much is going on under the surface. Your chart agrees. You show people the easy version of you and keep the rest back, and then it stings when nobody asks about it.]"
    },
    {
-    "id": "09",
+    "id": "10",
     "html": "<p class=\"p\"><span class=\"fill\">[GIVING_LINE: You also give a lot of your time and energy to other people. Most years that’s what keeps everything running. 2026 has asked for more of it than usual, and given back less.]</span></p>",
     "text": "[GIVING_LINE: You also give a lot of your time and energy to other people. Most years that’s what keeps everything running. 2026 has asked for more of it than usual, and given back less.]"
    },
    {
-    "id": "10",
+    "id": "11",
     "html": "<p class=\"p\"><span class=\"fill\">[AREA_LINE: You picked love. For you, love has run stop-and-start this year. Things that looked like they were going somewhere, then stalled for no reason you could name, with you doing most of the work and waiting for the other side to catch up.]</span></p>",
     "text": "[AREA_LINE: You picked love. For you, love has run stop-and-start this year. Things that looked like they were going somewhere, then stalled for no reason you could name, with you doing most of the work and waiting for the other side to catch up.]"
    },
    {
-    "id": "11",
+    "id": "12",
     "html": "<p class=\"p\"><strong><span class=\"fill\">[PATTERN_LINE: And you said the same situations keep coming back in your life.]</span> Right now there’s a reason for that, and it has an end.</strong></p>",
     "text": "[PATTERN_LINE: And you said the same situations keep coming back in your life.] Right now there’s a reason for that, and it has an end."
    },
    {
-    "id": "12",
+    "id": "13",
     "html": "<div class=\"sh\">Why everything feels stuck right now</div>",
     "text": "Why everything feels stuck right now"
    },
    {
-    "id": "13",
-    "html": "<p class=\"p\">Since October 3, Venus has been moving backward. Venus runs love and money, so for the past few weeks both have felt like pushing a car uphill.</p>",
-    "text": "Since October 3, Venus has been moving backward. Venus runs love and money, so for the past few weeks both have felt like pushing a car uphill."
-   },
-   {
     "id": "14",
-    "html": "<p class=\"p\"><span class=\"fill\">[MERCURY_LINE: On October 24, Mercury goes backward too.]</span> Mercury runs every conversation, message and plan. With both of them backward at once, the easy stuff gets hard and the hard stuff just sits there.</p>",
-    "text": "[MERCURY_LINE: On October 24, Mercury goes backward too.] Mercury runs every conversation, message and plan. With both of them backward at once, the easy stuff gets hard and the hard stuff just sits there."
+    "html": "<p class=\"p\">Since October 3, Venus has been moving backward. Venus runs love and money, so for weeks both have felt like pushing a car uphill.</p>",
+    "text": "Since October 3, Venus has been moving backward. Venus runs love and money, so for weeks both have felt like pushing a car uphill."
    },
    {
     "id": "15",
-    "html": "<p class=\"p\"><strong>That’s why things you’ve worked on for months can suddenly stop moving, and people you counted on go quiet. You’re not doing anything wrong. You’re pushing while the sky is pulling back.</strong></p>",
-    "text": "That’s why things you’ve worked on for months can suddenly stop moving, and people you counted on go quiet. You’re not doing anything wrong. You’re pushing while the sky is pulling back."
+    "html": "<p class=\"p\"><span class=\"fill\">[MERCURY_LINE: On October 24, Mercury goes backward too.]</span> Mercury runs how you talk to people and how plans come together. With both of them backward at once, the easy stuff gets hard and the hard stuff just sits there.</p>",
+    "text": "[MERCURY_LINE: On October 24, Mercury goes backward too.] Mercury runs how you talk to people and how plans come together. With both of them backward at once, the easy stuff gets hard and the hard stuff just sits there."
    },
    {
     "id": "16",
+    "html": "<p class=\"p\"><strong>If you’ve been doing all the work since early October and getting nothing back, this is why. You’ve been pushing while the sky pulls back.</strong></p>",
+    "text": "If you’ve been doing all the work since early October and getting nothing back, this is why. You’ve been pushing while the sky pulls back."
+   },
+   {
+    "id": "17",
     "html": "<div class=\"sh\">In mid-November, both turn around on the same day</div>",
     "text": "In mid-November, both turn around on the same day"
    },
    {
-    "id": "17",
+    "id": "18",
     "html": "<p class=\"p\">Mercury and Venus turn forward again within hours of each other. That hasn’t happened once since 1950, and it won’t happen again before 2060.</p>",
     "text": "Mercury and Venus turn forward again within hours of each other. That hasn’t happened once since 1950, and it won’t happen again before 2060."
    },
    {
-    "id": "18",
-    "html": "<p class=\"p\">Then, a few days later, Mars meets Jupiter. Mars is the planet that makes you move. Jupiter is the one that gets you a yes. The last time those 2 met in Leo was 1991.</p>",
-    "text": "Then, a few days later, Mars meets Jupiter. Mars is the planet that makes you move. Jupiter is the one that gets you a yes. The last time those 2 met in Leo was 1991."
-   },
-   {
     "id": "19",
-    "html": "<p class=\"p\">Everything that’s been piling up since October starts moving at once. Those days are your Transformation Window: about a week when the stuff that wouldn’t budge finally does.</p>",
-    "text": "Everything that’s been piling up since October starts moving at once. Those days are your Transformation Window: about a week when the stuff that wouldn’t budge finally does."
+    "html": "<p class=\"p\">A few days later, Mars meets Jupiter. Mars is the planet that makes you move, and Jupiter is the one that gets you a yes. The last time those 2 met in Leo was 1991.</p>",
+    "text": "A few days later, Mars meets Jupiter. Mars is the planet that makes you move, and Jupiter is the one that gets you a yes. The last time those 2 met in Leo was 1991."
    },
    {
     "id": "20",
-    "html": "<div class=\"img tap\" style=\"height:320px\">Her birth chart, drawn from her birth date, with Venus and Mercury marked</div>",
-    "text": "Her birth chart, drawn from her birth date, with Venus and Mercury marked"
+    "html": "<p class=\"p\"><strong>What’s been stuck since October starts moving again, all in the same week. That week is your Transformation Window, and it’s your best shot this year at the thing that wouldn’t budge.</strong></p>",
+    "text": "What’s been stuck since October starts moving again, all in the same week. That week is your Transformation Window, and it’s your best shot this year at the thing that wouldn’t budge."
    },
    {
     "id": "21",
@@ -113,23 +113,23 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "22",
-    "html": "<div class=\"wrow tap\"><div class=\"wn\">OCT 3 – NOV 13</div><div class=\"wd\">Venus moves backward. Love and money stall.</div><div class=\"wsGone\">WAIT</div></div>",
-    "text": "OCT 3 – NOV 13 Venus moves backward. Love and money stall. WAIT"
+    "html": "<div class=\"wrow\" data-pop=\"3\"><div class=\"wn\">OCT 3 – NOV 13</div><div class=\"wd\">Venus moves backward. Love and money stall.</div><div class=\"wsGone\">WAIT <span class=\"chev\">›</span></div></div>",
+    "text": "OCT 3 – NOV 13 Venus moves backward. Love and money stall. WAIT ›"
    },
    {
     "id": "23",
-    "html": "<div class=\"wrow tap\"><div class=\"wn\">OCT 24 – NOV 13</div><div class=\"wd\">Mercury moves backward. Plans and messages stall.</div><div class=\"wsGone\">WAIT</div></div>",
-    "text": "OCT 24 – NOV 13 Mercury moves backward. Plans and messages stall. WAIT"
+    "html": "<div class=\"wrow\" data-pop=\"3\"><div class=\"wn\">OCT 24 – NOV 13</div><div class=\"wd\">Mercury moves backward. Plans and messages stall.</div><div class=\"wsGone\">WAIT <span class=\"chev\">›</span></div></div>",
+    "text": "OCT 24 – NOV 13 Mercury moves backward. Plans and messages stall. WAIT ›"
    },
    {
     "id": "24",
-    "html": "<div class=\"wrow tap\"><div class=\"wn\">NOV 13 – 19</div><div class=\"wd\">Both turn forward. Mars meets Jupiter.</div><div class=\"wsLive\">YOUR WINDOW</div></div>",
-    "text": "NOV 13 – 19 Both turn forward. Mars meets Jupiter. YOUR WINDOW"
+    "html": "<div class=\"wrow\" data-pop=\"3\"><div class=\"wn\">NOV 13 – 19</div><div class=\"wd\">Both turn forward. Mars meets Jupiter.</div><div class=\"wsLive\">YOUR WINDOW <span class=\"chev\">›</span></div></div>",
+    "text": "NOV 13 – 19 Both turn forward. Mars meets Jupiter. YOUR WINDOW ›"
    },
    {
     "id": "25",
-    "html": "<p class=\"p\"><span class=\"fill\">[SEASON_LINE: For love, this is a stretch for reaching out and talking things through, not for making anything official. Whatever you start now, give it until mid-November before you lock it in.]</span></p>",
-    "text": "[SEASON_LINE: For love, this is a stretch for reaching out and talking things through, not for making anything official. Whatever you start now, give it until mid-November before you lock it in.]"
+    "html": "<p class=\"p\"><span class=\"fill\">[SEASON_LINE: For love, the wait days matter more than usual. Whatever you make official before the turn has a way of coming undone.]</span></p>",
+    "text": "[SEASON_LINE: For love, the wait days matter more than usual. Whatever you make official before the turn has a way of coming undone.]"
    },
    {
     "id": "26",
@@ -158,8 +158,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "31",
-    "html": "<p class=\"p\">The stall sits on one part of your life, and so does the turn: your work, your money, your home, or one particular person. What you want doesn’t pick it. Where Venus and Mercury sit in your chart does.</p>",
-    "text": "The stall sits on one part of your life, and so does the turn: your work, your money, your home, or one particular person. What you want doesn’t pick it. Where Venus and Mercury sit in your chart does."
+    "html": "<p class=\"p\">The stall sits on 1 part of your life, and so does the turn: your work, your money, your home, or 1 specific person. Where Venus and Mercury sit in your chart picks it, and it doesn’t always pick what you’d want.</p>",
+    "text": "The stall sits on 1 part of your life, and so does the turn: your work, your money, your home, or 1 specific person. Where Venus and Mercury sit in your chart picks it, and it doesn’t always pick what you’d want."
    },
    {
     "id": "32",
@@ -173,18 +173,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "34",
-    "html": "<p class=\"p\">When Venus moves backward, the past comes back around. Old flames. Money you’re owed. Plans you put on a shelf. Some of it is worth picking up. Some of it came back so you could finally let it go.</p>",
-    "text": "When Venus moves backward, the past comes back around. Old flames. Money you’re owed. Plans you put on a shelf. Some of it is worth picking up. Some of it came back so you could finally let it go."
+    "html": "<p class=\"p\">When Venus moves backward, the past comes back around, whether that’s an old flame or a plan you put on a shelf years ago. Some of it is worth picking up, and some of it came back so you can finally let it go.</p>",
+    "text": "When Venus moves backward, the past comes back around, whether that’s an old flame or a plan you put on a shelf years ago. Some of it is worth picking up, and some of it came back so you can finally let it go."
    },
    {
     "id": "35",
-    "html": "<p class=\"p\">The last time Venus went backward in this part of the sky was fall 2018. Think back. Who was in your life then?</p>",
-    "text": "The last time Venus went backward in this part of the sky was fall 2018. Think back. Who was in your life then?"
+    "html": "<p class=\"p\">The last time Venus went backward in this part of the sky was fall 2018. Who was in your life back then?</p>",
+    "text": "The last time Venus went backward in this part of the sky was fall 2018. Who was in your life back then?"
    },
    {
     "id": "36",
-    "html": "<p class=\"p\"><strong>Your report tells you which is which, so you don’t spend the window on something that already had its chance.</strong></p>",
-    "text": "Your report tells you which is which, so you don’t spend the window on something that already had its chance."
+    "html": "<p class=\"p\"><strong>Your report tells you which is which, so you don’t spend your window on something that already had its chance.</strong></p>",
+    "text": "Your report tells you which is which, so you don’t spend your window on something that already had its chance."
    },
    {
     "id": "37",
@@ -193,23 +193,23 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "38",
-    "html": "<div class=\"num tap\"><div class=\"numn\">01</div><div><div class=\"numt\">Which part of your life is stuck, and why</div><div class=\"numd\">Your work, your money, your home, or one particular person. If it’s more than one, the biggest comes first.</div><div class=\"lab\" style=\"margin-top:8px\">READ FROM YOUR CHART</div></div></div>",
-    "text": "01 Which part of your life is stuck, and why Your work, your money, your home, or one particular person. If it’s more than one, the biggest comes first. READ FROM YOUR CHART"
+    "html": "<div class=\"num\" data-pop=\"4\"><div class=\"numn\">01</div><div><div class=\"numt\">Which part of your life is stuck, and why</div><div class=\"numd\">Your work, your money, your home, or 1 specific person. If it’s more than one, the biggest comes first.</div><div class=\"lab\" style=\"margin-top:8px\">READ FROM YOUR CHART</div></div><span class=\"chev\">›</span></div>",
+    "text": "01 Which part of your life is stuck, and why Your work, your money, your home, or 1 specific person. If it’s more than one, the biggest comes first. READ FROM YOUR CHART ›"
    },
    {
     "id": "39",
-    "html": "<div class=\"num tap\"><div class=\"numn\">02</div><div><div class=\"numt\">What’s coming back, and whether to pick it up</div><div class=\"numd\">Who and what Venus is bringing back around for you, and which of it to let go for good.</div><div class=\"lab\" style=\"margin-top:8px\">UNTIL MID-NOVEMBER</div></div></div>",
-    "text": "02 What’s coming back, and whether to pick it up Who and what Venus is bringing back around for you, and which of it to let go for good. UNTIL MID-NOVEMBER"
+    "html": "<div class=\"num\" data-pop=\"4\"><div class=\"numn\">02</div><div><div class=\"numt\">What’s coming back, and whether to pick it up</div><div class=\"numd\">Who and what Venus is bringing back around for you, and which of it to let go for good.</div><div class=\"lab\" style=\"margin-top:8px\">UNTIL MID-NOVEMBER</div></div><span class=\"chev\">›</span></div>",
+    "text": "02 What’s coming back, and whether to pick it up Who and what Venus is bringing back around for you, and which of it to let go for good. UNTIL MID-NOVEMBER ›"
    },
    {
     "id": "40",
-    "html": "<div class=\"num tap\"><div class=\"numn\">03</div><div><div class=\"numt\">Your wait days</div><div class=\"numd\">What to hold off on until the turn, so nothing you start now falls apart later.</div><div class=\"lab\" style=\"margin-top:8px\">MARKED ON ONE CALENDAR</div></div></div>",
-    "text": "03 Your wait days What to hold off on until the turn, so nothing you start now falls apart later. MARKED ON ONE CALENDAR"
+    "html": "<div class=\"num\" data-pop=\"4\"><div class=\"numn\">03</div><div><div class=\"numt\">Your wait days</div><div class=\"numd\">What to hold off on until the turn, so nothing you start now falls apart later.</div><div class=\"lab\" style=\"margin-top:8px\">MARKED ON 1 CALENDAR</div></div><span class=\"chev\">›</span></div>",
+    "text": "03 Your wait days What to hold off on until the turn, so nothing you start now falls apart later. MARKED ON 1 CALENDAR ›"
    },
    {
     "id": "41",
-    "html": "<div class=\"num tap\" style=\"border-bottom:none\"><div class=\"numn\">04</div><div><div class=\"numt\">Your big day</div><div class=\"numd\">The one day of your Transformation Window to make your move, and the best hours of that day to make it.</div><div class=\"lab\" style=\"margin-top:8px\">ONE DAY · NAMED IN YOUR REPORT</div></div></div>",
-    "text": "04 Your big day The one day of your Transformation Window to make your move, and the best hours of that day to make it. ONE DAY · NAMED IN YOUR REPORT"
+    "html": "<div class=\"num\" data-pop=\"4\" style=\"border-bottom:none\"><div class=\"numn\">04</div><div><div class=\"numt\">Your big day</div><div class=\"numd\">The 1 day of your Transformation Window to make your move, and the best hours of that day to make it.</div><div class=\"lab\" style=\"margin-top:8px\">1 DAY · NAMED IN YOUR REPORT</div></div><span class=\"chev\">›</span></div>",
+    "text": "04 Your big day The 1 day of your Transformation Window to make your move, and the best hours of that day to make it. 1 DAY · NAMED IN YOUR REPORT ›"
    },
    {
     "id": "42",
@@ -233,13 +233,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "46",
-    "html": "<p class=\"p\">An hour with an astrologer starts at $150, if you can get one before mid-November. You don’t need your whole chart explained. You need to know what’s stuck, what to wait on, and which day to move.</p>",
-    "text": "An hour with an astrologer starts at $150, if you can get one before mid-November. You don’t need your whole chart explained. You need to know what’s stuck, what to wait on, and which day to move."
+    "html": "<p class=\"p\">An hour with an astrologer starts at $150, if you can get one before mid-November. Your report covers the part of that hour you need right now, which is what’s stuck and the day to make your move.</p>",
+    "text": "An hour with an astrologer starts at $150, if you can get one before mid-November. Your report covers the part of that hour you need right now, which is what’s stuck and the day to make your move."
    },
    {
     "id": "47",
-    "html": "<p class=\"p\"><strong>The report costs the same whenever you order it. The window doesn’t wait.</strong></p>",
-    "text": "The report costs the same whenever you order it. The window doesn’t wait."
+    "html": "<p class=\"p\"><strong>The report costs the same whenever you order it, but every day you wait is 1 less day to get ready.</strong></p>",
+    "text": "The report costs the same whenever you order it, but every day you wait is 1 less day to get ready."
    },
    {
     "id": "48",
@@ -268,8 +268,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "53",
-    "html": "<div class=\"sh\" style=\"font-size:28px\">Your horoscope tells you why it’s been stuck. Your report tells you what to do when it moves.</div>",
-    "text": "Your horoscope tells you why it’s been stuck. Your report tells you what to do when it moves."
+    "html": "<div class=\"sh\" style=\"font-size:28px\">Your horoscope tells you why it’s been stuck. Your report tells you what to do once it moves.</div>",
+    "text": "Your horoscope tells you why it’s been stuck. Your report tells you what to do once it moves."
    },
    {
     "id": "54",
@@ -278,8 +278,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "55",
-    "html": "<p class=\"p\">You can walk in knowing which part of your life it’s for and which day to move. Or you can find out in December what it was for, the way most people do.</p>",
-    "text": "You can walk in knowing which part of your life it’s for and which day to move. Or you can find out in December what it was for, the way most people do."
+    "html": "<p class=\"p\">You can walk in knowing which part of your life it’s for and which day to make your move. Or you can find out in December what it was for, the way most people do.</p>",
+    "text": "You can walk in knowing which part of your life it’s for and which day to make your move. Or you can find out in December what it was for, the way most people do."
    },
    {
     "id": "56",
@@ -334,8 +334,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "02",
-    "html": "<div class=\"typing\">Nora is typing…</div>",
-    "text": "Nora is typing…"
+    "html": "<div class=\"bub a dots\"><i></i><i></i><i></i></div>",
+    "text": ""
    },
    {
     "id": "03",
@@ -344,8 +344,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<div class=\"img bubimg tap\" style=\"height:260px\">Her birth chart, drawn from her birth date</div>",
-    "text": "Her birth chart, drawn from her birth date"
+    "html": "<div class=\"bub a bubchart\"><svg viewBox=\"0 0 520 520\" xmlns=\"http://www.w3.org/2000/svg\" class=\"chartsvg\" font-family=\"'Segoe UI Symbol','Apple Symbols','Noto Sans Symbols 2',serif\"><circle cx=\"260\" cy=\"260\" r=\"250\" fill=\"#fbf7ef\" stroke=\"#2f2620\" stroke-width=\"2\"/><circle cx=\"260\" cy=\"260\" r=\"212\" fill=\"#fff\" stroke=\"#2f2620\" stroke-width=\"1.2\"/><circle cx=\"260\" cy=\"260\" r=\"150\" fill=\"none\" stroke=\"#d8cfbf\" stroke-width=\"1\"/><circle cx=\"260\" cy=\"260\" r=\"60\" fill=\"#fbf7ef\" stroke=\"#d8cfbf\" stroke-width=\"1\"/><line x1=\"200.0\" y1=\"260.0\" x2=\"10.0\" y2=\"260.0\" stroke=\"#d8cfbf\"/><text x=\"36.9\" y=\"319.8\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♈︎</text><line x1=\"208.0\" y1=\"290.0\" x2=\"43.5\" y2=\"385.0\" stroke=\"#d8cfbf\"/><text x=\"96.7\" y=\"423.3\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♉︎</text><line x1=\"230.0\" y1=\"312.0\" x2=\"135.0\" y2=\"476.5\" stroke=\"#d8cfbf\"/><text x=\"200.2\" y=\"483.1\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♊︎</text><line x1=\"260.0\" y1=\"320.0\" x2=\"260.0\" y2=\"510.0\" stroke=\"#d8cfbf\"/><text x=\"319.8\" y=\"483.1\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♋︎</text><line x1=\"290.0\" y1=\"312.0\" x2=\"385.0\" y2=\"476.5\" stroke=\"#d8cfbf\"/><text x=\"423.3\" y=\"423.3\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♌︎</text><line x1=\"312.0\" y1=\"290.0\" x2=\"476.5\" y2=\"385.0\" stroke=\"#d8cfbf\"/><text x=\"483.1\" y=\"319.8\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♍︎</text><line x1=\"320.0\" y1=\"260.0\" x2=\"510.0\" y2=\"260.0\" stroke=\"#d8cfbf\"/><text x=\"483.1\" y=\"200.2\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♎︎</text><line x1=\"312.0\" y1=\"230.0\" x2=\"476.5\" y2=\"135.0\" stroke=\"#d8cfbf\"/><text x=\"423.3\" y=\"96.7\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♏︎</text><line x1=\"290.0\" y1=\"208.0\" x2=\"385.0\" y2=\"43.5\" stroke=\"#d8cfbf\"/><text x=\"319.8\" y=\"36.9\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♐︎</text><line x1=\"260.0\" y1=\"200.0\" x2=\"260.0\" y2=\"10.0\" stroke=\"#d8cfbf\"/><text x=\"200.2\" y=\"36.9\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♑︎</text><line x1=\"230.0\" y1=\"208.0\" x2=\"135.0\" y2=\"43.5\" stroke=\"#d8cfbf\"/><text x=\"96.7\" y=\"96.7\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♒︎</text><line x1=\"208.0\" y1=\"230.0\" x2=\"43.5\" y2=\"135.0\" stroke=\"#d8cfbf\"/><text x=\"36.9\" y=\"200.2\" font-size=\"22\" fill=\"#7b6a52\" text-anchor=\"middle\" dominant-baseline=\"central\">♓︎</text><line x1=\"48.0\" y1=\"263.1\" x2=\"58.0\" y2=\"263.0\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"83.0\" y=\"262.6\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">☿︎</text><line x1=\"152.3\" y1=\"442.6\" x2=\"157.4\" y2=\"434.0\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"170.1\" y=\"412.5\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">☽︎</text><line x1=\"365.2\" y1=\"444.1\" x2=\"360.2\" y2=\"435.4\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"347.8\" y=\"413.7\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♃︎</text><line x1=\"459.6\" y1=\"331.4\" x2=\"450.2\" y2=\"328.0\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"426.7\" y=\"319.6\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♄︎</text><line x1=\"460.8\" y1=\"191.9\" x2=\"451.3\" y2=\"195.1\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"427.6\" y=\"203.1\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♇︎</text><line x1=\"393.5\" y1=\"95.3\" x2=\"387.2\" y2=\"103.1\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"371.5\" y=\"122.5\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♅︎</text><line x1=\"295.4\" y1=\"51.0\" x2=\"293.7\" y2=\"60.8\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"289.5\" y=\"85.5\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♆︎</text><line x1=\"151.1\" y1=\"78.1\" x2=\"156.2\" y2=\"86.7\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"169.1\" y=\"108.1\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♀︎</text><line x1=\"70.0\" y1=\"166.0\" x2=\"79.0\" y2=\"170.4\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"101.4\" y=\"181.5\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">♂︎</text><line x1=\"56.9\" y1=\"199.1\" x2=\"66.5\" y2=\"202.0\" stroke=\"#2f2620\" stroke-width=\"1.5\"/><text x=\"90.5\" y=\"209.2\" font-size=\"24\" fill=\"#2f2620\" text-anchor=\"middle\" dominant-baseline=\"central\">☉︎</text><circle cx=\"397.1\" cy=\"98.3\" r=\"17\" fill=\"#e4531d\"/><text x=\"397.1\" y=\"98.3\" font-size=\"19\" fill=\"#fff\" text-anchor=\"middle\" dominant-baseline=\"central\">☿︎</text><text x=\"347.9\" y=\"156.2\" font-size=\"14\" font-weight=\"700\" fill=\"#e4531d\" text-anchor=\"middle\" dominant-baseline=\"central\">℞</text><line x1=\"385.4\" y1=\"112.0\" x2=\"298.8\" y2=\"214.2\" stroke=\"#e4531d\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><circle cx=\"446.9\" cy=\"160.0\" r=\"17\" fill=\"#e4531d\"/><text x=\"446.9\" y=\"160.0\" font-size=\"19\" fill=\"#fff\" text-anchor=\"middle\" dominant-baseline=\"central\">♀︎</text><text x=\"379.9\" y=\"195.9\" font-size=\"14\" font-weight=\"700\" fill=\"#e4531d\" text-anchor=\"middle\" dominant-baseline=\"central\">℞</text><line x1=\"431.1\" y1=\"168.5\" x2=\"312.9\" y2=\"231.7\" stroke=\"#e4531d\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/></svg><div class=\"chartkey\"><span><i class=\"kd\"></i>Your planets</span><span><i class=\"ko\"></i>Moving backward now</span></div></div>",
+    "text": "♈︎ ♉︎ ♊︎ ♋︎ ♌︎ ♍︎ ♎︎ ♏︎ ♐︎ ♑︎ ♒︎ ♓︎ ☿︎ ☽︎ ♃︎ ♄︎ ♇︎ ♅︎ ♆︎ ♀︎ ♂︎ ☉︎ ☿︎ ℞ ♀︎ ℞ Your planets Moving backward now"
    },
    {
     "id": "05",
@@ -379,13 +379,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "11",
-    "html": "<div class=\"bub a\">Venus moving backward is famous for one thing: people from your past show up again. A text out of nowhere. A name you haven’t heard in years. It happens to a lot of people in a stretch like this one.</div>",
-    "text": "Venus moving backward is famous for one thing: people from your past show up again. A text out of nowhere. A name you haven’t heard in years. It happens to a lot of people in a stretch like this one."
+    "html": "<div class=\"bub a\">When Venus moves backward, people from your past have a way of showing up again, sometimes with a text out of nowhere after years of nothing.</div>",
+    "text": "When Venus moves backward, people from your past have a way of showing up again, sometimes with a text out of nowhere after years of nothing."
    },
    {
     "id": "12",
-    "html": "<div class=\"bub a\">The real question isn’t whether someone comes back. It’s whether they’re worth picking up, or whether they came back so you can close the door for good. That depends on where Venus sits in your chart, and that’s what your report reads.</div>",
-    "text": "The real question isn’t whether someone comes back. It’s whether they’re worth picking up, or whether they came back so you can close the door for good. That depends on where Venus sits in your chart, and that’s what your report reads."
+    "html": "<div class=\"bub a\">The bigger question is whether they’re worth picking up, or whether they came back so you can close the door for good. That depends on where Venus sits in your chart, and that’s what your report reads.</div>",
+    "text": "The bigger question is whether they’re worth picking up, or whether they came back so you can close the door for good. That depends on where Venus sits in your chart, and that’s what your report reads."
    },
    {
     "id": "13",
@@ -404,8 +404,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "16",
-    "html": "<div class=\"bub a\">You’ve been putting in the effort while Venus is moving backward. That’s like rowing against the current. You’re not doing it wrong. You’re doing it at the wrong time, and that changes in mid-November.</div>",
-    "text": "You’ve been putting in the effort while Venus is moving backward. That’s like rowing against the current. You’re not doing it wrong. You’re doing it at the wrong time, and that changes in mid-November."
+    "html": "<div class=\"bub a\">You’ve been putting in the effort while Venus moves backward, which is like rowing against the current. The effort counts, and the current turns in mid-November.</div>",
+    "text": "You’ve been putting in the effort while Venus moves backward, which is like rowing against the current. The effort counts, and the current turns in mid-November."
    },
    {
     "id": "17",
@@ -449,8 +449,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "25",
-    "html": "<div class=\"bub a\">There’s about a week in mid-November when everything that’s been stuck starts moving. I call it your Transformation Window. One day in it is your big one, and it depends on your chart, not your sign.</div>",
-    "text": "There’s about a week in mid-November when everything that’s been stuck starts moving. I call it your Transformation Window. One day in it is your big one, and it depends on your chart, not your sign."
+    "html": "<div class=\"bub a\">There’s about a week in mid-November when what’s been stuck starts moving again. I call it your Transformation Window. 1 day in it is your big one, and your chart decides which.</div>",
+    "text": "There’s about a week in mid-November when what’s been stuck starts moving again. I call it your Transformation Window. 1 day in it is your big one, and your chart decides which."
    },
    {
     "id": "26",
@@ -469,13 +469,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "29",
-    "html": "<div class=\"bub a\"><span class=\"fill\">[WAIT_LINE: Reach out, talk things through, flirt if you want to. Just don’t make anything official until mid-November. Whatever you lock in while Venus is backward tends to come apart.]</span></div>",
-    "text": "[WAIT_LINE: Reach out, talk things through, flirt if you want to. Just don’t make anything official until mid-November. Whatever you lock in while Venus is backward tends to come apart.]"
+    "html": "<div class=\"bub a\"><span class=\"fill\">[WAIT_LINE: Some days before the turn are good for reaching out, and some will undo whatever you start. Which ones depends on your chart.]</span></div>",
+    "text": "[WAIT_LINE: Some days before the turn are good for reaching out, and some will undo whatever you start. Which ones depends on your chart.]"
    },
    {
     "id": "30",
-    "html": "<div class=\"bub a\">And then be ready, because the window after the turn is short. Your report has which day of it is yours.</div>",
-    "text": "And then be ready, because the window after the turn is short. Your report has which day of it is yours."
+    "html": "<div class=\"bub a\">Your report marks both, plus the 1 day in the window that’s yours.</div>",
+    "text": "Your report marks both, plus the 1 day in the window that’s yours."
    },
    {
     "id": "31",
@@ -499,8 +499,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "35",
-    "html": "<div class=\"bub a\">4 things. Which part of your life is stuck right now, and why. Who and what is coming back while Venus is backward, and whether to pick it up. Your wait days. And your big day in the window, with the best hours to move.</div>",
-    "text": "4 things. Which part of your life is stuck right now, and why. Who and what is coming back while Venus is backward, and whether to pick it up. Your wait days. And your big day in the window, with the best hours to move."
+    "html": "<div class=\"bub a\">4 things. Which part of your life is stuck right now, and why. Who and what is coming back while Venus is backward, and whether to pick it up. Your wait days. And your big day in the window, with the best hours to make your move.</div>",
+    "text": "4 things. Which part of your life is stuck right now, and why. Who and what is coming back while Venus is backward, and whether to pick it up. Your wait days. And your big day in the window, with the best hours to make your move."
    },
    {
     "id": "36",
@@ -509,8 +509,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "37",
-    "html": "<div class=\"bub a\">An hour with me runs $150 and up, and I’m booked into <span class=\"fill\">[MONTH_AHEAD: November]</span>. The report is the part of that hour you actually need right now: what’s stuck, what to wait on, and which day to move. $39, once.</div>",
-    "text": "An hour with me runs $150 and up, and I’m booked into [MONTH_AHEAD: November] . The report is the part of that hour you actually need right now: what’s stuck, what to wait on, and which day to move. $39, once."
+    "html": "<div class=\"bub a\">An hour with me runs $150 and up, and I’m booked into <span class=\"fill\">[MONTH_AHEAD: November]</span>. The report is the part of that hour you need right now, which is what’s stuck and the day to make your move. It’s $39, once.</div>",
+    "text": "An hour with me runs $150 and up, and I’m booked into [MONTH_AHEAD: November] . The report is the part of that hour you need right now, which is what’s stuck and the day to make your move. It’s $39, once."
    },
    {
     "id": "38",
@@ -519,8 +519,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "39",
-    "html": "<div class=\"bub a\">Then send one email within 60 days and you get the $39 back. You keep the report. No forms, no questions.</div>",
-    "text": "Then send one email within 60 days and you get the $39 back. You keep the report. No forms, no questions."
+    "html": "<div class=\"bub a\">Then send 1 email within 60 days and you get the $39 back. You keep the report. No forms, no questions.</div>",
+    "text": "Then send 1 email within 60 days and you get the $39 back. You keep the report. No forms, no questions."
    },
    {
     "id": "40",
@@ -590,8 +590,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "06",
-    "html": "<div class=\"bub a\">This is the stretch where good work sits and waits to be noticed. It doesn’t disappear. It gets picked up once things turn in mid-November.</div>",
-    "text": "This is the stretch where good work sits and waits to be noticed. It doesn’t disappear. It gets picked up once things turn in mid-November."
+    "html": "<div class=\"bub a\">In a stretch like this, good work sits and waits to be noticed, and the stretch ends in mid-November.</div>",
+    "text": "In a stretch like this, good work sits and waits to be noticed, and the stretch ends in mid-November."
    },
    {
     "id": "07",
@@ -600,8 +600,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "08",
-    "html": "<div class=\"bub a\">That’s not a call I’d make right now, and not one you should make either. Big decisions made while Venus is backward have a way of coming undone.</div>",
-    "text": "That’s not a call I’d make right now, and not one you should make either. Big decisions made while Venus is backward have a way of coming undone."
+    "html": "<div class=\"bub a\">That’s a call I wouldn’t make right now, and I don’t think you should either. Big decisions made while Venus is backward have a way of coming undone.</div>",
+    "text": "That’s a call I wouldn’t make right now, and I don’t think you should either. Big decisions made while Venus is backward have a way of coming undone."
    },
    {
     "id": "09",
@@ -640,13 +640,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "16",
-    "html": "<div class=\"bub a\">Venus runs money, and it’s been moving backward since October 3. Every time you get a little ahead, something comes along and takes it back. That’s what this stretch does.</div>",
-    "text": "Venus runs money, and it’s been moving backward since October 3. Every time you get a little ahead, something comes along and takes it back. That’s what this stretch does."
+    "html": "<div class=\"bub a\">Venus runs money, and it’s been moving backward since October 3. If every time you get a little ahead something comes along and takes it back, that’s this stretch.</div>",
+    "text": "Venus runs money, and it’s been moving backward since October 3. If every time you get a little ahead something comes along and takes it back, that’s this stretch."
    },
    {
     "id": "17",
-    "html": "<div class=\"bub a\">It doesn’t mean you’re bad with money. It means tighten up, chase what you’re owed, and hold off on big buys until mid-November.</div>",
-    "text": "It doesn’t mean you’re bad with money. It means tighten up, chase what you’re owed, and hold off on big buys until mid-November."
+    "html": "<div class=\"bub a\">It says more about the timing than about you, and the timing changes in mid-November.</div>",
+    "text": "It says more about the timing than about you, and the timing changes in mid-November."
    },
    {
     "id": "18",
@@ -655,8 +655,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "19",
-    "html": "<div class=\"bub a\">When Venus is backward, old money comes back around first: something you’re owed, something you forgot about, a plan you put on a shelf. New money moves after the turn.</div>",
-    "text": "When Venus is backward, old money comes back around first: something you’re owed, something you forgot about, a plan you put on a shelf. New money moves after the turn."
+    "html": "<div class=\"bub a\">When Venus is backward, money from the past has a way of coming back around before anything new shows up.</div>",
+    "text": "When Venus is backward, money from the past has a way of coming back around before anything new shows up."
    },
    {
     "id": "20",
@@ -695,13 +695,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "27",
-    "html": "<div class=\"bub a\">Because 2 planets are moving backward at once. Venus runs love and money. Mercury runs every conversation and plan. With both backward, the easy stuff gets hard and the hard stuff just sits.</div>",
-    "text": "Because 2 planets are moving backward at once. Venus runs love and money. Mercury runs every conversation and plan. With both backward, the easy stuff gets hard and the hard stuff just sits."
+    "html": "<div class=\"bub a\">Because 2 planets are moving backward at once. Venus runs love and money, and Mercury runs how you talk to people and how plans come together. With both backward, the easy stuff gets hard and the hard stuff just sits.</div>",
+    "text": "Because 2 planets are moving backward at once. Venus runs love and money, and Mercury runs how you talk to people and how plans come together. With both backward, the easy stuff gets hard and the hard stuff just sits."
    },
    {
     "id": "28",
-    "html": "<div class=\"bub a\">It’s not forever. Both turn forward in mid-November, on the same day.</div>",
-    "text": "It’s not forever. Both turn forward in mid-November, on the same day."
+    "html": "<div class=\"bub a\">Both turn forward in mid-November, on the same day.</div>",
+    "text": "Both turn forward in mid-November, on the same day."
    },
    {
     "id": "29",
@@ -715,8 +715,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "31",
-    "html": "<div class=\"bub a\">In mid-November, Venus and Mercury turn forward within hours of each other, and a few days later Mars meets Jupiter. Everything that’s been piling up starts moving at once.</div>",
-    "text": "In mid-November, Venus and Mercury turn forward within hours of each other, and a few days later Mars meets Jupiter. Everything that’s been piling up starts moving at once."
+    "html": "<div class=\"bub a\">In mid-November, Venus and Mercury turn forward within hours of each other, and a few days later Mars meets Jupiter. What’s been stuck starts moving again.</div>",
+    "text": "In mid-November, Venus and Mercury turn forward within hours of each other, and a few days later Mars meets Jupiter. What’s been stuck starts moving again."
    },
    {
     "id": "32",
@@ -727,59 +727,34 @@ export const boards: Record<string, Board> = {
  },
  "popups": {
   "title": "Pop-ups · Piece 1",
-  "sub": "What opens when she taps an orange-dashed element.",
+  "sub": "What opens when she taps a numbered element on Piece 1.",
   "blocks": [
    {
     "id": "01",
-    "html": "<p class=\"p\">People tap lists, names and pictures thinking they open. On the new page, they do. Each pop-up gives her 1 true thing about her, blurs the rest, and has 1 button.</p>",
-    "text": "People tap lists, names and pictures thinking they open. On the new page, they do. Each pop-up gives her 1 true thing about her, blurs the rest, and has 1 button."
+    "html": "<p class=\"p\">People tap lists, names and pictures thinking they open. On the new page, they do. The orange numbers on the page match the numbers here. Each pop-up slides up from the bottom, gives her 1 true thing about her, blurs the rest, and has 1 button.</p>",
+    "text": "People tap lists, names and pictures thinking they open. On the new page, they do. The orange numbers on the page match the numbers here. Each pop-up slides up from the bottom, gives her 1 true thing about her, blurs the rest, and has 1 button."
    },
    {
     "id": "02",
-    "html": "<div class=\"lab\">1 · She taps her name or sign at the top</div>",
-    "text": "1 · She taps her name or sign at the top"
+    "html": "<div class=\"popdemo\"><div class=\"popwhere\"><span class=\"pinbig\">1</span><div class=\"lab\">She taps</div><p class=\"p\">Her name or sign at the top of the page</p></div><div class=\"phone\"><div class=\"phonepage\"><i style=\"width:70%\"></i><i></i><i style=\"width:85%\"></i><i></i><i style=\"width:60%\"></i><i></i><i style=\"width:80%\"></i></div><div class=\"scrim\"></div><div class=\"pop\"><div class=\"handle\"></div><div class=\"x\">×</div><div class=\"popt\">Your chart, <span class=\"fill\">[NAME: Sarah]</span></div><p class=\"p\">You’re a <span class=\"fill\">[SIGN: Pisces]</span> with Venus in <span class=\"fill\">[VENUS_SIGN: Aries]</span>. Venus is the planet moving backward right now, and it’s sitting on 1 part of your life.</p><div class=\"blur\">It’s sitting on your ████ and ██████████</div><div class=\"cta\">» See which part of my life</div></div></div></div>",
+    "text": "1 She taps Her name or sign at the top of the page × Your chart, [NAME: Sarah] You’re a [SIGN: Pisces] with Venus in [VENUS_SIGN: Aries] . Venus is the planet moving backward right now, and it’s sitting on 1 part of your life. It’s sitting on your ████ and ██████████ » See which part of my life"
    },
    {
     "id": "03",
-    "html": "<div class=\"pop\"><div class=\"popt\">Your chart, <span class=\"fill\">[NAME: Sarah]</span></div><p class=\"p\">You’re a <span class=\"fill\">[SIGN: Pisces]</span> with Venus in <span class=\"fill\">[VENUS_SIGN: Aries]</span>. Venus is the planet moving backward right now, and it’s sitting on one part of your life.</p><div class=\"blur\">It’s sitting on your ████ and ██████████</div><div class=\"cta\">» See which part of my life</div></div>",
-    "text": "Your chart, [NAME: Sarah] You’re a [SIGN: Pisces] with Venus in [VENUS_SIGN: Aries] . Venus is the planet moving backward right now, and it’s sitting on one part of your life. It’s sitting on your ████ and ██████████ » See which part of my life"
+    "html": "<div class=\"popdemo\"><div class=\"popwhere\"><span class=\"pinbig\">2</span><div class=\"lab\">She taps</div><p class=\"p\">Her birth chart</p></div><div class=\"phone\"><div class=\"phonepage\"><i style=\"width:70%\"></i><i></i><i style=\"width:85%\"></i><i></i><i style=\"width:60%\"></i><i></i><i style=\"width:80%\"></i></div><div class=\"scrim\"></div><div class=\"pop\"><div class=\"handle\"></div><div class=\"x\">×</div><div class=\"popt\">This is the sky on <span class=\"fill\">[BIRTH_DATE: March 4, 1979]</span></div><p class=\"p\">The 2 planets marked in orange are moving backward right now. Where they sit in your chart decides what’s stuck for you.</p><div class=\"blur\">Venus: your ██████ · Mercury: your ████████</div><div class=\"cta\">» Read my chart</div></div></div></div>",
+    "text": "2 She taps Her birth chart × This is the sky on [BIRTH_DATE: March 4, 1979] The 2 planets marked in orange are moving backward right now. Where they sit in your chart decides what’s stuck for you. Venus: your ██████ · Mercury: your ████████ » Read my chart"
    },
    {
     "id": "04",
-    "html": "<div class=\"lab\">2 · She taps her birth chart</div>",
-    "text": "2 · She taps her birth chart"
+    "html": "<div class=\"popdemo\"><div class=\"popwhere\"><span class=\"pinbig\">3</span><div class=\"lab\">She taps</div><p class=\"p\">Any row in the 6-week calendar</p></div><div class=\"phone\"><div class=\"phonepage\"><i style=\"width:70%\"></i><i></i><i style=\"width:85%\"></i><i></i><i style=\"width:60%\"></i><i></i><i style=\"width:80%\"></i></div><div class=\"scrim\"></div><div class=\"pop\"><div class=\"handle\"></div><div class=\"x\">×</div><div class=\"popt\">Your Transformation Window</div><p class=\"p\">November 13 to 19. Venus and Mercury turn forward, then Mars meets Jupiter. 1 day in it is your big one.</p><div class=\"blur\">Your big day: November ██ · Best hours: █:██ to █:██</div><div class=\"cta\">» Show me my big day</div></div></div></div>",
+    "text": "3 She taps Any row in the 6-week calendar × Your Transformation Window November 13 to 19. Venus and Mercury turn forward, then Mars meets Jupiter. 1 day in it is your big one. Your big day: November ██ · Best hours: █:██ to █:██ » Show me my big day"
    },
    {
     "id": "05",
-    "html": "<div class=\"pop\"><div class=\"popt\">This is the sky on <span class=\"fill\">[BIRTH_DATE: March 4, 1979]</span></div><p class=\"p\">The 2 planets marked in orange are the ones moving backward right now. Where they sit in your chart decides what’s stuck for you.</p><div class=\"blur\">Venus: your ██████ · Mercury: your ████████</div><div class=\"cta\">» Read my chart</div></div>",
-    "text": "This is the sky on [BIRTH_DATE: March 4, 1979] The 2 planets marked in orange are the ones moving backward right now. Where they sit in your chart decides what’s stuck for you. Venus: your ██████ · Mercury: your ████████ » Read my chart"
-   },
-   {
-    "id": "06",
-    "html": "<div class=\"lab\">3 · She taps a row in the 6-week calendar</div>",
-    "text": "3 · She taps a row in the 6-week calendar"
-   },
-   {
-    "id": "07",
-    "html": "<div class=\"pop\"><div class=\"popt\">Your Transformation Window</div><p class=\"p\">November 13 to 19. Venus and Mercury turn forward, then Mars meets Jupiter. One day in it is your big one.</p><div class=\"blur\">Your big day: November ██ · Best hours: █:██ to █:██</div><div class=\"cta\">» Show me my big day</div></div>",
-    "text": "Your Transformation Window November 13 to 19. Venus and Mercury turn forward, then Mars meets Jupiter. One day in it is your big one. Your big day: November ██ · Best hours: █:██ to █:██ » Show me my big day"
-   },
-   {
-    "id": "08",
-    "html": "<div class=\"lab\">4 · She taps any of the 4 report items</div>",
-    "text": "4 · She taps any of the 4 report items"
-   },
-   {
-    "id": "09",
-    "html": "<div class=\"pop\"><div class=\"popt\">What’s coming back for you</div><p class=\"p\">While Venus is backward, the past comes back around: a person, money, or a plan you put down. Your report says which one it is for you.</p><div class=\"blur\">Worth picking up: ██████████ · Let go of: ████████████</div><div class=\"cta\">» Get my report · $39</div></div>",
-    "text": "What’s coming back for you While Venus is backward, the past comes back around: a person, money, or a plan you put down. Your report says which one it is for you. Worth picking up: ██████████ · Let go of: ████████████ » Get my report · $39"
-   },
-   {
-    "id": "10",
-    "html": "<p class=\"small\">Same pop-up for all 4 items, with the heading and the first line changed to match the item she tapped. The 4 versions are in the Placeholders panel.</p>",
-    "text": "Same pop-up for all 4 items, with the heading and the first line changed to match the item she tapped. The 4 versions are in the Placeholders panel."
+    "html": "<div class=\"popdemo\"><div class=\"popwhere\"><span class=\"pinbig\">4</span><div class=\"lab\">She taps</div><p class=\"p\">Any of the 4 report items (this is item 02; the other 3 are in the Placeholders panel)</p></div><div class=\"phone\"><div class=\"phonepage\"><i style=\"width:70%\"></i><i></i><i style=\"width:85%\"></i><i></i><i style=\"width:60%\"></i><i></i><i style=\"width:80%\"></i></div><div class=\"scrim\"></div><div class=\"pop\"><div class=\"handle\"></div><div class=\"x\">×</div><div class=\"popt\">What’s coming back for you</div><p class=\"p\">While Venus is backward, the past comes back around, whether that’s a person or a plan you put down. Your report says which one it is for you.</p><div class=\"blur\">Worth picking up: ██████████ · Let go of: ████████████</div><div class=\"cta\">» Get my report · $39</div></div></div></div>",
+    "text": "4 She taps Any of the 4 report items (this is item 02; the other 3 are in the Placeholders panel) × What’s coming back for you While Venus is backward, the past comes back around, whether that’s a person or a plan you put down. Your report says which one it is for you. Worth picking up: ██████████ · Let go of: ████████████ » Get my report · $39"
    }
   ]
  }
 };
-export const placeholders = "<p class=\"pn\">Rust words on the boards are filled in for each reader. The sample values (Sarah, March 4, 1979, Pisces, Venus in Aries) are examples only.</p>\n\n<h3><code>TURN_STATE</code> · Stuck page</h3>\n<ul>\n<li>Counts down to <strong>November 13, 2026</strong> (US Eastern), the day Venus and Mercury both turn forward.</li>\n<li>Before November 13: <em>in N days</em> (stat row: <em>In N days</em>). On November 12: <em>tomorrow</em>.</li>\n<li>November 13 to 19: <em>this week</em> (stat row: <em>This week</em>).</li>\n<li>After November 19 the page is over and needs a new window.</li>\n<li>Used in the headline, the stat row, the closing section and the P.S.</li>\n</ul>\n\n<h3><code>MERCURY_LINE</code> · both pages</h3>\n<table><tr><th>Before Oct 24</th><th>From Oct 24</th></tr>\n<tr><td>Stuck page: <em>On October 24, Mercury goes backward too.</em><br>Chat: <em>Mercury joins it on October 24.</em></td><td>Stuck page: <em>Since October 24, Mercury has been going backward too.</em><br>Chat: <em>Since October 24, Mercury’s been going backward too.</em></td></tr></table>\n\n<h3><code>VENUS_SIGN</code> · <code>VENUS_LINE</code> · both pages</h3>\n<p class=\"pn\">Venus sign from her birth date. No birth time needed. The same tool that works out her sun sign can do it. Start each line with <em>Your Venus is in [VENUS_SIGN].</em></p>\n<table><tr><th>Venus in</th><th>Line</th></tr>\n<tr><td>Aries</td><td>You go after what you want and you don’t play games about it. Waiting on someone else to make up their mind is the one thing you can’t stand.</td></tr>\n<tr><td>Taurus</td><td>You love slow and you love for keeps. Once you’re in, you’re loyal to a fault, and you stay longer than you should when it’s not working.</td></tr>\n<tr><td>Gemini</td><td>You need someone who can keep up with you. When the talking stops, you check out, even if everything else is fine.</td></tr>\n<tr><td>Cancer</td><td>You take care of the people you love before they even ask. You also keep quiet score, and it hurts when nobody does the same for you.</td></tr>\n<tr><td>Leo</td><td>You love big and you want it to show. You don’t need much, but you do need to feel chosen, out loud.</td></tr>\n<tr><td>Virgo</td><td>You show love by doing things: fixing, planning, remembering. You notice every little thing people do, and it stings when they don’t notice yours.</td></tr>\n<tr><td>Libra</td><td>You’re the one who keeps the peace. You’ll bend a long way to keep things nice, and sometimes you only notice how far after it’s too late.</td></tr>\n<tr><td>Scorpio</td><td>You don’t do halfway. You let very few people all the way in, and when someone breaks that trust, you don’t forget it.</td></tr>\n<tr><td>Sagittarius</td><td>You need room to breathe, even from people you love. The minute it starts to feel like a cage, part of you is already halfway out the door.</td></tr>\n<tr><td>Capricorn</td><td>You take love seriously and you don’t hand it out to just anyone. People think you’re cool at first. The ones who stay find out you’re the most loyal person they know.</td></tr>\n<tr><td>Aquarius</td><td>You need space even from people you love, and someone has called that cold. It isn’t. You just love on your own terms.</td></tr>\n<tr><td>Pisces</td><td>You love with your whole heart and you see the best in people, sometimes more than they’ve earned. You’ve given second chances you knew you shouldn’t.</td></tr>\n</table>\n\n<h3>Carried over from Version 3 · Stuck page</h3>\n<p class=\"pn\"><code>NAME</code>, <code>BIRTH_DATE</code>, <code>SIGN</code>, <code>ELEMENT</code>, <code>AREA</code>, <code>ELEMENT_LINE</code>, <code>DEPTH_LINE</code>, <code>GIVING_LINE</code>, <code>AREA_LINE</code> and <code>PATTERN_LINE</code> work exactly as on Version 3, with the same versions. Nothing new is asked in the quiz.</p>\n\n<h3><code>SEASON_LINE</code> · Stuck page, under the 6-week calendar</h3>\n<table><tr><th>Area</th><th>Line</th></tr>\n<tr><td>Love</td><td>As shown on the page.</td></tr>\n<tr><td>Work</td><td>For work, this is a stretch to finish what’s half-done and fix what’s broken, not to start something big. The push comes after the turn.</td></tr>\n<tr><td>Money</td><td>For money, this is a stretch to chase what you’re owed and cut what’s leaking, not to make a big buy. Big money moves wait for the turn.</td></tr>\n<tr><td>A bit of everything</td><td>For everything else, this is a stretch to finish, fix and follow up, not to start fresh. The fresh start comes after the turn.</td></tr>\n</table>\n\n<h3><code>WAIT_LINE</code> · Chat, “What do I do until then?”</h3>\n<table><tr><th>Area</th><th>Line</th></tr>\n<tr><td>Love</td><td>As shown on the chat.</td></tr>\n<tr><td>Work</td><td>Finish what’s half-done, fix what’s broken, and follow up on everything. Just don’t start anything big or walk away from anything until mid-November.</td></tr>\n<tr><td>Money</td><td>Chase what you’re owed, cut what’s leaking, and hold off on big buys until mid-November.</td></tr>\n<tr><td>A bit of everything</td><td>Finish, fix and follow up. Save the fresh starts for mid-November.</td></tr>\n</table>\n\n<h3><code>ASTROLOGER</code> · <code>MONTH_AHEAD</code> · Chat</h3>\n<ul>\n<li><code>ASTROLOGER</code>: the real astrologer’s name, plus a real photo for the chat header. Nora Keating is a stand-in.</li>\n<li><code>MONTH_AHEAD</code>: next month’s name, same as on the earlier pages.</li>\n<li>The chat is a script. Show “typing…” for 1 to 2 seconds before each astrologer message. Every chip is a real button.</li>\n</ul>\n\n<h3>Pop-up 4 · one version per report item</h3>\n<table><tr><th>Item tapped</th><th>Heading · first line · blurred line · button</th></tr>\n<tr><td>01 What’s stuck</td><td><strong>What’s stuck for you</strong> · Venus and Mercury are sitting on one part of your life right now. · <em>It’s your ████ and ██████████</em> · See which part of my life</td></tr>\n<tr><td>02 What’s coming back</td><td>As shown on the Pop-ups board.</td></tr>\n<tr><td>03 Wait days</td><td><strong>Your wait days</strong> · Some days until mid-November are fine for moving. Some aren’t. · <em>Wait: Oct ██, Oct ██, Nov ██</em> · Get my calendar</td></tr>\n<tr><td>04 Big day</td><td><strong>Your big day</strong> · One day between November 13 and 19 is yours. · <em>November ██ · █:██ to █:██</em> · Show me my big day</td></tr>\n</table>\n\n<h3>Need from you</h3>\n<ul>\n<li><strong>Report contents.</strong> Both pages promise 4 things: which part of life is stuck and why, what’s coming back and whether to pick it up, wait days, and the big day with best hours. Confirm or tell me what to cut.</li>\n<li><strong>Astrologer name and photo</strong> for the chat.</li>\n<li><strong>Testimonials and star ratings</strong> are samples. Swap in real ones or remove them.</li>\n<li><strong>Track every pop-up tap and chip tap</strong> so we can see which ones lead to sales.</li>\n</ul>\n";
+export const placeholders = "<p class=\"pn\">Rust words on the boards are filled in for each reader. The sample values (Sarah, March 4, 1979, Pisces, Venus in Aries) are examples only.</p>\n\n<h3><code>TURN_STATE</code> · Stuck page</h3>\n<ul>\n<li>Counts down to <strong>November 13, 2026</strong> (US Eastern), the day Venus and Mercury both turn forward.</li>\n<li>Before November 13: <em>in N days</em> (stat row: <em>In N days</em>). On November 12: <em>tomorrow</em>.</li>\n<li>November 13 to 19: <em>this week</em> (stat row: <em>This week</em>).</li>\n<li>After November 19 the page is over and needs a new window.</li>\n<li>Used in the headline, the stat row, the closing section and the P.S.</li>\n</ul>\n\n<h3><code>MERCURY_LINE</code> · both pages</h3>\n<table><tr><th>Before Oct 24</th><th>From Oct 24</th></tr>\n<tr><td>Stuck page: <em>On October 24, Mercury goes backward too.</em><br>Chat: <em>Mercury joins it on October 24.</em></td><td>Stuck page: <em>Since October 24, Mercury has been going backward too.</em><br>Chat: <em>Since October 24, Mercury’s been going backward too.</em></td></tr></table>\n\n<h3><code>VENUS_SIGN</code> · <code>VENUS_LINE</code> · both pages</h3>\n<p class=\"pn\">Venus sign from her birth date. No birth time needed. The same tool that works out her sun sign can do it. Start each line with <em>Your Venus is in [VENUS_SIGN].</em></p>\n<table><tr><th>Venus in</th><th>Line</th></tr>\n<tr><td>Aries</td><td>You go after what you want and you don’t play games about it. Waiting on someone else to make up their mind is the one thing you can’t stand.</td></tr>\n<tr><td>Taurus</td><td>You love slow and you love for keeps. Once you’re in, you’re loyal to a fault, and you stay longer than you should when it’s not working.</td></tr>\n<tr><td>Gemini</td><td>You need someone who can keep up with you. When the talking stops, you check out, even if everything else is fine.</td></tr>\n<tr><td>Cancer</td><td>You take care of the people you love before they even ask. You also keep quiet score, and it hurts when nobody does the same for you.</td></tr>\n<tr><td>Leo</td><td>You love big and you want it to show. You don’t need much, but you do need to feel chosen, out loud.</td></tr>\n<tr><td>Virgo</td><td>You show love by doing things: fixing, planning, remembering. You notice every little thing people do, and it stings when they don’t notice yours.</td></tr>\n<tr><td>Libra</td><td>You’re the one who keeps the peace. You’ll bend a long way to keep things nice, and sometimes you only notice how far after it’s too late.</td></tr>\n<tr><td>Scorpio</td><td>You don’t do halfway. You let very few people all the way in, and when someone breaks that trust, you don’t forget it.</td></tr>\n<tr><td>Sagittarius</td><td>You need room to breathe, even from people you love. The minute it starts to feel like a cage, part of you is already halfway out the door.</td></tr>\n<tr><td>Capricorn</td><td>You take love seriously and you don’t hand it out to just anyone. People think you’re cool at first. The ones who stay find out you’re the most loyal person they know.</td></tr>\n<tr><td>Aquarius</td><td>You need space even from people you love, and someone has called that cold. You love on your own terms, and the right people get that.</td></tr>\n<tr><td>Pisces</td><td>You love with your whole heart and you see the best in people, sometimes more than they’ve earned. You’ve given second chances you knew you shouldn’t.</td></tr>\n</table>\n\n<h3>Carried over from Version 3 · Stuck page</h3>\n<p class=\"pn\"><code>NAME</code>, <code>BIRTH_DATE</code>, <code>SIGN</code>, <code>ELEMENT</code>, <code>AREA</code>, <code>ELEMENT_LINE</code>, <code>DEPTH_LINE</code>, <code>GIVING_LINE</code>, <code>AREA_LINE</code> and <code>PATTERN_LINE</code> work exactly as on Version 3, with the same versions. Nothing new is asked in the quiz.</p>\n\n<h3><code>SEASON_LINE</code> · Stuck page, under the 6-week calendar</h3>\n<table><tr><th>Area</th><th>Line</th></tr>\n<tr><td>Love</td><td>As shown on the page.</td></tr>\n<tr><td>Work</td><td>For work, the wait days matter more than usual. A big move made before the turn has a way of coming undone.</td></tr>\n<tr><td>Money</td><td>For money, the wait days matter more than usual. A big money move made before the turn has a way of coming undone.</td></tr>\n<tr><td>A bit of everything</td><td>For you, the wait days matter more than usual. Anything big you start before the turn has a way of coming undone.</td></tr>\n</table>\n\n<h3><code>WAIT_LINE</code> · Chat, “What do I do until then?”</h3>\n<table><tr><th>Area</th><th>Line</th></tr>\n<tr><td>Love</td><td>As shown on the chat.</td></tr>\n<tr><td>Work</td><td>Some days before the turn are good for moving at work, and some will undo whatever you start. Which ones depends on your chart.</td></tr>\n<tr><td>Money</td><td>Some days before the turn are fine for money moves, and some will undo whatever you start. Which ones depends on your chart.</td></tr>\n<tr><td>A bit of everything</td><td>Some days before the turn are good for moving, and some will undo whatever you start. Which ones depends on your chart.</td></tr>\n</table>\n\n<h3><code>ASTROLOGER</code> · <code>MONTH_AHEAD</code> · Chat</h3>\n<ul>\n<li><code>ASTROLOGER</code>: the real astrologer’s name, plus a real photo for the chat header. Nora Keating is a stand-in.</li>\n<li><code>MONTH_AHEAD</code>: next month’s name, same as on the earlier pages.</li>\n<li>The chat is a script. Show the 3 typing dots for 1 to 2 seconds before each astrologer message. Every chip is a real button.</li>\n</ul>\n\n<h3>Pop-up 4 · one version per report item</h3>\n<table><tr><th>Item tapped</th><th>Heading · first line · blurred line · button</th></tr>\n<tr><td>01 What’s stuck</td><td><strong>What’s stuck for you</strong> · Venus and Mercury are sitting on one part of your life right now. · <em>It’s your ████ and ██████████</em> · See which part of my life</td></tr>\n<tr><td>02 What’s coming back</td><td>As shown on the Pop-ups board.</td></tr>\n<tr><td>03 Wait days</td><td><strong>Your wait days</strong> · Some days until mid-November are fine for moving. Some aren’t. · <em>Wait: Oct ██, Oct ██, Nov ██</em> · Get my calendar</td></tr>\n<tr><td>04 Big day</td><td><strong>Your big day</strong> · 1 day between November 13 and 19 is yours. · <em>November ██ · █:██ to █:██</em> · Show me my big day</td></tr>\n</table>\n\n<h3>Need from you</h3>\n<ul>\n<li><strong>Report contents.</strong> Both pages promise 4 things: which part of life is stuck and why, what’s coming back and whether to pick it up, wait days, and the big day with best hours. Confirm or tell me what to cut.</li>\n<li><strong>Astrologer name and photo</strong> for the chat.</li>\n<li><strong>Testimonials and star ratings</strong> are samples. Swap in real ones or remove them.</li>\n<li><strong>Track every pop-up tap and chip tap</strong> so we can see which ones lead to sales.</li>\n</ul>\n";
