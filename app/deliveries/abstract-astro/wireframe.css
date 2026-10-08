@@ -112,3 +112,10 @@
 .wf .pop .cta{font-size:17px;padding:15px 12px;box-shadow:none;}
 .wf .popt{font-size:20px;font-weight:800;color:#111;}
 .wf .blur{font-size:16px;font-weight:700;color:#111;filter:blur(3.5px);user-select:none;background:#f8f7f4;padding:12px 14px;border-radius:8px;}
+.wf .vartab{display:flex;flex-direction:column;gap:6px;background:#faf8f3;border-radius:10px;padding:14px 16px;margin-top:-8px;}
+.wf .vrow{display:grid;grid-template-columns:100px 1fr;gap:10px;font-size:14px;line-height:1.45;color:#333;}
+.wf .vrow b{color:#111;}
+/* The money-back box keeps its badge; its pin moves to ::after */
+.wf .pen.pen[data-pop]::before{content:"60-DAY\A MONEY\A BACK";white-space:pre;position:absolute;left:28px;top:50%;transform:translateY(-50%);width:96px;height:96px;min-width:0;padding:0;border-radius:50%;border:3px double #111;background:none;box-shadow:none;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;font-weight:900;letter-spacing:.06em;line-height:1.25;color:#111;}
+.wf .pen[data-pop]::after{content:attr(data-pop);position:absolute;top:-11px;left:-36px;min-width:26px;height:22px;padding:0 5px;border-radius:11px;background:#e4531d;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff;}
+.wf .pop .cta .ctasub{display:block;font-size:12px;font-weight:600;opacity:.85;margin-top:4px;letter-spacing:0;}

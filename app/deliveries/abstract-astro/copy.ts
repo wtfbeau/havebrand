@@ -785,7 +785,7 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
   "blocks": [
    {
     "id": "01",
-    "html": "<div data-pop=\"H1\" style=\"display:flex;justify-content:space-between;align-items:center\">\n  <div class=\"strip\">YOUR 2026 HOROSCOPE · <span class=\"fill\">[NAME: SARAH]</span></div>\n  <div class=\"strip\"><span class=\"fill\">[SIGN: PISCES]</span> · <span class=\"fill\">[ELEMENT: WATER]</span> SIGN</div>\n</div>",
+    "html": "<div data-pop=\"1\" style=\"display:flex;justify-content:space-between;align-items:center\">\n  <div class=\"strip\">YOUR 2026 HOROSCOPE · <span class=\"fill\">[NAME: SARAH]</span></div>\n  <div class=\"strip\"><span class=\"fill\">[SIGN: PISCES]</span> · <span class=\"fill\">[ELEMENT: WATER]</span> SIGN</div>\n</div>",
     "text": "YOUR 2026 HOROSCOPE · [NAME: SARAH] [SIGN: PISCES] · [ELEMENT: WATER] SIGN"
    },
    {
@@ -800,12 +800,12 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "04",
-    "html": "<div class=\"dek\" style=\"font-weight:700;font-size:22px;color:#2f2620\">Your full horoscope is on its way to your inbox. Here’s the short version, read from your birth date, <span class=\"fill\">[BIRTH_DATE: March 4, 1979]</span>, and from what you told us matters most to you right now: <span class=\"fill\">[AREA: love]</span>.</div>",
-    "text": "Your full horoscope is on its way to your inbox. Here’s the short version, read from your birth date, [BIRTH_DATE: March 4, 1979] , and from what you told us matters most to you right now: [AREA: love] ."
+    "html": "<div class=\"dek\" style=\"font-weight:700;font-size:22px;color:#2f2620\">We read it from your birth date, <span class=\"fill\">[BIRTH_DATE: March 4, 1979]</span>, and from what you told us matters most to you right now: <span class=\"fill\">[AREA: love]</span>.</div>",
+    "text": "We read it from your birth date, [BIRTH_DATE: March 4, 1979] , and from what you told us matters most to you right now: [AREA: love] ."
    },
    {
     "id": "05",
-    "html": "<div data-pop=\"H2\" class=\"img\" style=\"height:300px\">Zodiac sign image</div>",
+    "html": "<div data-pop=\"1\" class=\"img\" style=\"height:300px\">Zodiac sign image</div>",
     "text": "Zodiac sign image"
    },
    {
@@ -850,27 +850,27 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "14",
-    "html": "<div data-pop=\"H3\" class=\"wrow\"><div class=\"wn\"><span class=\"fill\">[WINDOW_STATE: IN 13 DAYS]</span></div><div class=\"wd\">Your Transformation Window · Jupiter · 12 days</div><div class=\"wsLive\">THE BIG ONE</div></div>",
+    "html": "<div data-pop=\"2\" class=\"wrow\"><div class=\"wn\"><span class=\"fill\">[WINDOW_STATE: IN 13 DAYS]</span></div><div class=\"wd\">Your Transformation Window · Jupiter · 12 days</div><div class=\"wsLive\">THE BIG ONE</div></div>",
     "text": "[WINDOW_STATE: IN 13 DAYS] Your Transformation Window · Jupiter · 12 days THE BIG ONE"
    },
    {
     "id": "15",
-    "html": "<div data-pop=\"H3\" class=\"wrow\"><div class=\"wn\">OCT – NOV 13</div><div class=\"wd\">Venus goes backward. Go after it, don’t make it final.</div><div class=\"wsGone\">WAIT TO COMMIT</div></div>",
+    "html": "<div data-pop=\"3\" class=\"wrow\"><div class=\"wn\">OCT – NOV 13</div><div class=\"wd\">Venus goes backward. Go after it, don’t make it final.</div><div class=\"wsGone\">WAIT TO COMMIT</div></div>",
     "text": "OCT – NOV 13 Venus goes backward. Go after it, don’t make it final. WAIT TO COMMIT"
    },
    {
     "id": "16",
-    "html": "<div data-pop=\"H3\" class=\"wrow\"><div class=\"wn\">OCT 24 – NOV 13</div><div class=\"wd\">Mercury goes backward. Say less, read everything twice.</div><div class=\"wsGone\">SLOW DOWN</div></div>",
+    "html": "<div data-pop=\"4\" class=\"wrow\"><div class=\"wn\">OCT 24 – NOV 13</div><div class=\"wd\">Mercury goes backward. Say less, read everything twice.</div><div class=\"wsGone\">SLOW DOWN</div></div>",
     "text": "OCT 24 – NOV 13 Mercury goes backward. Say less, read everything twice. SLOW DOWN"
    },
    {
     "id": "17",
-    "html": "<div data-pop=\"H3\" class=\"wrow\"><div class=\"wn\">NOV 2 – 6</div><div class=\"wd\">Mars crosses the eclipse spot. Short fuses, fast moves.</div><div class=\"wsGone\">HEADS UP</div></div>",
+    "html": "<div data-pop=\"5\" class=\"wrow\"><div class=\"wn\">NOV 2 – 6</div><div class=\"wd\">Mars crosses the eclipse spot. Short fuses, fast moves.</div><div class=\"wsGone\">HEADS UP</div></div>",
     "text": "NOV 2 – 6 Mars crosses the eclipse spot. Short fuses, fast moves. HEADS UP"
    },
    {
     "id": "18",
-    "html": "<div data-pop=\"H3\" class=\"wrow\"><div class=\"wn\">DEC 13</div><div class=\"wd\">Jupiter turns backward. What you started gets tested.</div><div class=\"wsGone\">HOLD STEADY</div></div>",
+    "html": "<div data-pop=\"6\" class=\"wrow\"><div class=\"wn\">DEC 13</div><div class=\"wd\">Jupiter turns backward. What you started gets tested.</div><div class=\"wsGone\">HOLD STEADY</div></div>",
     "text": "DEC 13 Jupiter turns backward. What you started gets tested. HOLD STEADY"
    },
    {
@@ -910,7 +910,7 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "26",
-    "html": "<div data-pop=\"H4\" class=\"stat\">\n  <div><span class=\"statlab\">WINDOW</span><span class=\"statval\"><span class=\"fill\">[WINDOW_STATE: Opens in 13 days]</span></span></div>\n  <div><span class=\"statlab\">LENGTH</span><span class=\"statval\">12 days</span></div>\n  <div><span class=\"statlab\">PLANET</span><span class=\"statval\">Jupiter</span></div>\n  <div><span class=\"statlab\">NEXT ONE</span><span class=\"statval\">2038</span></div>\n</div>",
+    "html": "<div data-pop=\"7\" class=\"stat\">\n  <div><span class=\"statlab\">WINDOW</span><span class=\"statval\"><span class=\"fill\">[WINDOW_STATE: Opens in 13 days]</span></span></div>\n  <div><span class=\"statlab\">LENGTH</span><span class=\"statval\">12 days</span></div>\n  <div><span class=\"statlab\">PLANET</span><span class=\"statval\">Jupiter</span></div>\n  <div><span class=\"statlab\">NEXT ONE</span><span class=\"statval\">2038</span></div>\n</div>",
     "text": "WINDOW [WINDOW_STATE: Opens in 13 days] LENGTH 12 days PLANET Jupiter NEXT ONE 2038"
    },
    {
@@ -960,22 +960,22 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "36",
-    "html": "<div data-pop=\"H5\" class=\"num\"><div class=\"numn\">01</div><div><div class=\"numt\">Which part of your life this window opens</div><div class=\"numd\">Your work, your money, your home, or one particular person. If it’s more than one, the strongest comes first, so you know where to aim from day one.</div><div class=\"lab\" style=\"margin-top:8px\">12 DAYS · <span class=\"fill\">[WINDOW_STATE: OPENS IN 13 DAYS]</span></div></div></div>",
+    "html": "<div data-pop=\"8\" class=\"num\"><div class=\"numn\">01</div><div><div class=\"numt\">Which part of your life this window opens</div><div class=\"numd\">Your work, your money, your home, or one particular person. If it’s more than one, the strongest comes first, so you know where to aim from day one.</div><div class=\"lab\" style=\"margin-top:8px\">12 DAYS · <span class=\"fill\">[WINDOW_STATE: OPENS IN 13 DAYS]</span></div></div></div>",
     "text": "01 Which part of your life this window opens Your work, your money, your home, or one particular person. If it’s more than one, the strongest comes first, so you know where to aim from day one. 12 DAYS · [WINDOW_STATE: OPENS IN 13 DAYS]"
    },
    {
     "id": "37",
-    "html": "<div data-pop=\"H5\" class=\"num\"><div class=\"numn\">02</div><div><div class=\"numt\">Your big day</div><div class=\"numd\">The one day out of 12 to make your move, and the best hours of that day to make it.</div><div class=\"lab\" style=\"margin-top:8px\">ONE DAY · NAMED IN YOUR REPORT</div></div></div>",
+    "html": "<div data-pop=\"8\" class=\"num\"><div class=\"numn\">02</div><div><div class=\"numt\">Your big day</div><div class=\"numd\">The one day out of 12 to make your move, and the best hours of that day to make it.</div><div class=\"lab\" style=\"margin-top:8px\">ONE DAY · NAMED IN YOUR REPORT</div></div></div>",
     "text": "02 Your big day The one day out of 12 to make your move, and the best hours of that day to make it. ONE DAY · NAMED IN YOUR REPORT"
    },
    {
     "id": "38",
-    "html": "<div data-pop=\"H5\" class=\"num\"><div class=\"numn\">03</div><div><div class=\"numt\">Your go days and your wait days</div><div class=\"numd\">Which days are for making your move, and which days to hold off before you make anything final. All on one calendar.</div><div class=\"lab\" style=\"margin-top:8px\">6 WEEKS · MARKED IN YOUR REPORT</div></div></div>",
+    "html": "<div data-pop=\"8\" class=\"num\"><div class=\"numn\">03</div><div><div class=\"numt\">Your go days and your wait days</div><div class=\"numd\">Which days are for making your move, and which days to hold off before you make anything final. All on one calendar.</div><div class=\"lab\" style=\"margin-top:8px\">6 WEEKS · MARKED IN YOUR REPORT</div></div></div>",
     "text": "03 Your go days and your wait days Which days are for making your move, and which days to hold off before you make anything final. All on one calendar. 6 WEEKS · MARKED IN YOUR REPORT"
    },
    {
     "id": "39",
-    "html": "<div data-pop=\"H5\" class=\"num\" style=\"border-bottom:none\"><div class=\"numn\">04</div><div><div class=\"numt\">Your 2 follow-up windows</div><div class=\"numd\">Jupiter comes back to your spot in February and again in May, then it’s gone for 12 years. Your report covers both.</div><div class=\"lab\" style=\"margin-top:8px\">FEBRUARY AND MAY · 2 MORE WINDOWS</div></div></div>",
+    "html": "<div data-pop=\"8\" class=\"num\" style=\"border-bottom:none\"><div class=\"numn\">04</div><div><div class=\"numt\">Your 2 follow-up windows</div><div class=\"numd\">Jupiter comes back to your spot in February and again in May, then it’s gone for 12 years. Your report covers both.</div><div class=\"lab\" style=\"margin-top:8px\">FEBRUARY AND MAY · 2 MORE WINDOWS</div></div></div>",
     "text": "04 Your 2 follow-up windows Jupiter comes back to your spot in February and again in May, then it’s gone for 12 years. Your report covers both. FEBRUARY AND MAY · 2 MORE WINDOWS"
    },
    {
@@ -1015,7 +1015,7 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "47",
-    "html": "<div class=\"pen\" style=\"padding:22px 24px;display:flex;flex-direction:column;gap:12px\">\n  <div class=\"lab\" style=\"color:#9c3d22\">If it doesn’t ring true, you keep the report and your money</div>\n  <p class=\"p\">One email within 60 days puts the $39 back on your card. You keep the report. No forms, no questions.</p>\n</div>",
+    "html": "<div data-pop=\"9\" class=\"pen\" style=\"padding:22px 24px;display:flex;flex-direction:column;gap:12px\">\n  <div class=\"lab\" style=\"color:#9c3d22\">If it doesn’t ring true, you keep the report and your money</div>\n  <p class=\"p\">One email within 60 days puts the $39 back on your card. You keep the report. No forms, no questions.</p>\n</div>",
     "text": "If it doesn’t ring true, you keep the report and your money One email within 60 days puts the $39 back on your card. You keep the report. No forms, no questions."
    },
    {
@@ -1096,68 +1096,73 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
   "blocks": [
    {
     "id": "01",
-    "html": "<p class=\"p\">People tap lists, names and pictures thinking they open. Every orange number on the Version 3 board is a spot to make tappable, and its pop-up is here. Each one slides up from the bottom, gives her 1 true thing, blurs the rest, and has 1 button that goes where the page’s main button goes. The pop-ups use the same placeholders as the pages, so they move to the Mars version with them.</p>",
-    "text": "People tap lists, names and pictures thinking they open. Every orange number on the Version 3 board is a spot to make tappable, and its pop-up is here. Each one slides up from the bottom, gives her 1 true thing, blurs the rest, and has 1 button that goes where the page’s main button goes. The pop-ups use the same placeholders as the pages, so they move to the Mars version with them."
+    "html": "<p class=\"p\">Someone who taps a spot wants to know more about that spot. Each pop-up explains that one thing in plain words, then the same button as the page: Get my Transformation Window Report. The orange number on the Version 3 board matches the pop-up here.</p>",
+    "text": "Someone who taps a spot wants to know more about that spot. Each pop-up explains that one thing in plain words, then the same button as the page: Get my Transformation Window Report. The orange number on the Version 3 board matches the pop-up here."
    },
    {
     "id": "02",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H1</span><span class=\"lab\">Top strip with her name and sign</span></div><div class=\"pop\"><div class=\"popt\"><span class=\"fill\">[NAME: Sarah]</span>, <span class=\"fill\">[SIGN: Pisces]</span></div><p class=\"p\">Your full horoscope is on its way to your inbox. The biggest thing in it is your Transformation Window, and it lands on 1 part of your life.</p><div class=\"blur\">It lands on your ██████</div><div class=\"cta\">» See which part of my life</div></div></div>",
-    "text": "H1 Top strip with her name and sign [NAME: Sarah] , [SIGN: Pisces] Your full horoscope is on its way to your inbox. The biggest thing in it is your Transformation Window, and it lands on 1 part of your life. It lands on your ██████ » See which part of my life"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">1</span><span class=\"lab\">She taps: her name, her sign, or the sign image</span></div><div class=\"pop\"><div class=\"popt\">You’re a <span class=\"fill\">[SIGN: Pisces]</span></div><p class=\"p\"><span class=\"fill\">[ELEMENT_POP: Water signs run on feeling. You read a room before anyone says a word, and you need time alone to recharge.]</span></p><p class=\"p\">This fall, Jupiter crosses a spot in your chart it only reaches once every 12 years. Your Transformation Window Report shows which part of your life it opens.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "1 She taps: her name, her sign, or the sign image You’re a [SIGN: Pisces] [ELEMENT_POP: Water signs run on feeling. You read a room before anyone says a word, and you need time alone to recharge.] This fall, Jupiter crosses a spot in your chart it only reaches once every 12 years. Your Transformation Window Report shows which part of your life it opens. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    },
    {
     "id": "03",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H2</span><span class=\"lab\">Zodiac sign image</span></div><div class=\"pop\"><div class=\"popt\"><span class=\"fill\">[SIGN: Pisces]</span></div><p class=\"p\">You’re a <span class=\"fill\">[ELEMENT: water]</span> sign. Your sign says how you move. Your chart says which day of your window is the big one.</p><div class=\"blur\">Your big day: ███ ██ · Best hours: █:██</div><div class=\"cta\">» Find my big day</div></div></div>",
-    "text": "H2 Zodiac sign image [SIGN: Pisces] You’re a [ELEMENT: water] sign. Your sign says how you move. Your chart says which day of your window is the big one. Your big day: ███ ██ · Best hours: █:██ » Find my big day"
+    "html": "<div class=\"vartab\"><div class=\"lab\">ELEMENT_POP, by her element:</div><div class=\"vrow\"><b>Fire</b><span>Fire signs move first and think on the way. You’re brave, and you hate it when things stall.</span></div><div class=\"vrow\"><b>Earth</b><span>Earth signs build slow and build to last, and everybody leans on you.</span></div><div class=\"vrow\"><b>Air</b><span>Air signs live in their heads. You’re always 3 steps ahead, and you can talk yourself into or out of anything.</span></div><div class=\"vrow\"><b>Water</b><span>As shown on the pop-up.</span></div></div>",
+    "text": "ELEMENT_POP, by her element: Fire Fire signs move first and think on the way. You’re brave, and you hate it when things stall. Earth Earth signs build slow and build to last, and everybody leans on you. Air Air signs live in their heads. You’re always 3 steps ahead, and you can talk yourself into or out of anything. Water As shown on the pop-up."
    },
    {
     "id": "04",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H3</span><span class=\"lab\">Calendar, row 1 (Jupiter)</span></div><div class=\"pop\"><div class=\"popt\">Jupiter · 12 days</div><p class=\"p\">Jupiter <span class=\"fill\">[WINDOW_STATE: reaches the spot in 13 days]</span> and stays for 12 days. 1 of those days is the big one, and your chart decides which.</p><div class=\"blur\">Your big day: ███████ ██ · Your part of life: ██████</div><div class=\"cta\">» Find my big day</div></div></div>",
-    "text": "H3 Calendar, row 1 (Jupiter) Jupiter · 12 days Jupiter [WINDOW_STATE: reaches the spot in 13 days] and stays for 12 days. 1 of those days is the big one, and your chart decides which. Your big day: ███████ ██ · Your part of life: ██████ » Find my big day"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">2</span><span class=\"lab\">She taps: calendar row 1, “Your Transformation Window · Jupiter”</span></div><div class=\"pop\"><div class=\"popt\">What a Transformation Window is</div><p class=\"p\">Jupiter is the planet of luck and growth. It takes 12 years to get around the sky, so it reaches any one spot in your chart once every 12 years.</p><p class=\"p\">For 12 days this fall, it sits on the spot the August eclipse marked. While it’s there, asking for what you want gets a warmer answer than usual. Your window <span class=\"fill\">[WINDOW_STATE: is open now]</span>.</p><p class=\"p\">Your Transformation Window Report shows which part of your life it opens.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "2 She taps: calendar row 1, “Your Transformation Window · Jupiter” What a Transformation Window is Jupiter is the planet of luck and growth. It takes 12 years to get around the sky, so it reaches any one spot in your chart once every 12 years. For 12 days this fall, it sits on the spot the August eclipse marked. While it’s there, asking for what you want gets a warmer answer than usual. Your window [WINDOW_STATE: is open now] . Your Transformation Window Report shows which part of your life it opens. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    },
    {
     "id": "05",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H3</span><span class=\"lab\">Calendar, row 2 (Venus)</span></div><div class=\"pop\"><div class=\"popt\">Venus goes backward</div><p class=\"p\">For 6 weeks this fall, go after what you want, and wait to make it final until Venus turns around.</p><div class=\"blur\">Your wait days: ███ ██, ███ ██, ███ ██</div><div class=\"cta\">» Get my go and wait days</div></div></div>",
-    "text": "H3 Calendar, row 2 (Venus) Venus goes backward For 6 weeks this fall, go after what you want, and wait to make it final until Venus turns around. Your wait days: ███ ██, ███ ██, ███ ██ » Get my go and wait days"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">3</span><span class=\"lab\">She taps: calendar row 2, “Venus goes backward”</span></div><div class=\"pop\"><div class=\"popt\">What “Venus goes backward” means</div><p class=\"p\">Venus is the planet of love and money. About every year and a half, it looks like it moves backward in the sky for about 6 weeks. Astrologers call it a retrograde.</p><p class=\"p\">While it’s backward, people and money from your past come back around, and anything you make official has a way of coming apart. This one runs until November 13.</p><p class=\"p\">Your Transformation Window Report marks which days to go for it and which days to wait.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "3 She taps: calendar row 2, “Venus goes backward” What “Venus goes backward” means Venus is the planet of love and money. About every year and a half, it looks like it moves backward in the sky for about 6 weeks. Astrologers call it a retrograde. While it’s backward, people and money from your past come back around, and anything you make official has a way of coming apart. This one runs until November 13. Your Transformation Window Report marks which days to go for it and which days to wait. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    },
    {
     "id": "06",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H3</span><span class=\"lab\">Calendar, row 3 (Mercury)</span></div><div class=\"pop\"><div class=\"popt\">Mercury goes backward · Oct 24 to Nov 13</div><p class=\"p\">Messages get crossed and plans slip. Say less and read everything twice.</p><div class=\"blur\">It hits your: ██████</div><div class=\"cta\">» See where it hits me</div></div></div>",
-    "text": "H3 Calendar, row 3 (Mercury) Mercury goes backward · Oct 24 to Nov 13 Messages get crossed and plans slip. Say less and read everything twice. It hits your: ██████ » See where it hits me"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">4</span><span class=\"lab\">She taps: calendar row 3, “Mercury goes backward”</span></div><div class=\"pop\"><div class=\"popt\">What Mercury retrograde means</div><p class=\"p\">Mercury is the planet of talking, messages and plans. 3 or 4 times a year it moves backward for about 3 weeks, and that’s when wires get crossed.</p><p class=\"p\">This one runs October 24 to November 13. Say less, read everything twice, and give plans extra room.</p><p class=\"p\">Your Transformation Window Report marks which days to go for it and which days to wait.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "4 She taps: calendar row 3, “Mercury goes backward” What Mercury retrograde means Mercury is the planet of talking, messages and plans. 3 or 4 times a year it moves backward for about 3 weeks, and that’s when wires get crossed. This one runs October 24 to November 13. Say less, read everything twice, and give plans extra room. Your Transformation Window Report marks which days to go for it and which days to wait. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    },
    {
     "id": "07",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H3</span><span class=\"lab\">Calendar, row 4 (Mars)</span></div><div class=\"pop\"><div class=\"popt\">Mars crosses the eclipse spot · Nov 2 to 6</div><p class=\"p\">The same spot Jupiter crossed, hit again by the planet that makes you move. Short fuses, fast moves.</p><div class=\"blur\">In your chart: your ██████</div><div class=\"cta\">» See where it hits me</div></div></div>",
-    "text": "H3 Calendar, row 4 (Mars) Mars crosses the eclipse spot · Nov 2 to 6 The same spot Jupiter crossed, hit again by the planet that makes you move. Short fuses, fast moves. In your chart: your ██████ » See where it hits me"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">5</span><span class=\"lab\">She taps: calendar row 4, “Mars crosses the eclipse spot”</span></div><div class=\"pop\"><div class=\"popt\">Why Mars matters November 2 to 6</div><p class=\"p\">Mars is the planet of drive and temper. For 5 days in early November, it crosses the same spot Jupiter crosses in your window.</p><p class=\"p\">Things move fast and fuses run short. Use the push, and pick your battles.</p><p class=\"p\">It hits the same part of your life your window opens. Your Transformation Window Report names it.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "5 She taps: calendar row 4, “Mars crosses the eclipse spot” Why Mars matters November 2 to 6 Mars is the planet of drive and temper. For 5 days in early November, it crosses the same spot Jupiter crosses in your window. Things move fast and fuses run short. Use the push, and pick your battles. It hits the same part of your life your window opens. Your Transformation Window Report names it. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    },
    {
     "id": "08",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H3</span><span class=\"lab\">Calendar, row 5 (Jupiter turns)</span></div><div class=\"pop\"><div class=\"popt\">Jupiter turns backward · Dec 13</div><p class=\"p\">Whatever you started in your window gets tested.</p><div class=\"blur\">What gets tested: your ██████</div><div class=\"cta\">» Get my report · $39</div></div></div>",
-    "text": "H3 Calendar, row 5 (Jupiter turns) Jupiter turns backward · Dec 13 Whatever you started in your window gets tested. What gets tested: your ██████ » Get my report · $39"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">6</span><span class=\"lab\">She taps: calendar row 5, “Jupiter turns backward”</span></div><div class=\"pop\"><div class=\"popt\">What happens on December 13</div><p class=\"p\">Jupiter stops and moves backward for about 4 months. Whatever you started in your window gets tested.</p><p class=\"p\">What you built on solid ground holds. What you rushed shows its cracks. That’s why the way you use your window matters.</p><p class=\"p\">Your Transformation Window Report covers your window now and the 2 follow-ups in February and May.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "6 She taps: calendar row 5, “Jupiter turns backward” What happens on December 13 Jupiter stops and moves backward for about 4 months. Whatever you started in your window gets tested. What you built on solid ground holds. What you rushed shows its cracks. That’s why the way you use your window matters. Your Transformation Window Report covers your window now and the 2 follow-ups in February and May. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    },
    {
     "id": "09",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H4</span><span class=\"lab\">Stat row, any of the 4</span></div><div class=\"pop\"><div class=\"popt\">Your Transformation Window</div><p class=\"p\">12 days of Jupiter on the spot the August eclipse marked. The next time is 2038, when you’ll be <span class=\"fill\">[AGE_2038: 59]</span>.</p><div class=\"blur\">Your big day: ███████ ██ · Best hours: █:██ to █:██</div><div class=\"cta\">» Find my big day</div></div></div>",
-    "text": "H4 Stat row, any of the 4 Your Transformation Window 12 days of Jupiter on the spot the August eclipse marked. The next time is 2038, when you’ll be [AGE_2038: 59] . Your big day: ███████ ██ · Best hours: █:██ to █:██ » Find my big day"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">7</span><span class=\"lab\">She taps: the stat row</span></div><div class=\"pop\"><div class=\"popt\">Why it’s 12 days, and why 2038</div><p class=\"p\">Jupiter is slow. It takes 12 days to move across the spot, then it doesn’t come back to it until 2038. You’ll be <span class=\"fill\">[AGE_2038: 59]</span>.</p><p class=\"p\">Jupiter does pass back over it twice in 2027, in February and May, on its way backward and forward again.</p><p class=\"p\">Your Transformation Window Report covers all 3.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "7 She taps: the stat row Why it’s 12 days, and why 2038 Jupiter is slow. It takes 12 days to move across the spot, then it doesn’t come back to it until 2038. You’ll be [AGE_2038: 59] . Jupiter does pass back over it twice in 2027, in February and May, on its way backward and forward again. Your Transformation Window Report covers all 3. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    },
    {
     "id": "10",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H5</span><span class=\"lab\">Report item 01</span></div><div class=\"pop\"><div class=\"popt\">Which part of your life this window opens</div><p class=\"p\">Your work, your money, your home, or 1 specific person. If it’s more than one, the strongest comes first.</p><div class=\"blur\">Strongest: your ██████ · Then: your ████</div><div class=\"cta\">» See which part of my life</div></div></div>",
-    "text": "H5 Report item 01 Which part of your life this window opens Your work, your money, your home, or 1 specific person. If it’s more than one, the strongest comes first. Strongest: your ██████ · Then: your ████ » See which part of my life"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">8</span><span class=\"lab\">She taps: report item 01, “Which part of your life this window opens”</span></div><div class=\"pop\"><div class=\"popt\">Which part of your life it opens</div><p class=\"p\">Your chart is split into 12 parts, 1 for each area of your life, like work, money, home and love.</p><p class=\"p\">The eclipse spot falls in 1 of them for you. That’s the part this window opens, and your Transformation Window Report names it.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "8 She taps: report item 01, “Which part of your life this window opens” Which part of your life it opens Your chart is split into 12 parts, 1 for each area of your life, like work, money, home and love. The eclipse spot falls in 1 of them for you. That’s the part this window opens, and your Transformation Window Report names it. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    },
    {
     "id": "11",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H5</span><span class=\"lab\">Report item 02</span></div><div class=\"pop\"><div class=\"popt\">Your big day</div><p class=\"p\">1 day out of 12, and the best hours to make your move on it.</p><div class=\"blur\">███████ ██ · █:██ to █:██</div><div class=\"cta\">» Find my big day</div></div></div>",
-    "text": "H5 Report item 02 Your big day 1 day out of 12, and the best hours to make your move on it. ███████ ██ · █:██ to █:██ » Find my big day"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">8</span><span class=\"lab\">She taps: report item 02, “Your big day”</span></div><div class=\"pop\"><div class=\"popt\">Your strongest days</div><p class=\"p\">Jupiter peaks on 1 day of the 12, and the days around it are the strongest. Your Transformation Window Report marks which days of your window to use.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "8 She taps: report item 02, “Your big day” Your strongest days Jupiter peaks on 1 day of the 12, and the days around it are the strongest. Your Transformation Window Report marks which days of your window to use. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    },
    {
     "id": "12",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H5</span><span class=\"lab\">Report item 03</span></div><div class=\"pop\"><div class=\"popt\">Your go days and wait days</div><p class=\"p\">Venus goes backward partway through your window. Go days are for making your move. Wait days are for holding off on making it final.</p><div class=\"blur\">Go: ███ ██, ███ ██ · Wait: ███ ██ to ███ ██</div><div class=\"cta\">» Get my go and wait days</div></div></div>",
-    "text": "H5 Report item 03 Your go days and wait days Venus goes backward partway through your window. Go days are for making your move. Wait days are for holding off on making it final. Go: ███ ██, ███ ██ · Wait: ███ ██ to ███ ██ » Get my go and wait days"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">8</span><span class=\"lab\">She taps: report item 03, “Your go days and your wait days”</span></div><div class=\"pop\"><div class=\"popt\">Go days and wait days</div><p class=\"p\">Venus goes backward partway through your window. Go days are for asking and going after it. Wait days are for holding off on anything final.</p><p class=\"p\">Your Transformation Window Report marks each one on 1 calendar.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "8 She taps: report item 03, “Your go days and your wait days” Go days and wait days Venus goes backward partway through your window. Go days are for asking and going after it. Wait days are for holding off on anything final. Your Transformation Window Report marks each one on 1 calendar. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    },
    {
     "id": "13",
-    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">H5</span><span class=\"lab\">Report item 04</span></div><div class=\"pop\"><div class=\"popt\">Your 2 follow-up windows</div><p class=\"p\">Jupiter crosses your spot 3 times in 8 months. The next 2 are in February and May, then it’s gone for 12 years.</p><div class=\"blur\">February ██ to March █ · May ██ to June █</div><div class=\"cta\">» Get all 3 windows</div></div></div>",
-    "text": "H5 Report item 04 Your 2 follow-up windows Jupiter crosses your spot 3 times in 8 months. The next 2 are in February and May, then it’s gone for 12 years. February ██ to March █ · May ██ to June █ » Get all 3 windows"
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">8</span><span class=\"lab\">She taps: report item 04, “Your 2 follow-up windows”</span></div><div class=\"pop\"><div class=\"popt\">Why there are 3 windows</div><p class=\"p\">Jupiter crosses the spot 3 times: this fall, again in February, and again in May, as it moves forward, back, and forward again. Then it’s gone for 12 years.</p><p class=\"p\">Your Transformation Window Report covers all 3.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "8 She taps: report item 04, “Your 2 follow-up windows” Why there are 3 windows Jupiter crosses the spot 3 times: this fall, again in February, and again in May, as it moves forward, back, and forward again. Then it’s gone for 12 years. Your Transformation Window Report covers all 3. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
+   },
+   {
+    "id": "14",
+    "html": "<div class=\"popcard\"><div class=\"popwhere\"><span class=\"pinbig\">9</span><span class=\"lab\">She taps: the money-back box</span></div><div class=\"pop\"><div class=\"popt\">How the refund works</div><p class=\"p\">Read your Transformation Window Report. If it doesn’t ring true, send 1 email within 60 days and the $39 goes back on your card.</p><p class=\"p\">You keep the report. No forms, no questions.</p><div class=\"cta\">» Get my Transformation Window Report · $39<span class=\"ctasub\">One-time payment · Full refund within 60 days</span></div></div></div>",
+    "text": "9 She taps: the money-back box How the refund works Read your Transformation Window Report. If it doesn’t ring true, send 1 email within 60 days and the $39 goes back on your card. You keep the report. No forms, no questions. » Get my Transformation Window Report · $39 One-time payment · Full refund within 60 days"
    }
   ]
  }

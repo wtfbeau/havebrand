@@ -553,7 +553,7 @@ function Placeholders() {
       <ul className="mt-2 list-disc space-y-1 pl-5 text-[13px] leading-snug">
         <li><span className={code}>NAME</span>, <span className={code}>BIRTH_DATE</span>, <span className={code}>AGE_2038</span> and <span className={code}>WINDOW_STATE</span> work exactly as on the sales page. <span className={code}>WINDOW_STATE</span> appears in the headline ("starts in N days" / "is happening right now"), the Jupiter section ("gets there in N days" / "is there right now"), the stat row, the top row of the 3-month calendar ("IN N DAYS" / "OPEN NOW"), report item 01, the closing section and the P.S.</li>
         <li>The 3-month calendar is the same for every reader. Its dates are astronomy (see PRD). Venus shows as "OCT – NOV 13" on purpose: printing October 3 would give away the big day, which the report sells.</li>
-        <li>The opening says the full horoscope is on its way to her inbox. That has to be true: the horoscope email must go out as the quiz promised.</li>
+        <li>The opening no longer mentions the inbox. If the full horoscope email does go out, that line can come back.</li>
         <li>Every slot below comes from an answer she already gave in the quiz. Nothing new is asked.</li>
       </ul>
       <div className="mt-3 overflow-hidden rounded border border-[#e5ddd0]">
