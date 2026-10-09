@@ -845,8 +845,8 @@ export const boards: Record<'advertorial' | 'sales' | 'horoscope' | 'popups', Bo
    },
    {
     "id": "13",
-    "html": "<p class=\"p\">Here’s what’s coming between now and the end of the year. 4 of these you can plan around starting today. The top one is the biggest you’ll get in 12 years.</p>",
-    "text": "Here’s what’s coming between now and the end of the year. 4 of these you can plan around starting today. The top one is the biggest you’ll get in 12 years."
+    "html": "<p class=\"p\">This is what’s coming between now and the end of the year. 4 of these you can plan around starting today. The top one is the biggest you’ll get in 12 years.</p>",
+    "text": "This is what’s coming between now and the end of the year. 4 of these you can plan around starting today. The top one is the biggest you’ll get in 12 years."
    },
    {
     "id": "14",
