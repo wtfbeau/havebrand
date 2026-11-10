@@ -91,86 +91,79 @@ async function copyRich(htmls: string[]) {
   } catch {}
   return copy(text);
 }
-// One video prompt per script, built from the board as it stands (hand edits included). Format that worked best:
-// scene and people as sentences, speech quoted ("The fitter says: ..."), actions written into the line, and the
-// full no-text line. Titles, on-screen text, captions and end cards are CapCut's job, so they never reach the prompt.
-type Said = { who: string; cue: string; say: string };
-const NO_TEXT = "No captions, no subtitles and no text of any kind on screen. No writing on vans, signs, shops or clothes.";
+// One video prompt per script, copied from the board as it stands (hand edits included). Format that worked best
+// (G, 10 Nov): the board almost as written. Video with the story beats and the length, short Characters, then
+// "Name: line" with no stage directions. Titles, on-screen text, captions and end cards are CapCut's job, so they
+// never reach the prompt.
 const clean = (s: string) => s.replace(/\s+/g, " ").trim();
-const sentence = (s: string) => {
-  const x = clean(s);
-  return x ? x[0].toUpperCase() + x.slice(1) + (/[.?!]$/.test(x) ? "" : ".") : "";
-};
-const sceneOf = (s: string) =>
-  clean(s.replace(/About \d+ seconds\.?/gi, "").replace(/,\s*no music, no text on screen\./gi, ".").replace(/No music, no text on screen\.?/gi, "").replace(/no text on screen\.?/gi, "").replace(/No music\.?/gi, ""));
 
-function speak({ who, cue, say }: Said) {
-  const w = `The ${who.toLowerCase()}`;
-  const q = `"${say.replace(/"/g, "'")}"`;
-  if (!cue) return `${w} says: ${q}`;
-  return /\b(asks|says|replies|answers)\b/.test(cue) ? `${w} ${cue}: ${q}` : `${w} ${cue} and says: ${q}`;
+// Opening for an Arcads/Seedance extend: the same scene and people restated, so G can paste whichever script lines
+// come next underneath it.
+const CONTINUE = "Continue from the last frame. Same scene, same people, same voices.";
+function buildContinuation(htmls: string[]): string {
+  const head = buildPrompt(htmls).split("\n\nScript\n")[0].replace(/\s*About \d+ seconds\./gi, "");
+  return `${CONTINUE}\n\n${head}\n\nScript\n`;
 }
 
-// Opening for an Arcads/Seedance extend: the same scene, people and voices restated, so G can paste whichever
-// script lines come next underneath it.
-const CONTINUE =
-  "Continue this video from its last frame. Keep everything exactly as it is: same setting, same camera, same light, same people, same voices and accents. Carry straight on from where the last clip ended, unless the lines below start a new shot. Do not repeat anything already said or shown, and play only the lines below, in order.";
-function buildContinuation(htmls: string[]): string {
-  const head = buildPrompt(htmls).split("\n")[0];
-  return `${CONTINUE} ${head}\nThe next lines are:`;
+// Where a generation runs out: Script 3's first 15-second clip got through 69 spoken words ("...find new customers."),
+// so a mark goes before the first line that would push a 15-second stretch past 70 words.
+const WORDS_PER_15S = 70;
+function cutMarks(htmls: string[]): Record<number, number> {
+  const marks: Record<number, number> = {};
+  let total = 0;
+  let next = WORDS_PER_15S;
+  htmls.forEach((h, i) => {
+    const say = /class="say">([\s\S]*?)<\/span>/.exec(h)?.[1].replace(/<[^>]+>/g, " ") ?? "";
+    const n = say.split(/\s+/).filter(Boolean).length;
+    if (n && total && total + n > next) {
+      marks[i] = Math.round((next / WORDS_PER_15S) * 15);
+      while (total + n > next) next += WORDS_PER_15S;
+    }
+    total += n;
+  });
+  return marks;
 }
 
 function buildPrompt(htmls: string[]): string {
   const root = document.createElement("div");
   root.innerHTML = htmls.join("");
   const t = (el: Element | null | undefined) => clean(el?.textContent ?? "");
-  let scene = "";
-  let voice = "";
-  const chars: string[] = [];
+  const head: string[] = [];
   const body: string[] = [];
   let lastWho = "";
-  let pending: Said | null = null;
+  let pending: { who: string; say: string } | null = null;
   const flush = () => {
-    if (pending) body.push(speak(pending));
+    if (pending) body.push(`${pending.who}: ${pending.say}`);
     pending = null;
   };
   Array.from(root.children).forEach((el) => {
     const cl = el.classList;
     if (cl.contains("spec")) {
       const lab = t(el.querySelector(".lab"));
-      const ps = Array.from(el.querySelectorAll(".p"));
-      if (lab === "Video") scene = sceneOf(ps.map((x) => t(x)).join(" "));
-      if (lab === "Voice") voice = ps.map((x) => t(x)).join(" ");
-      if (lab === "Characters")
-        ps.forEach((x) => {
-          const name = t(x.querySelector("b")).replace(/:$/, "");
-          const desc = clean(t(x).slice(t(x.querySelector("b")).length));
-          if (name) chars.push(`The ${name.toLowerCase()} is ${/^British (man|woman)\b/.test(desc) ? "a " : ""}${desc}`);
-        });
+      head.push(`${lab}\n${Array.from(el.querySelectorAll(".p")).map((x) => t(x)).join("\n")}`);
     } else if (cl.contains("dir")) {
       flush();
-      const head = t(el.querySelector("b"));
       const c = el.cloneNode(true) as HTMLElement;
       c.querySelectorAll("b,.cap").forEach((x) => x.remove());
-      const rest = t(c);
-      if (head === "Drawing") body.push(/^(the hand|on |under |in )/i.test(rest) ? sentence(rest) : `The hand draws ${rest.replace(/[.]$/, "")}.`);
-      else body.push(/^no speech/i.test(rest) ? `${head}, no one speaks: ${sentence(rest.replace(/^no speech:?\s*/i, ""))}` : `${head}: ${sentence(rest)}`);
+      // Back to the source wording: "Shot 1, no speech: evening. ..." and a full stop the board display drops.
+      const rest = t(c).replace(/^no speech:\s*/i, "");
+      body.push(`${t(el.querySelector("b"))}${rest === t(c) ? ":" : ", no speech:"} ${rest}${/[.?!]$/.test(rest) ? "" : "."}`);
     } else if (cl.contains("line")) {
       const who = t(el.querySelector(".who")) || lastWho;
       lastWho = who;
-      const said = { who, cue: t(el.querySelector(".cue")), say: t(el.querySelector(".say")) };
-      if (!said.say) return;
-      // A speaker's back-to-back lines (a monologue) become one quote.
-      if (pending && pending.who === who && !said.cue) pending.say = `${pending.say} ${said.say}`;
+      const cue = t(el.querySelector(".cue"));
+      const say = `${cue ? `(${cue}) ` : ""}${t(el.querySelector(".say"))}`;
+      if (!t(el.querySelector(".say"))) return;
+      // A speaker's back-to-back lines (a monologue) become one line.
+      if (pending && pending.who === who && !cue) pending.say = `${pending.say} ${say}`;
       else {
         flush();
-        pending = said;
+        pending = { who, say };
       }
     }
   });
   flush();
-  const head = clean([scene, voice && `The voiceover is a ${voice}`, chars.join(" "), "No music.", NO_TEXT].filter(Boolean).join(" "));
-  return `${head}\n${body.join("\n")}`;
+  return `${head.join("\n\n")}\n\nScript\n${body.join("\n")}`;
 }
 
 // Notes and edits are stored as "<signature of the original block>|<value>". When the block's text changes in the
@@ -375,7 +368,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
     const t = e.target as HTMLElement;
     const onBoard = t.closest("[data-board]");
     if (onBoard && !space) return;
-    if (t.closest("button,textarea")) return;
+    if (t.closest("button,textarea,video,a")) return;
     drag.current = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y };
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   };
@@ -410,7 +403,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
       <header className="z-30 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#55504a] bg-[#3f3a34] px-4 py-2.5 text-[#f3efe6]">
         <div className="mr-auto">
           <div className="text-[10px] font-bold uppercase tracking-[.14em] text-[#b8b0a2]">DOWO · Windows and doors</div>
-          <div className="text-[15px] font-bold leading-tight">New Meta scripts · 8 video scripts</div>
+          <div className="text-[15px] font-bold leading-tight">New Meta scripts · 9 video scripts</div>
         </div>
         <div className="hidden text-[12px] text-[#b8b0a2] md:block">
           Drag the background to move · ⌘ or Ctrl + scroll to zoom · Hover a block to copy or note ·{" "}
@@ -500,6 +493,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
         >
           {(Object.keys(boards) as (keyof Boards)[]).map((k, bi) => {
             const b = boards[k];
+            const marks = cutMarks(boardHtml(k));
             return (
               <div key={k} className="absolute top-0" style={{ left: bi * (BOARD_W + GAP), width: BOARD_W }}>
                 <div className="mb-2 flex items-end justify-between px-0.5">
@@ -523,7 +517,13 @@ export default function Reviewer({ boards }: { boards: Boards }) {
                       const silent = isSilent(bl);
                       const showNote = (open === id || note.trim()) && !silent;
                       return (
-                        <div key={bl.id} className={`blk group relative -mr-[76px] pr-[76px] ${tight ? "-mt-[22px]" : ""}`}>
+                        <div key={bl.id} className={`blk group relative -mr-[76px] pr-[76px] ${tight ? "-mt-[22px]" : ""} ${marks[i] ? "mt-[18px]" : ""}`}>
+                          {marks[i] && (
+                            <div className="pointer-events-none absolute -top-[22px] left-0 right-[76px] flex items-center gap-2 select-none" aria-hidden>
+                              <span className="text-[10px] font-bold uppercase tracking-[.14em] text-[#c9a48a]">~{marks[i]}s · cut</span>
+                              <span className="h-0 flex-1 border-t border-dashed border-[#e2c6b2]" />
+                            </div>
+                          )}
                           <div
                             key={`${id}:${edits[id] === undefined ? "o" : "e"}:${editing}`}
                             contentEditable={editing && !silent}
@@ -629,6 +629,28 @@ export default function Reviewer({ boards }: { boards: Boards }) {
                     })}
                   </div>
                 </div>
+                {b.videos.length > 0 && (
+                  <div className="mt-4 rounded-sm bg-[#2f2b26] p-5 text-[#f3efe6]">
+                    <div className="mb-3 text-[12px] font-bold uppercase tracking-[.12em] text-[#e4b89a]">Video drafts</div>
+                    <div className="grid grid-cols-2 gap-4">
+                      {b.videos.map((v) => (
+                        <div key={v.file}>
+                          <video src={v.play} controls playsInline preload="metadata" className="aspect-[9/16] w-full rounded-sm bg-black object-contain" />
+                          <div className="mt-2 flex items-center justify-between gap-2">
+                            <span className="text-[13px] leading-snug text-[#d8d0c2]">{v.label}</span>
+                            <a
+                              href={v.file}
+                              download
+                              className="shrink-0 rounded-full border border-[#8a8074] px-2.5 py-1 text-[11px] font-semibold text-[#f3efe6] hover:bg-[#f3efe6] hover:text-[#1c1814]"
+                            >
+                              Download
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div className="mt-4 rounded-sm border-2 border-dashed border-[#8a8074] bg-[#2f2b26] p-5 text-[#f3efe6]">
                   <div className="mb-2 flex items-center justify-between">
                     <div className="text-[12px] font-bold uppercase tracking-[.12em] text-[#e4b89a]">Continuation prompt · for extends</div>
