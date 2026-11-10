@@ -208,6 +208,15 @@ export default function Reviewer({ boards }: { boards: Boards }) {
   // The prompt builders need the DOM, so the continuation boxes fill in after mount.
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
+  // Phones get a plain scrolling page: the drag-and-zoom canvas blocks touch scrolling.
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 820px)");
+    const on = () => setMobile(mq.matches);
+    on();
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, []);
   const timers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
   const vp = useRef<HTMLDivElement>(null);
   const drag = useRef<{ x: number; y: number; vx: number; vy: number } | null>(null);
@@ -338,6 +347,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
     const el = vp.current;
     if (!el) return;
     const onWheel = (e: WheelEvent) => {
+      if (window.matchMedia("(max-width: 820px)").matches) return;
       e.preventDefault();
       if (e.ctrlKey || e.metaKey) {
         const r = el.getBoundingClientRect();
@@ -444,7 +454,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
             {showList ? "Back to canvas" : "List notes"}
           </button>
         )}
-        <div className="flex items-center gap-1 rounded-full border border-[#6a645c] bg-[#4a453e] p-0.5 text-[12px] font-semibold text-[#f3efe6]">
+        <div className="hidden items-center gap-1 rounded-full border border-[#6a645c] bg-[#4a453e] p-0.5 text-[12px] font-semibold text-[#f3efe6] md:flex">
           <button onClick={() => zoomBy(1 / 1.25)} className="h-7 w-7 rounded-full hover:bg-[#5a544c]">−</button>
           <button onClick={fit} className="h-7 min-w-[52px] rounded-full px-2 hover:bg-[#5a544c]">{pct}%</button>
           <button onClick={() => zoomBy(1.25)} className="h-7 w-7 rounded-full hover:bg-[#5a544c]">+</button>
@@ -475,27 +485,31 @@ export default function Reviewer({ boards }: { boards: Boards }) {
 
       <div
         ref={vp}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
-        className={`relative flex-1 overflow-hidden ${space ? "cursor-grab" : ""} ${drag.current ? "cursor-grabbing" : ""}`}
-        style={{
-          backgroundImage: "radial-gradient(#5a544c 1px, transparent 1px)",
-          backgroundSize: `${24 * view.s}px ${24 * view.s}px`,
-          backgroundPosition: `${view.x}px ${view.y}px`,
-          touchAction: "none",
-        }}
+        onPointerDown={mobile ? undefined : onPointerDown}
+        onPointerMove={mobile ? undefined : onPointerMove}
+        onPointerUp={mobile ? undefined : onPointerUp}
+        onPointerCancel={mobile ? undefined : onPointerUp}
+        className={`relative flex-1 ${mobile ? "overflow-y-auto overflow-x-hidden" : "overflow-hidden"} ${space ? "cursor-grab" : ""} ${drag.current ? "cursor-grabbing" : ""}`}
+        style={
+          mobile
+            ? { WebkitOverflowScrolling: "touch" }
+            : {
+                backgroundImage: "radial-gradient(#5a544c 1px, transparent 1px)",
+                backgroundSize: `${24 * view.s}px ${24 * view.s}px`,
+                backgroundPosition: `${view.x}px ${view.y}px`,
+                touchAction: "none",
+              }
+        }
       >
         <div
-          className="absolute left-0 top-0 origin-top-left"
-          style={{ transform: `translate(${view.x}px, ${view.y}px) scale(${view.s})`, width: worldW }}
+          className={mobile ? "flex flex-col gap-10 px-3 py-4" : "absolute left-0 top-0 origin-top-left"}
+          style={mobile ? undefined : { transform: `translate(${view.x}px, ${view.y}px) scale(${view.s})`, width: worldW }}
         >
           {(Object.keys(boards) as (keyof Boards)[]).map((k, bi) => {
             const b = boards[k];
             const marks = cutMarks(boardHtml(k));
             return (
-              <div key={k} className="absolute top-0" style={{ left: bi * (BOARD_W + GAP), width: BOARD_W }}>
+              <div key={k} className={mobile ? "relative w-full" : "absolute top-0"} style={mobile ? undefined : { left: bi * (BOARD_W + GAP), width: BOARD_W }}>
                 <div className="mb-2 flex items-end justify-between px-0.5">
                   <div>
                     <div className="text-[14px] font-bold text-[#f3efe6]">{b.title}</div>
@@ -515,11 +529,11 @@ export default function Reviewer({ boards }: { boards: Boards }) {
                       const note = notes[id] ?? "";
                       const tight = isRow(bl) && i > 0 && isRow(b.blocks[i - 1]);
                       const silent = isSilent(bl);
-                      const showNote = (open === id || note.trim()) && !silent;
+                      const showNote = (open === id || note.trim()) && !silent && !mobile;
                       return (
-                        <div key={bl.id} className={`blk group relative -mr-[76px] pr-[76px] ${tight ? "-mt-[22px]" : ""} ${marks[i] ? "mt-[18px]" : ""}`}>
+                        <div key={bl.id} className={`blk group relative ${mobile ? "" : "-mr-[76px] pr-[76px]"} ${tight ? "-mt-[22px]" : ""} ${marks[i] ? "mt-[18px]" : ""}`}>
                           {marks[i] && (
-                            <div className="pointer-events-none absolute -top-[22px] left-0 right-[76px] flex items-center gap-2 select-none" aria-hidden>
+                            <div className={`pointer-events-none absolute -top-[22px] left-0 ${mobile ? "right-0" : "right-[76px]"} flex items-center gap-2 select-none`} aria-hidden>
                               <span className="text-[10px] font-bold uppercase tracking-[.14em] text-[#c9a48a]">~{marks[i]}s · cut</span>
                               <span className="h-0 flex-1 border-t border-dashed border-[#e2c6b2]" />
                             </div>
@@ -545,7 +559,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
                             className={`rounded-sm ${editing && !silent ? "cursor-text outline-none focus:bg-[#fffbe6] focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-[#e4531d]" : ""} ${edits[id] !== undefined ? "border-l-4 border-[#e4531d] -ml-[14px] pl-[10px]" : ""} ${showNote ? "outline outline-2 outline-offset-4 outline-[#f0d95a]" : "group-hover:outline group-hover:outline-1 group-hover:outline-offset-4 group-hover:outline-[#c4b39a]"}`}
                             dangerouslySetInnerHTML={{ __html: htmlOf(k as string, bl) }}
                           />
-                          {!silent && (
+                          {!silent && !mobile && (
                             <div className="absolute right-0 top-0 z-10 flex w-[68px] flex-col gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
                               <button
                                 onClick={async () => flash((await copyRich([htmlOf(k as string, bl)])) ? "Copied" : "Copy failed")}
