@@ -276,7 +276,13 @@ export const boards: Record<string, Board> = {
     "text": "End text Tap the link. Pop your postcode in. Get a call with what you can get."
    }
   ],
-  "videos": []
+  "videos": [
+   {
+    "label": "Draft · British houses",
+    "play": "/deliveries/dowo/script2-british-houses.play.mp4",
+    "file": "/deliveries/dowo/script2-british-houses.mov"
+   }
+  ]
  },
  "cheapest": {
   "title": "Script 3 · Cheapest way to get new windows",
@@ -378,6 +384,11 @@ export const boards: Record<string, Board> = {
     "label": "Draft · cheapest way",
     "play": "/deliveries/dowo/script3-cheapest-way.play.mp4",
     "file": "/deliveries/dowo/script3-cheapest-way.mov"
+   },
+   {
+    "label": "Draft · woman presenter",
+    "play": "/deliveries/dowo/script3-woman-presenter-sorted.mp4",
+    "file": "/deliveries/dowo/script3-woman-presenter-sorted.mp4"
    }
   ]
  },
@@ -482,11 +493,6 @@ export const boards: Record<string, Board> = {
    }
   ],
   "videos": [
-   {
-    "label": "Draft · woman presenter, \"Sorted\" ending",
-    "play": "/deliveries/dowo/script4-woman-presenter-sorted.mp4",
-    "file": "/deliveries/dowo/script4-woman-presenter-sorted.mp4"
-   },
    {
     "label": "Draft · earlier full-grant testimonial (5 Nov)",
     "play": "/deliveries/dowo/script4-testimonial-full-grant.play.mp4",
