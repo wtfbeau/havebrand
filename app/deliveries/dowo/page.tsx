@@ -5,10 +5,10 @@ import "./wireframe.css";
 
 export const metadata: Metadata = {
   title: "DOWO · New Meta scripts",
-  description: "9 video scripts, for review.",
+  description: "10 video scripts, for review.",
   keywords: [],
-  openGraph: { title: "DOWO · New Meta scripts", description: "9 video scripts, for review." },
-  twitter: { title: "DOWO · New Meta scripts", description: "9 video scripts, for review." },
+  openGraph: { title: "DOWO · New Meta scripts", description: "10 video scripts, for review." },
+  twitter: { title: "DOWO · New Meta scripts", description: "10 video scripts, for review." },
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
   alternates: { canonical: null },
 };

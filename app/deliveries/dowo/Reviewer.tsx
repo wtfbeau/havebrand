@@ -107,6 +107,21 @@ function buildContinuation(htmls: string[]): string {
 
 // Where a generation runs out: Script 3's first 15-second clip got through 69 spoken words ("...find new customers."),
 // so a mark goes before the first line that would push a 15-second stretch past 70 words.
+// Ad copy boards: everything as plain text, in the order Ads Manager asks for it.
+function buildAdCopy(htmls: string[]): string {
+  const out: string[] = [];
+  htmls.forEach((h) => {
+    const d = new DOMParser().parseFromString(h, "text/html").body;
+    const el = d.firstElementChild as HTMLElement | null;
+    if (!el || el.classList.contains("strip") || el.classList.contains("h1")) return;
+    if (el.classList.contains("sh")) out.push(`\n${clean(el.textContent ?? "")}`);
+    else if (el.classList.contains("adp")) {
+      const ps = [...el.querySelectorAll("p")].map((p) => p.innerHTML.split(/<br\s*\/?>/i).map((x) => clean(x.replace(/<[^>]+>/g, " "))).join("\n"));
+      out.push(`\n${(el.dataset.lab ?? "").split(" · ").slice(0, 2).join(" · ")}\n${ps.join("\n\n")}`);
+    } else out.push(clean(el.textContent ?? ""));
+  });
+  return out.join("\n").trim();
+}
 const WORDS_PER_15S = 70;
 function cutMarks(htmls: string[]): Record<number, number> {
   const marks: Record<number, number> = {};
@@ -413,7 +428,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
       <header className="z-30 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#55504a] bg-[#3f3a34] px-4 py-2.5 text-[#f3efe6]">
         <div className="mr-auto">
           <div className="text-[10px] font-bold uppercase tracking-[.14em] text-[#b8b0a2]">DOWO · Windows and doors</div>
-          <div className="text-[15px] font-bold leading-tight">New Meta scripts · 9 video scripts</div>
+          <div className="text-[15px] font-bold leading-tight">New Meta scripts · 10 video scripts</div>
         </div>
         <div className="hidden text-[12px] text-[#b8b0a2] md:block">
           Drag the background to move · ⌘ or Ctrl + scroll to zoom · Hover a block to copy or note ·{" "}
@@ -507,7 +522,8 @@ export default function Reviewer({ boards }: { boards: Boards }) {
         >
           {(Object.keys(boards) as (keyof Boards)[]).map((k, bi) => {
             const b = boards[k];
-            const marks = cutMarks(boardHtml(k));
+            const ads = b.kind === "ads";
+            const marks = ads ? {} as Record<number, number> : cutMarks(boardHtml(k));
             return (
               <div key={k} className={mobile ? "relative w-full" : "absolute top-0"} style={mobile ? undefined : { left: bi * (BOARD_W + GAP), width: BOARD_W }}>
                 <div className="mb-2 flex items-end justify-between px-0.5">
@@ -516,10 +532,12 @@ export default function Reviewer({ boards }: { boards: Boards }) {
                     <div className="text-[12px] text-[#b8b0a2]">{b.sub}</div>
                   </div>
                   <button
-                    onClick={async () => flash((await copy(buildPrompt(boardHtml(k)))) ? "Prompt copied" : "Copy failed")}
+                    onClick={async () =>
+                      flash((await copy(ads ? buildAdCopy(boardHtml(k)) : buildPrompt(boardHtml(k)))) ? (ads ? "Ad copy copied" : "Prompt copied") : "Copy failed")
+                    }
                     className="rounded-full border border-[#8a8074] px-2.5 py-1 text-[11px] font-semibold text-[#f3efe6] hover:bg-[#f3efe6] hover:text-[#1c1814]"
                   >
-                    Copy prompt
+                    {ads ? "Copy all" : "Copy prompt"}
                   </button>
                 </div>
                 <div data-board data-page={k} className="wf rounded-sm shadow-[0_6px_30px_rgba(0,0,0,.45)]" style={{ pointerEvents: space ? "none" : "auto" }}>
@@ -665,7 +683,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
                     </div>
                   </div>
                 )}
-                <div className="mt-4 rounded-sm border-2 border-dashed border-[#8a8074] bg-[#2f2b26] p-5 text-[#f3efe6]">
+                {!ads && <div className="mt-4 rounded-sm border-2 border-dashed border-[#8a8074] bg-[#2f2b26] p-5 text-[#f3efe6]">
                   <div className="mb-2 flex items-center justify-between">
                     <div className="text-[12px] font-bold uppercase tracking-[.12em] text-[#e4b89a]">Continuation prompt · for extends</div>
                     <button
@@ -677,7 +695,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
                   </div>
                   <div className="mb-3 text-[13px] text-[#b8b0a2]">Paste this, then paste the script lines from where your last clip stopped.</div>
                   <div className="whitespace-pre-wrap text-[15px] leading-relaxed">{mounted ? buildContinuation(boardHtml(k)) : ""}</div>
-                </div>
+                </div>}
               </div>
             );
           })}
