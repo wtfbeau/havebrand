@@ -162,13 +162,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<p class=\"p adh\" data-n=\"27\">Get new windows, £0 upfront</p>",
-    "text": "Get new windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get help with new windows</p>",
+    "text": "Get help with new windows"
    },
    {
     "id": "05",
-    "html": "<p class=\"p adh\" data-n=\"25\">Get new doors, £0 upfront</p>",
-    "text": "Get new doors, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get new windows and doors</p>",
+    "text": "Get new windows and doors"
    },
    {
     "id": "06",
@@ -187,18 +187,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "09",
-    "html": "<p class=\"p adh\" data-n=\"23\">Homeowners. £0 upfront.</p>",
-    "text": "Homeowners. £0 upfront."
+    "html": "<p class=\"p adh\" data-n=\"29\">UK homeowners. No obligation.</p>",
+    "text": "UK homeowners. No obligation."
    },
    {
     "id": "10",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 166 characters · first line 113\"><p class=\"p\">Need new windows but don&#x27;t want a big bill upfront? Homeowners can get them with £0 upfront. Check your postcode.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Need new windows but don't want a big bill upfront? Homeowners can get them with £0 upfront. Check your postcode. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 141 characters · first line 115\"><p class=\"p\">Thinking about new windows? Homeowners can get help towards the cost of new windows and doors. Check your postcode.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Thinking about new windows? Homeowners can get help towards the cost of new windows and doors. Check your postcode. Not a government scheme."
    },
    {
     "id": "11",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 411 characters · first line 51\"><p class=\"p\">Need new windows but don&#x27;t want a big bill upfront?</p><p class=\"p\">UK homeowners can replace old windows and doors with nothing to pay upfront:</p><p class=\"p\">✅ Flexible finance with £0 upfront<br>✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Need new windows but don't want a big bill upfront? UK homeowners can replace old windows and doors with nothing to pay upfront: ✅ Flexible finance with £0 upfront ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation Pop your postcode in to see if your home qualifies. No obligation. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 430 characters · first line 79\"><p class=\"p\">Thinking about new windows? See what help you can get before anyone quotes you.</p><p class=\"p\">UK homeowners can get new energy-efficient windows and doors, with help towards the cost:</p><p class=\"p\">✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation<br>✅ A warmer home and lower heating bills</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Thinking about new windows? See what help you can get before anyone quotes you. UK homeowners can get new energy-efficient windows and doors, with help towards the cost: ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation ✅ A warmer home and lower heating bills Pop your postcode in to see if your home qualifies. No obligation. Not a government scheme."
    }
   ],
   "videos": [],
@@ -368,13 +368,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<p class=\"p adh\" data-n=\"28\">Swap old windows, £0 upfront</p>",
-    "text": "Swap old windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"29\">Get a warmer home this winter</p>",
+    "text": "Get a warmer home this winter"
    },
    {
     "id": "05",
-    "html": "<p class=\"p adh\" data-n=\"29\">Get a warmer home this winter</p>",
-    "text": "Get a warmer home this winter"
+    "html": "<p class=\"p adh\" data-n=\"32\">Get new energy-efficient windows</p>",
+    "text": "Get new energy-efficient windows"
    },
    {
     "id": "06",
@@ -393,18 +393,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "09",
-    "html": "<p class=\"p adh\" data-n=\"23\">Homeowners. £0 upfront.</p>",
-    "text": "Homeowners. £0 upfront."
+    "html": "<p class=\"p adh\" data-n=\"29\">UK homeowners. No obligation.</p>",
+    "text": "UK homeowners. No obligation."
    },
    {
     "id": "10",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 148 characters · first line 95\"><p class=\"p\">Old windows let the heat out. Homeowners can replace them with £0 upfront. Check your postcode.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Old windows let the heat out. Homeowners can replace them with £0 upfront. Check your postcode. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 148 characters · first line 122\"><p class=\"p\">Old windows let the heat out. Homeowners can get help towards new energy-efficient windows and doors. Check your postcode.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Old windows let the heat out. Homeowners can get help towards new energy-efficient windows and doors. Check your postcode. Not a government scheme."
    },
    {
     "id": "11",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 426 characters · first line 66\"><p class=\"p\">Cold house even with the heating on? Old windows let the heat out.</p><p class=\"p\">UK homeowners can replace old windows and doors with nothing to pay upfront:</p><p class=\"p\">✅ Flexible finance with £0 upfront<br>✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Cold house even with the heating on? Old windows let the heat out. UK homeowners can replace old windows and doors with nothing to pay upfront: ✅ Flexible finance with £0 upfront ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation Pop your postcode in to see if your home qualifies. No obligation. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 417 characters · first line 66\"><p class=\"p\">Cold house even with the heating on? Old windows let the heat out.</p><p class=\"p\">UK homeowners can get new energy-efficient windows and doors, with help towards the cost:</p><p class=\"p\">✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation<br>✅ A warmer home and lower heating bills</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Cold house even with the heating on? Old windows let the heat out. UK homeowners can get new energy-efficient windows and doors, with help towards the cost: ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation ✅ A warmer home and lower heating bills Pop your postcode in to see if your home qualifies. No obligation. Not a government scheme."
    }
   ],
   "videos": [],
@@ -539,8 +539,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<p class=\"p adh\" data-n=\"27\">Get new windows, £0 upfront</p>",
-    "text": "Get new windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get help with new windows</p>",
+    "text": "Get help with new windows"
    },
    {
     "id": "05",
@@ -564,18 +564,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "09",
-    "html": "<p class=\"p adh\" data-n=\"23\">Homeowners. £0 upfront.</p>",
-    "text": "Homeowners. £0 upfront."
+    "html": "<p class=\"p adh\" data-n=\"29\">UK homeowners. No obligation.</p>",
+    "text": "UK homeowners. No obligation."
    },
    {
     "id": "10",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 167 characters · first line 114\"><p class=\"p\">Getting window quotes? First see if your home qualifies for new windows and doors with £0 upfront. For homeowners.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Getting window quotes? First see if your home qualifies for new windows and doors with £0 upfront. For homeowners. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 137 characters · first line 111\"><p class=\"p\">Getting window quotes? First see if your home qualifies for help towards new windows and doors. For homeowners.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Getting window quotes? First see if your home qualifies for help towards new windows and doors. For homeowners. Not a government scheme."
    },
    {
     "id": "11",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 440 characters · first line 80\"><p class=\"p\">Getting quotes for new windows? See if your home qualifies for £0 upfront first.</p><p class=\"p\">UK homeowners can replace old windows and doors with nothing to pay upfront:</p><p class=\"p\">✅ Flexible finance with £0 upfront<br>✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Getting quotes for new windows? See if your home qualifies for £0 upfront first. UK homeowners can replace old windows and doors with nothing to pay upfront: ✅ Flexible finance with £0 upfront ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation Pop your postcode in to see if your home qualifies. No obligation. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 439 characters · first line 88\"><p class=\"p\">Getting quotes for new windows? See if your home qualifies for help with the cost first.</p><p class=\"p\">UK homeowners can get new energy-efficient windows and doors, with help towards the cost:</p><p class=\"p\">✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation<br>✅ A warmer home and lower heating bills</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Getting quotes for new windows? See if your home qualifies for help with the cost first. UK homeowners can get new energy-efficient windows and doors, with help towards the cost: ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation ✅ A warmer home and lower heating bills Pop your postcode in to see if your home qualifies. No obligation. Not a government scheme."
    }
   ],
   "videos": [],
@@ -710,13 +710,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<p class=\"p adh\" data-n=\"27\">Get new windows, £0 upfront</p>",
-    "text": "Get new windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get new windows and doors</p>",
+    "text": "Get new windows and doors"
    },
    {
     "id": "05",
-    "html": "<p class=\"p adh\" data-n=\"25\">Get new doors, £0 upfront</p>",
-    "text": "Get new doors, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"32\">Get new energy-efficient windows</p>",
+    "text": "Get new energy-efficient windows"
    },
    {
     "id": "06",
@@ -735,18 +735,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "09",
-    "html": "<p class=\"p adh\" data-n=\"23\">Homeowners. £0 upfront.</p>",
-    "text": "Homeowners. £0 upfront."
+    "html": "<p class=\"p adh\" data-n=\"29\">UK homeowners. No obligation.</p>",
+    "text": "UK homeowners. No obligation."
    },
    {
     "id": "10",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 145 characters · first line 92\"><p class=\"p\">New energy-efficient windows and doors for homeowners, with £0 upfront. Check your postcode.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "New energy-efficient windows and doors for homeowners, with £0 upfront. Check your postcode. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 129 characters · first line 103\"><p class=\"p\">New energy-efficient windows and doors for homeowners, with help towards the cost. Check your postcode.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "New energy-efficient windows and doors for homeowners, with help towards the cost. Check your postcode. Not a government scheme."
    },
    {
     "id": "11",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 428 characters · first line 68\"><p class=\"p\">New energy-efficient windows and doors, with nothing to pay upfront.</p><p class=\"p\">UK homeowners can replace old windows and doors with nothing to pay upfront:</p><p class=\"p\">✅ Flexible finance with £0 upfront<br>✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "New energy-efficient windows and doors, with nothing to pay upfront. UK homeowners can replace old windows and doors with nothing to pay upfront: ✅ Flexible finance with £0 upfront ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation Pop your postcode in to see if your home qualifies. No obligation. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 418 characters · first line 67\"><p class=\"p\">New energy-efficient windows and doors, with help towards the cost.</p><p class=\"p\">UK homeowners can get new energy-efficient windows and doors, with help towards the cost:</p><p class=\"p\">✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation<br>✅ A warmer home and lower heating bills</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "New energy-efficient windows and doors, with help towards the cost. UK homeowners can get new energy-efficient windows and doors, with help towards the cost: ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation ✅ A warmer home and lower heating bills Pop your postcode in to see if your home qualifies. No obligation. Not a government scheme."
    }
   ],
   "videos": [],
@@ -886,13 +886,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<p class=\"p adh\" data-n=\"27\">Get new windows, £0 upfront</p>",
-    "text": "Get new windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get help with new windows</p>",
+    "text": "Get help with new windows"
    },
    {
     "id": "05",
-    "html": "<p class=\"p adh\" data-n=\"26\">Skip the thousands upfront</p>",
-    "text": "Skip the thousands upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get new windows and doors</p>",
+    "text": "Get new windows and doors"
    },
    {
     "id": "06",
@@ -911,18 +911,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "09",
-    "html": "<p class=\"p adh\" data-n=\"23\">Homeowners. £0 upfront.</p>",
-    "text": "Homeowners. £0 upfront."
+    "html": "<p class=\"p adh\" data-n=\"29\">UK homeowners. No obligation.</p>",
+    "text": "UK homeowners. No obligation."
    },
    {
     "id": "10",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 164 characters · first line 111\"><p class=\"p\">New windows don&#x27;t have to mean thousands upfront. Homeowners can get them with £0 upfront. Check your postcode.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "New windows don't have to mean thousands upfront. Homeowners can get them with £0 upfront. Check your postcode. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 146 characters · first line 120\"><p class=\"p\">New windows cost thousands. Homeowners can get help towards the cost. Check your postcode to see if your home qualifies.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "New windows cost thousands. Homeowners can get help towards the cost. Check your postcode to see if your home qualifies. Not a government scheme."
    },
    {
     "id": "11",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 431 characters · first line 71\"><p class=\"p\">New windows usually mean finding thousands upfront. They don&#x27;t have to.</p><p class=\"p\">UK homeowners can replace old windows and doors with nothing to pay upfront:</p><p class=\"p\">✅ Flexible finance with £0 upfront<br>✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "New windows usually mean finding thousands upfront. They don't have to. UK homeowners can replace old windows and doors with nothing to pay upfront: ✅ Flexible finance with £0 upfront ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation Pop your postcode in to see if your home qualifies. No obligation. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 420 characters · first line 69\"><p class=\"p\">New windows cost thousands. Homeowners can get help towards the cost.</p><p class=\"p\">UK homeowners can get new energy-efficient windows and doors, with help towards the cost:</p><p class=\"p\">✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation<br>✅ A warmer home and lower heating bills</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "New windows cost thousands. Homeowners can get help towards the cost. UK homeowners can get new energy-efficient windows and doors, with help towards the cost: ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation ✅ A warmer home and lower heating bills Pop your postcode in to see if your home qualifies. No obligation. Not a government scheme."
    }
   ],
   "videos": [],
@@ -1036,8 +1036,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<p class=\"p adh\" data-n=\"27\">Get new windows, £0 upfront</p>",
-    "text": "Get new windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get help with new windows</p>",
+    "text": "Get help with new windows"
    },
    {
     "id": "05",
@@ -1061,18 +1061,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "09",
-    "html": "<p class=\"p adh\" data-n=\"23\">Homeowners. £0 upfront.</p>",
-    "text": "Homeowners. £0 upfront."
+    "html": "<p class=\"p adh\" data-n=\"29\">UK homeowners. No obligation.</p>",
+    "text": "UK homeowners. No obligation."
    },
    {
     "id": "10",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 162 characters · first line 109\"><p class=\"p\">Window quote more than your car? Before you sign, see if your home qualifies for new windows with £0 upfront.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Window quote more than your car? Before you sign, see if your home qualifies for new windows with £0 upfront. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 126 characters · first line 100\"><p class=\"p\">Window quote more than your car? Before you sign, see if your home qualifies for help with the cost.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Window quote more than your car? Before you sign, see if your home qualifies for help with the cost. Not a government scheme."
    },
    {
     "id": "11",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 452 characters · first line 92\"><p class=\"p\">Window quote more than your car? Before you sign, see if your home qualifies for £0 upfront.</p><p class=\"p\">UK homeowners can replace old windows and doors with nothing to pay upfront:</p><p class=\"p\">✅ Flexible finance with £0 upfront<br>✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Window quote more than your car? Before you sign, see if your home qualifies for £0 upfront. UK homeowners can replace old windows and doors with nothing to pay upfront: ✅ Flexible finance with £0 upfront ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation Pop your postcode in to see if your home qualifies. No obligation. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 451 characters · first line 100\"><p class=\"p\">Window quote more than your car? Before you sign, see if your home qualifies for help with the cost.</p><p class=\"p\">UK homeowners can get new energy-efficient windows and doors, with help towards the cost:</p><p class=\"p\">✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation<br>✅ A warmer home and lower heating bills</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Window quote more than your car? Before you sign, see if your home qualifies for help with the cost. UK homeowners can get new energy-efficient windows and doors, with help towards the cost: ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation ✅ A warmer home and lower heating bills Pop your postcode in to see if your home qualifies. No obligation. Not a government scheme."
    }
   ],
   "videos": [],
@@ -1226,13 +1226,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<p class=\"p adh\" data-n=\"27\">Get new windows, £0 upfront</p>",
-    "text": "Get new windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get help with new windows</p>",
+    "text": "Get help with new windows"
    },
    {
     "id": "05",
-    "html": "<p class=\"p adh\" data-n=\"28\">Swap old windows, £0 upfront</p>",
-    "text": "Swap old windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get new windows and doors</p>",
+    "text": "Get new windows and doors"
    },
    {
     "id": "06",
@@ -1251,18 +1251,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "09",
-    "html": "<p class=\"p adh\" data-n=\"23\">Homeowners. £0 upfront.</p>",
-    "text": "Homeowners. £0 upfront."
+    "html": "<p class=\"p adh\" data-n=\"29\">UK homeowners. No obligation.</p>",
+    "text": "UK homeowners. No obligation."
    },
    {
     "id": "10",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 149 characters · first line 96\"><p class=\"p\">New windows cost thousands. Homeowners can get them fitted with £0 upfront. Check your postcode.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "New windows cost thousands. Homeowners can get them fitted with £0 upfront. Check your postcode. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 116 characters · first line 90\"><p class=\"p\">New windows cost thousands. Homeowners can get help towards the cost. Check your postcode.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "New windows cost thousands. Homeowners can get help towards the cost. Check your postcode. Not a government scheme."
    },
    {
     "id": "11",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 426 characters · first line 66\"><p class=\"p\">New windows cost thousands. You don&#x27;t have to find it all upfront.</p><p class=\"p\">UK homeowners can replace old windows and doors with nothing to pay upfront:</p><p class=\"p\">✅ Flexible finance with £0 upfront<br>✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "New windows cost thousands. You don't have to find it all upfront. UK homeowners can replace old windows and doors with nothing to pay upfront: ✅ Flexible finance with £0 upfront ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation Pop your postcode in to see if your home qualifies. No obligation. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 421 characters · first line 70\"><p class=\"p\">New windows cost thousands. You may not have to cover it all yourself.</p><p class=\"p\">UK homeowners can get new energy-efficient windows and doors, with help towards the cost:</p><p class=\"p\">✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation<br>✅ A warmer home and lower heating bills</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "New windows cost thousands. You may not have to cover it all yourself. UK homeowners can get new energy-efficient windows and doors, with help towards the cost: ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation ✅ A warmer home and lower heating bills Pop your postcode in to see if your home qualifies. No obligation. Not a government scheme."
    }
   ],
   "videos": [],
@@ -1381,13 +1381,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<p class=\"p adh\" data-n=\"27\">Get new windows, £0 upfront</p>",
-    "text": "Get new windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get new windows and doors</p>",
+    "text": "Get new windows and doors"
    },
    {
     "id": "05",
-    "html": "<p class=\"p adh\" data-n=\"25\">Get new doors, £0 upfront</p>",
-    "text": "Get new doors, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get help with new windows</p>",
+    "text": "Get help with new windows"
    },
    {
     "id": "06",
@@ -1406,18 +1406,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "09",
-    "html": "<p class=\"p adh\" data-n=\"23\">Homeowners. £0 upfront.</p>",
-    "text": "Homeowners. £0 upfront."
+    "html": "<p class=\"p adh\" data-n=\"29\">UK homeowners. No obligation.</p>",
+    "text": "UK homeowners. No obligation."
    },
    {
     "id": "10",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 157 characters · first line 104\"><p class=\"p\">Getting new windows done? Homeowners can get new windows and doors with £0 upfront. Check your postcode.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Getting new windows done? Homeowners can get new windows and doors with £0 upfront. Check your postcode. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 139 characters · first line 113\"><p class=\"p\">Getting new windows done? Homeowners can get help towards the cost of new windows and doors. Check your postcode.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Getting new windows done? Homeowners can get help towards the cost of new windows and doors. Check your postcode. Not a government scheme."
    },
    {
     "id": "11",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 427 characters · first line 67\"><p class=\"p\">Getting new windows done? You don&#x27;t have to pay for it all upfront.</p><p class=\"p\">UK homeowners can replace old windows and doors with nothing to pay upfront:</p><p class=\"p\">✅ Flexible finance with £0 upfront<br>✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Getting new windows done? You don't have to pay for it all upfront. UK homeowners can replace old windows and doors with nothing to pay upfront: ✅ Flexible finance with £0 upfront ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation Pop your postcode in to see if your home qualifies. No obligation. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 409 characters · first line 58\"><p class=\"p\">Getting new windows done? See what help you can get first.</p><p class=\"p\">UK homeowners can get new energy-efficient windows and doors, with help towards the cost:</p><p class=\"p\">✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation<br>✅ A warmer home and lower heating bills</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Getting new windows done? See what help you can get first. UK homeowners can get new energy-efficient windows and doors, with help towards the cost: ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation ✅ A warmer home and lower heating bills Pop your postcode in to see if your home qualifies. No obligation. Not a government scheme."
    }
   ],
   "videos": [],
@@ -1551,13 +1551,13 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "04",
-    "html": "<p class=\"p adh\" data-n=\"28\">Swap old windows, £0 upfront</p>",
-    "text": "Swap old windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"29\">Get a warmer home this winter</p>",
+    "text": "Get a warmer home this winter"
    },
    {
     "id": "05",
-    "html": "<p class=\"p adh\" data-n=\"29\">Get a warmer home this winter</p>",
-    "text": "Get a warmer home this winter"
+    "html": "<p class=\"p adh\" data-n=\"32\">Get new energy-efficient windows</p>",
+    "text": "Get new energy-efficient windows"
    },
    {
     "id": "06",
@@ -1576,18 +1576,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "09",
-    "html": "<p class=\"p adh\" data-n=\"23\">Homeowners. £0 upfront.</p>",
-    "text": "Homeowners. £0 upfront."
+    "html": "<p class=\"p adh\" data-n=\"29\">UK homeowners. No obligation.</p>",
+    "text": "UK homeowners. No obligation."
    },
    {
     "id": "10",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 157 characters · first line 104\"><p class=\"p\">Heating on, house still cold? Old windows let the heat out. Homeowners can replace them with £0 upfront.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Heating on, house still cold? Old windows let the heat out. Homeowners can replace them with £0 upfront. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 127 characters · first line 101\"><p class=\"p\">Heating on, house still cold? Old windows let the heat out. Homeowners can get help towards new ones.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Heating on, house still cold? Old windows let the heat out. Homeowners can get help towards new ones. Not a government scheme."
    },
    {
     "id": "11",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 419 characters · first line 59\"><p class=\"p\">Heating on, house still cold? Old windows let the heat out.</p><p class=\"p\">UK homeowners can replace old windows and doors with nothing to pay upfront:</p><p class=\"p\">✅ Flexible finance with £0 upfront<br>✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Heating on, house still cold? Old windows let the heat out. UK homeowners can replace old windows and doors with nothing to pay upfront: ✅ Flexible finance with £0 upfront ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation Pop your postcode in to see if your home qualifies. No obligation. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 410 characters · first line 59\"><p class=\"p\">Heating on, house still cold? Old windows let the heat out.</p><p class=\"p\">UK homeowners can get new energy-efficient windows and doors, with help towards the cost:</p><p class=\"p\">✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation<br>✅ A warmer home and lower heating bills</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Heating on, house still cold? Old windows let the heat out. UK homeowners can get new energy-efficient windows and doors, with help towards the cost: ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation ✅ A warmer home and lower heating bills Pop your postcode in to see if your home qualifies. No obligation. Not a government scheme."
    }
   ],
   "videos": [],
@@ -1726,8 +1726,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "05",
-    "html": "<p class=\"p adh\" data-n=\"28\">Swap old windows, £0 upfront</p>",
-    "text": "Swap old windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"32\">Get new energy-efficient windows</p>",
+    "text": "Get new energy-efficient windows"
    },
    {
     "id": "06",
@@ -1736,8 +1736,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "07",
-    "html": "<p class=\"p adh\" data-n=\"27\">Get new windows, £0 upfront</p>",
-    "text": "Get new windows, £0 upfront"
+    "html": "<p class=\"p adh\" data-n=\"25\">Get help with new windows</p>",
+    "text": "Get help with new windows"
    },
    {
     "id": "08",
@@ -1746,18 +1746,18 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "09",
-    "html": "<p class=\"p adh\" data-n=\"23\">Homeowners. £0 upfront.</p>",
-    "text": "Homeowners. £0 upfront."
+    "html": "<p class=\"p adh\" data-n=\"29\">UK homeowners. No obligation.</p>",
+    "text": "UK homeowners. No obligation."
    },
    {
     "id": "10",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 165 characters · first line 112\"><p class=\"p\">Old windows let the heat out. Homeowners can get new energy-efficient ones with £0 upfront. Check your postcode.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Old windows let the heat out. Homeowners can get new energy-efficient ones with £0 upfront. Check your postcode. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 1 · short, for Reels and Stories · 135 characters · first line 109\"><p class=\"p\">Old windows let the heat out. Homeowners can get help towards new energy-efficient ones. Check your postcode.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Old windows let the heat out. Homeowners can get help towards new energy-efficient ones. Check your postcode. Not a government scheme."
    },
    {
     "id": "11",
-    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 433 characters · first line 73\"><p class=\"p\">Want to spend less heating your home this winter? Start with the windows.</p><p class=\"p\">UK homeowners can replace old windows and doors with nothing to pay upfront:</p><p class=\"p\">✅ Flexible finance with £0 upfront<br>✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Finance subject to status. Not a government scheme.</p></div>",
-    "text": "Want to spend less heating your home this winter? Start with the windows. UK homeowners can replace old windows and doors with nothing to pay upfront: ✅ Flexible finance with £0 upfront ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation Pop your postcode in to see if your home qualifies. No obligation. Finance subject to status. Not a government scheme."
+    "html": "<div class=\"adp\" data-lab=\"Primary text 2 · full · 424 characters · first line 73\"><p class=\"p\">Want to spend less heating your home this winter? Start with the windows.</p><p class=\"p\">UK homeowners can get new energy-efficient windows and doors, with help towards the cost:</p><p class=\"p\">✅ Non-government grants that may cover the full cost<br>✅ Fitted by certified installers<br>✅ Fewer draughts and less condensation<br>✅ A warmer home and lower heating bills</p><p class=\"p\">Pop your postcode in to see if your home qualifies. No obligation.</p><p class=\"p\">Not a government scheme.</p></div>",
+    "text": "Want to spend less heating your home this winter? Start with the windows. UK homeowners can get new energy-efficient windows and doors, with help towards the cost: ✅ Non-government grants that may cover the full cost ✅ Fitted by certified installers ✅ Fewer draughts and less condensation ✅ A warmer home and lower heating bills Pop your postcode in to see if your home qualifies. No obligation. Not a government scheme."
    }
   ],
   "videos": [],
