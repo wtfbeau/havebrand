@@ -84,8 +84,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "16",
-    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">It&#x27;s how they find new customers. Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront.</span></span></div>",
-    "text": "Fitter It's how they find new customers. Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront."
+    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">It&#x27;s how they find new customers. Some people get the whole job covered. Most get part of it paid for.</span></span></div>",
+    "text": "Fitter It's how they find new customers. Some people get the whole job covered. Most get part of it paid for."
    },
    {
     "id": "17",
@@ -305,8 +305,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "20",
-    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront. Either way, you know where you stand before anyone quotes you.</span></span></div>",
-    "text": "Fitter Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront. Either way, you know where you stand before anyone quotes you."
+    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">Some people get the whole job covered. Most get part of it paid for. Either way, you know where you stand before anyone quotes you.</span></span></div>",
+    "text": "Fitter Some people get the whole job covered. Most get part of it paid for. Either way, you know where you stand before anyone quotes you."
    },
    {
     "id": "21",
@@ -481,8 +481,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "14",
-    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">For some people, the whole job. Most get part of it paid for, or pay nothing upfront.</span></span></div>",
-    "text": "Fitter For some people, the whole job. Most get part of it paid for, or pay nothing upfront."
+    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">For some people, the whole job. Most get part of it paid for.</span></span></div>",
+    "text": "Fitter For some people, the whole job. Most get part of it paid for."
    },
    {
     "id": "15",
@@ -823,8 +823,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "14",
-    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">No, proper windows, fitted by certified installers. The catch is not everyone gets the lot. Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront.</span></span></div>",
-    "text": "Fitter No, proper windows, fitted by certified installers. The catch is not everyone gets the lot. Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront."
+    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">No, proper windows, fitted by certified installers. The catch is not everyone gets the lot. Some people get the whole job covered. Most get part of it paid for.</span></span></div>",
+    "text": "Fitter No, proper windows, fitted by certified installers. The catch is not everyone gets the lot. Some people get the whole job covered. Most get part of it paid for."
    },
    {
     "id": "15",
@@ -994,8 +994,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "13",
-    "html": "<div class=\"line cont\"><span class=\"who\">Woman</span><span class=\"body\"><span class=\"say\">Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront. Either way, you know where you stand before anyone quotes you.</span></span></div>",
-    "text": "Woman Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront. Either way, you know where you stand before anyone quotes you."
+    "html": "<div class=\"line cont\"><span class=\"who\">Woman</span><span class=\"body\"><span class=\"say\">Some people get the whole job covered. Most get part of it paid for. Either way, you know where you stand before anyone quotes you.</span></span></div>",
+    "text": "Woman Some people get the whole job covered. Most get part of it paid for. Either way, you know where you stand before anyone quotes you."
    },
    {
     "id": "14",
@@ -1159,8 +1159,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "16",
-    "html": "<div class=\"line\"><span class=\"who\">Voiceover</span><span class=\"body\"><span class=\"say\">Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront.</span></span></div>",
-    "text": "Voiceover Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront."
+    "html": "<div class=\"line\"><span class=\"who\">Voiceover</span><span class=\"body\"><span class=\"say\">Some people get the whole job covered. Most get part of it paid for.</span></span></div>",
+    "text": "Voiceover Some people get the whole job covered. Most get part of it paid for."
    },
    {
     "id": "17",
@@ -1194,8 +1194,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "23",
-    "html": "<div class=\"os\"><div class=\"oslab\">Handwritten labels to add in CapCut, as each drawing appears</div><div class=\"ostx\">£10,000 (on the price tag) / Every winter (on the heat and coins) / Check first (on the phone) / Window companies (on the van) / Not the government (on the crossed-out building) / Whole job covered (on the umbrella) / Part paid or £0 upfront (on the half-green tag) / Homeowners (on the key) / Your postcode (on the map pin)</div></div>",
-    "text": "Handwritten labels to add in CapCut, as each drawing appears £10,000 (on the price tag) / Every winter (on the heat and coins) / Check first (on the phone) / Window companies (on the van) / Not the government (on the crossed-out building) / Whole job covered (on the umbrella) / Part paid or £0 upfront (on the half-green tag) / Homeowners (on the key) / Your postcode (on the map pin)"
+    "html": "<div class=\"os\"><div class=\"oslab\">Handwritten labels to add in CapCut, as each drawing appears</div><div class=\"ostx\">£10,000 (on the price tag) / Every winter (on the heat and coins) / Check first (on the phone) / Window companies (on the van) / Not the government (on the crossed-out building) / Whole job covered (on the umbrella) / Part paid (on the half-green tag) / Homeowners (on the key) / Your postcode (on the map pin)</div></div>",
+    "text": "Handwritten labels to add in CapCut, as each drawing appears £10,000 (on the price tag) / Every winter (on the heat and coins) / Check first (on the phone) / Window companies (on the van) / Not the government (on the crossed-out building) / Whole job covered (on the umbrella) / Part paid (on the half-green tag) / Homeowners (on the key) / Your postcode (on the map pin)"
    },
    {
     "id": "24",
@@ -1334,8 +1334,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "13",
-    "html": "<div class=\"line cont\"><span class=\"who\">Woman</span><span class=\"body\"><span class=\"say\">Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront.</span></span></div>",
-    "text": "Woman Some people get the whole job covered. Most get part of it paid for, or pay nothing upfront."
+    "html": "<div class=\"line cont\"><span class=\"who\">Woman</span><span class=\"body\"><span class=\"say\">Some people get the whole job covered. Most get part of it paid for.</span></span></div>",
+    "text": "Woman Some people get the whole job covered. Most get part of it paid for."
    },
    {
     "id": "14",
@@ -1509,8 +1509,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "17",
-    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">For some people, the whole lot. If not, you&#x27;ll usually get offered finance or money off. Either way, you know where you stand before anyone quotes you.</span></span></div>",
-    "text": "Fitter For some people, the whole lot. If not, you'll usually get offered finance or money off. Either way, you know where you stand before anyone quotes you."
+    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">For some people, the whole lot. If not, you&#x27;ll usually get money off. Either way, you know where you stand before anyone quotes you.</span></span></div>",
+    "text": "Fitter For some people, the whole lot. If not, you'll usually get money off. Either way, you know where you stand before anyone quotes you."
    },
    {
     "id": "18",
@@ -1654,8 +1654,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "12",
-    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">That&#x27;s why most people leave it. But you don&#x27;t always have to pay it all upfront.</span></span></div>",
-    "text": "Fitter That's why most people leave it. But you don't always have to pay it all upfront."
+    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">That&#x27;s why most people leave it. But you don&#x27;t always have to pay for it all yourself.</span></span></div>",
+    "text": "Fitter That's why most people leave it. But you don't always have to pay for it all yourself."
    },
    {
     "id": "13",
@@ -1664,8 +1664,8 @@ export const boards: Record<string, Board> = {
    },
    {
     "id": "14",
-    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">There&#x27;s funding from window companies, not the government. Some homeowners get grants towards it. Most spread the cost, with nothing to pay upfront.</span></span></div>",
-    "text": "Fitter There's funding from window companies, not the government. Some homeowners get grants towards it. Most spread the cost, with nothing to pay upfront."
+    "html": "<div class=\"line\"><span class=\"who\">Fitter</span><span class=\"body\"><span class=\"say\">There&#x27;s funding from window companies, not the government. Some homeowners get the whole job covered. Most get part of it paid for.</span></span></div>",
+    "text": "Fitter There's funding from window companies, not the government. Some homeowners get the whole job covered. Most get part of it paid for."
    },
    {
     "id": "15",
