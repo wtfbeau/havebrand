@@ -1,0 +1,754 @@
+"use client";
+
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { Board, Block } from "./copy";
+
+type Boards = Record<string, Board>;
+type Notes = Record<string, string>;
+type Sync = "local" | "syncing" | "synced" | "error";
+const BOARD_W = 760;
+const GAP = 280;
+// Rows on the canvas, top to bottom. Each board's group comes from make-delivery.py.
+const ROWS = [
+  { group: "new", label: "New scripts", sub: "Not live yet" },
+  { group: "running", label: "Running", sub: "Live on Meta, best first" },
+  { group: "stopped", label: "Stopped", sub: "Paused on Meta" },
+] as const;
+
+function textOf(html: string) {
+  const el = document.createElement("div");
+  el.innerHTML = html;
+  return (el.innerText || el.textContent || "").replace(/\n{3,}/g, "\n\n").trim();
+}
+async function copy(s: string) {
+  try {
+    await navigator.clipboard.writeText(s);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// Turn a block's wireframe markup into plain semantic HTML so a paste into Google Docs keeps headings, bold and lists.
+function toRich(html: string): string {
+  const root = document.createElement("div");
+  root.innerHTML = html;
+  const inline = (el: Element) => {
+    const c = el.cloneNode(true) as HTMLElement;
+    c.querySelectorAll(".fill").forEach((f) => {
+      const b = document.createElement("b");
+      b.innerHTML = f.innerHTML;
+      f.replaceWith(b);
+    });
+    c.querySelectorAll("span,div").forEach((x) => {
+      if (x.children.length === 0) x.replaceWith(document.createTextNode(x.textContent ?? ""));
+    });
+    return c.innerHTML.trim();
+  };
+  const out: string[] = [];
+  const walk = (el: Element) => {
+    const cl = el.classList;
+    if (cl.contains("line")) out.push(`<p>${el.querySelector(".who")?.textContent ? `<b>${el.querySelector(".who")?.textContent}:</b> ` : ""}${inline(el.querySelector(".say") ?? el)}</p>`);
+    else if (cl.contains("dir")) out.push(`<p><i>${Array.from(el.childNodes).map((c) => c.textContent?.trim()).filter(Boolean).join(". ")}</i></p>`);
+    else if (cl.contains("os")) out.push(`<p><b>${el.querySelector(".oslab")?.textContent ?? ""}:</b><br>${el.querySelector(".ostx")?.innerHTML ?? ""}</p>`);
+    else if (cl.contains("quote")) out.push(`<blockquote>${inline(el)}</blockquote>`);
+    else if (cl.contains("fmt")) out.push(`<p><b>${el.querySelector("span")?.textContent ?? ""}. ${el.querySelector("b")?.textContent ?? ""}</b> ${el.querySelector("div")?.lastChild?.textContent ?? ""}</p>`);
+    else if (cl.contains("spec")) out.push(`<p><b>${el.querySelector(".lab")?.textContent ?? ""}</b></p>`, ...Array.from(el.querySelectorAll(".p")).map((x) => `<p>${x.innerHTML}</p>`));
+    else if (cl.contains("h1")) out.push(`<h1>${inline(el)}</h1>`);
+    else if (cl.contains("sh")) out.push(`<h2>${inline(el)}</h2>`);
+    else if (cl.contains("dek")) out.push(`<p><b>${inline(el)}</b></p>`);
+    else if (cl.contains("lab") || cl.contains("strip") || cl.contains("cta")) out.push(`<p><b>${inline(el)}</b></p>`);
+    else if (cl.contains("q")) out.push(`<p><b>${inline(el)}</b></p>`);
+    else if (cl.contains("p") || cl.contains("small")) out.push(`<p>${inline(el)}</p>`);
+    else if (cl.contains("bul")) out.push(`<ul>${Array.from(el.children).map((c) => `<li>${inline(c)}</li>`).join("")}</ul>`);
+    else if (cl.contains("num")) {
+      const t = el.querySelector(".numt"), d = el.querySelector(".numd"), n = el.querySelector(".numn"), tag = el.querySelector(".lab");
+      out.push(`<p><b>${n?.textContent?.trim() ?? ""} ${t ? inline(t) : ""}</b><br>${d ? inline(d) : ""}${tag ? `<br><i>${inline(tag)}</i>` : ""}</p>`);
+    } else if (cl.contains("wrow")) out.push(`<p>${Array.from(el.children).map((c) => inline(c)).filter(Boolean).join(" · ")}</p>`);
+    else if (cl.contains("stat")) out.push(`<p>${Array.from(el.children).map((c) => `${c.querySelector(".statlab")?.textContent ?? ""}: ${c.querySelector(".statval")?.textContent ?? ""}`).join(" · ")}</p>`);
+    else if (cl.contains("tst")) out.push(`<blockquote>${inline(el.querySelector(".tstq") ?? el)}<br><b>${el.querySelector(".tstn")?.textContent ?? ""}</b></blockquote>`);
+    else if (cl.contains("img") || cl.contains("avatar")) return;
+    else if (cl.contains("tstbox") || cl.contains("pen") || cl.contains("band") || cl.contains("byline")) Array.from(el.children).forEach(walk);
+    else if (el.children.length && !el.classList.contains("rule")) Array.from(el.children).forEach(walk);
+    else if (el.textContent?.trim()) out.push(`<p>${inline(el)}</p>`);
+  };
+  Array.from(root.children).forEach(walk);
+  return out.join("\n");
+}
+
+async function copyRich(htmls: string[]) {
+  const html = htmls.map(toRich).filter(Boolean).join("\n");
+  const text = htmls.map(textOf).filter(Boolean).join("\n\n");
+  try {
+    if (typeof ClipboardItem !== "undefined") {
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          "text/html": new Blob([html], { type: "text/html" }),
+          "text/plain": new Blob([text], { type: "text/plain" }),
+        }),
+      ]);
+      return true;
+    }
+  } catch {}
+  return copy(text);
+}
+// One video prompt per script, copied from the board as it stands (hand edits included). Format that worked best
+// (G, 10 Nov): the board almost as written. Video with the story beats and the length, short Characters, then
+// "Name: line" with no stage directions. Titles, on-screen text, captions and end cards are CapCut's job, so they
+// never reach the prompt.
+const clean = (s: string) => s.replace(/\s+/g, " ").trim();
+
+// Opening for an Arcads/Seedance extend: the same scene and people restated, so G can paste whichever script lines
+// come next underneath it.
+const CONTINUE = "Continue from the last frame. Same scene, same people, same voices.";
+function buildContinuation(htmls: string[]): string {
+  const head = buildPrompt(htmls).split("\n\nScript\n")[0].replace(/\s*About \d+ seconds\./gi, "");
+  return `${CONTINUE}\n\n${head}\n\nScript\n`;
+}
+
+// Where a generation runs out: Script 3's first 15-second clip got through 69 spoken words ("...find new customers."),
+// so a mark goes before the first line that would push a 15-second stretch past 70 words.
+// Ad copy boards: everything as plain text, in the order Ads Manager asks for it.
+function buildAdCopy(htmls: string[]): string {
+  const out: string[] = [];
+  htmls.forEach((h) => {
+    const d = new DOMParser().parseFromString(h, "text/html").body;
+    const el = d.firstElementChild as HTMLElement | null;
+    if (!el || el.classList.contains("strip") || el.classList.contains("h1")) return;
+    if (el.classList.contains("sh")) out.push(`\n${clean(el.textContent ?? "")}`);
+    else if (el.classList.contains("adp")) {
+      const ps = [...el.querySelectorAll("p")].map((p) => p.innerHTML.split(/<br\s*\/?>/i).map((x) => clean(x.replace(/<[^>]+>/g, " "))).join("\n"));
+      out.push(`\n${(el.dataset.lab ?? "").split(" · ").slice(0, 2).join(" · ")}\n${ps.join("\n\n")}`);
+    } else out.push(clean(el.textContent ?? ""));
+  });
+  return out.join("\n").trim();
+}
+const WORDS_PER_15S = 70;
+function cutMarks(htmls: string[]): Record<number, number> {
+  const marks: Record<number, number> = {};
+  let total = 0;
+  let next = WORDS_PER_15S;
+  htmls.forEach((h, i) => {
+    const say = /class="say">([\s\S]*?)<\/span>/.exec(h)?.[1].replace(/<[^>]+>/g, " ") ?? "";
+    const n = say.split(/\s+/).filter(Boolean).length;
+    if (n && total && total + n > next) {
+      marks[i] = Math.round((next / WORDS_PER_15S) * 15);
+      while (total + n > next) next += WORDS_PER_15S;
+    }
+    total += n;
+  });
+  return marks;
+}
+
+function buildPrompt(htmls: string[]): string {
+  const root = document.createElement("div");
+  root.innerHTML = htmls.join("");
+  const t = (el: Element | null | undefined) => clean(el?.textContent ?? "");
+  const head: string[] = [];
+  const body: string[] = [];
+  let lastWho = "";
+  let pending: { who: string; say: string } | null = null;
+  const flush = () => {
+    if (pending) body.push(`${pending.who}: ${pending.say}`);
+    pending = null;
+  };
+  Array.from(root.children).forEach((el) => {
+    const cl = el.classList;
+    if (cl.contains("spec")) {
+      const lab = t(el.querySelector(".lab"));
+      head.push(`${lab}\n${Array.from(el.querySelectorAll(".p")).map((x) => t(x)).join("\n")}`);
+    } else if (cl.contains("dir")) {
+      flush();
+      const c = el.cloneNode(true) as HTMLElement;
+      c.querySelectorAll("b,.cap").forEach((x) => x.remove());
+      // Back to the source wording: "Shot 1, no speech: evening. ..." and a full stop the board display drops.
+      const rest = t(c).replace(/^no speech:\s*/i, "");
+      body.push(`${t(el.querySelector("b"))}${rest === t(c) ? ":" : ", no speech:"} ${rest}${/[.?!]$/.test(rest) ? "" : "."}`);
+    } else if (cl.contains("line")) {
+      const who = t(el.querySelector(".who")) || lastWho;
+      lastWho = who;
+      const cue = t(el.querySelector(".cue"));
+      const say = `${cue ? `(${cue}) ` : ""}${t(el.querySelector(".say"))}`;
+      if (!t(el.querySelector(".say"))) return;
+      // A speaker's back-to-back lines (a monologue) become one line.
+      if (pending && pending.who === who && !cue) pending.say = `${pending.say} ${say}`;
+      else {
+        flush();
+        pending = { who, say };
+      }
+    }
+  });
+  flush();
+  return `${head.join("\n\n")}\n\nScript\n${body.join("\n")}`;
+}
+
+// Notes and edits are stored as "<signature of the original block>|<value>". When the block's text changes in the
+// source, the signature no longer matches and the old note or edit drops off instead of landing on the new text.
+function sig(s: string) {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+  return (h >>> 0).toString(36);
+}
+const isRow = (b: Block) => /^<div class="wrow"/.test(b.html);
+const isSilent = (b: Block) => b.text.length === 0;
+
+// `store` keeps each page's notes and edits apart ("dowo" for the v3 page, "dowo-v4" for the fresh set).
+export default function Reviewer({ boards, store = "dowo", heading = "New Meta scripts · 15 video scripts" }: { boards: Boards; store?: string; heading?: string }) {
+  const KEY = `${store}-notes-v1`;
+  const DOC = `${store}-scripts`;
+  // Hand edits to the script text: same store, own doc, value = the block's edited HTML.
+  const EDIT_DOC = `${store}-scripts-edits`;
+  const EDIT_KEY = `${store}-edits-v1`;
+  const [stored, setNotes] = useState<Notes>({});
+  const [storedEdits, setEdits] = useState<Notes>({});
+  const sigs = useMemo(() => {
+    const m: Notes = {};
+    Object.keys(boards).forEach((k) => boards[k].blocks.forEach((bl) => (m[`${k}:${bl.id}`] = sig(bl.html))));
+    return m;
+  }, [boards]);
+  const unpack = useCallback(
+    (raw: Notes) => {
+      const o: Notes = {};
+      Object.entries(raw).forEach(([id, v]) => {
+        const pre = `${sigs[id]}|`;
+        if (sigs[id] && v.startsWith(pre)) o[id] = v.slice(pre.length);
+      });
+      return o;
+    },
+    [sigs],
+  );
+  const pack = (id: string, v: string) => `${sigs[id]}|${v}`;
+  const notes = useMemo(() => unpack(stored), [stored, unpack]);
+  const edits = useMemo(() => unpack(storedEdits), [storedEdits, unpack]);
+  const [editing, setEditing] = useState(false);
+  const [open, setOpen] = useState<string | null>(null);
+  const [toast, setToast] = useState<string | null>(null);
+  const [view, setView] = useState({ x: 40, y: 40, s: 0.5 });
+  const [space, setSpace] = useState(false);
+  const [sync, setSync] = useState<Sync>("local");
+  const [showList, setShowList] = useState(false);
+  // The prompt builders need the DOM, so the continuation boxes fill in after mount.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  // Phones get a plain scrolling page: the drag-and-zoom canvas blocks touch scrolling.
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 820px)");
+    const on = () => setMobile(mq.matches);
+    on();
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, []);
+  const timers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
+  const vp = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ x: number; y: number; vx: number; vy: number } | null>(null);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(EDIT_KEY);
+      if (raw) setEdits(JSON.parse(raw));
+    } catch {}
+    fetch(`/api/deliveries/notes?doc=${EDIT_DOC}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (j?.ok) {
+          setEdits(j.notes);
+          try {
+            localStorage.setItem(EDIT_KEY, JSON.stringify(j.notes));
+          } catch {}
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const saveEdit = (id: string, html: string | null) => {
+    setEdits((prev) => {
+      const n = { ...prev };
+      if (html === null) delete n[id];
+      else n[id] = pack(id, html);
+      try {
+        localStorage.setItem(EDIT_KEY, JSON.stringify(n));
+      } catch {}
+      return n;
+    });
+    fetch("/api/deliveries/notes", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ doc: EDIT_DOC, id, text: html === null ? "" : pack(id, html) }),
+    })
+      .then((r) => setSync(r.status === 503 ? "local" : r.ok ? "synced" : "error"))
+      .catch(() => setSync("error"));
+  };
+  const htmlOf = (k: string, bl: Block) => edits[`${k}:${bl.id}`] ?? bl.html;
+  const editCount = Object.keys(edits).length;
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (raw) setNotes(JSON.parse(raw));
+    } catch {}
+    fetch(`/api/deliveries/notes?doc=${DOC}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (j?.ok) {
+          setNotes(j.notes);
+          setSync("synced");
+          try {
+            localStorage.setItem(KEY, JSON.stringify(j.notes));
+          } catch {}
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const push = (id: string, text: string) => {
+    clearTimeout(timers.current[id]);
+    timers.current[id] = setTimeout(async () => {
+      setSync((s) => (s === "local" ? s : "syncing"));
+      try {
+        const r = await fetch("/api/deliveries/notes", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ doc: DOC, id, text }),
+        });
+        if (r.status === 503) setSync("local");
+        else setSync(r.ok ? "synced" : "error");
+      } catch {
+        setSync("error");
+      }
+    }, 600);
+  };
+
+  const save = (n: Notes, changed?: string) => {
+    const raw: Notes = {};
+    Object.entries(n).forEach(([id, v]) => (raw[id] = pack(id, v)));
+    setNotes(raw);
+    try {
+      localStorage.setItem(KEY, JSON.stringify(raw));
+    } catch {}
+    if (changed) push(changed, n[changed] === undefined ? "" : raw[changed]);
+  };
+  const flash = (m: string) => {
+    setToast(m);
+    setTimeout(() => setToast(null), 1400);
+  };
+  const noteCount = useMemo(() => Object.values(notes).filter((v) => v.trim()).length, [notes]);
+
+  const rows = ROWS.map((r) => ({ ...r, keys: (Object.keys(boards) as (keyof Boards)[]).filter((k) => boards[k].group === r.group) })).filter((r) => r.keys.length);
+  const n = Math.max(...rows.map((r) => r.keys.length));
+  const worldW = BOARD_W * n + GAP * (n - 1) + 80;
+
+  const fit = useCallback(() => {
+    const el = vp.current;
+    if (!el) return;
+    const s = Math.min(1, Math.max(0.5, (el.clientWidth - 48) / worldW));
+    setView({ x: 24, y: 24, s });
+  }, [worldW]);
+
+  useEffect(() => {
+    fit();
+  }, [fit]);
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.code === "Space" && !(e.target as HTMLElement)?.closest("textarea,input,[contenteditable=true]")) {
+        setSpace(true);
+        e.preventDefault();
+      }
+    };
+    const up = (e: KeyboardEvent) => e.code === "Space" && setSpace(false);
+
+    window.addEventListener("keydown", down);
+    window.addEventListener("keyup", up);
+    return () => {
+      window.removeEventListener("keydown", down);
+      window.removeEventListener("keyup", up);
+    };
+  }, []);
+
+  useEffect(() => {
+    const el = vp.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      if (window.matchMedia("(max-width: 820px)").matches) return;
+      e.preventDefault();
+      if (e.ctrlKey || e.metaKey) {
+        const r = el.getBoundingClientRect();
+        const mx = e.clientX - r.left, my = e.clientY - r.top;
+        setView((v) => {
+          const s = Math.min(2, Math.max(0.15, v.s * Math.exp(-e.deltaY * 0.01)));
+          return { s, x: mx - ((mx - v.x) * s) / v.s, y: my - ((my - v.y) * s) / v.s };
+        });
+      } else {
+        setView((v) => ({ ...v, x: v.x - e.deltaX, y: v.y - e.deltaY }));
+      }
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, []);
+
+  const zoomBy = (f: number) => {
+    const el = vp.current;
+    if (!el) return;
+    const mx = el.clientWidth / 2, my = el.clientHeight / 2;
+    setView((v) => {
+      const s = Math.min(2, Math.max(0.15, v.s * f));
+      return { s, x: mx - ((mx - v.x) * s) / v.s, y: my - ((my - v.y) * s) / v.s };
+    });
+  };
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    const t = e.target as HTMLElement;
+    const onBoard = t.closest("[data-board]");
+    if (onBoard && !space) return;
+    if (t.closest("button,textarea,video,a")) return;
+    drag.current = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y };
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+  };
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!drag.current) return;
+    const d = drag.current;
+    setView((v) => ({ ...v, x: d.vx + (e.clientX - d.x), y: d.vy + (e.clientY - d.y) }));
+  };
+  const onPointerUp = () => (drag.current = null);
+
+  const allNotes = () => {
+    const lines: string[] = [];
+    (Object.keys(boards) as (keyof Boards)[]).forEach((k) => {
+      const b = boards[k];
+      const mine = b.blocks.filter((bl) => notes[`${k}:${bl.id}`]?.trim());
+      if (!mine.length) return;
+      lines.push(b.title.toUpperCase(), "");
+      mine.forEach((bl) => {
+        const ex = bl.text.length > 90 ? bl.text.slice(0, 90) + "…" : bl.text;
+        lines.push(`${bl.id} · "${ex}"`, notes[`${k}:${bl.id}`].trim(), "");
+      });
+      lines.push("");
+    });
+    return lines.join("\n").trim();
+  };
+  const boardHtml = (k: keyof Boards) => boards[k].blocks.map((b) => htmlOf(k as string, b));
+
+  const pct = Math.round(view.s * 100);
+
+  return (
+    <div className="fixed inset-0 flex flex-col bg-[#3f3a34] text-[#1c1814]" style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
+      <header className="z-30 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#55504a] bg-[#3f3a34] px-4 py-2.5 text-[#f3efe6]">
+        <div className="mr-auto">
+          <div className="text-[10px] font-bold uppercase tracking-[.14em] text-[#b8b0a2]">DOWO · Windows and doors</div>
+          <div className="text-[15px] font-bold leading-tight">{heading}</div>
+        </div>
+        <div className="hidden text-[12px] text-[#b8b0a2] md:block">
+          Drag the background to move · ⌘ or Ctrl + scroll to zoom · Hover a block to copy or note ·{" "}
+          {sync === "synced" && "Notes save as you type and are shared"}
+          {sync === "syncing" && "Saving…"}
+          {sync === "local" && "Notes save in this browser; send them with Copy all notes"}
+          {sync === "error" && "Notes saved in this browser; sharing failed"}
+        </div>
+        <button
+          onClick={() => setEditing((v) => !v)}
+          className={`rounded-full px-4 py-1.5 text-[12px] font-semibold ${editing ? "bg-[#f0d95a] text-[#1c1814] hover:bg-[#f6e27a]" : "border border-[#6a645c] text-[#f3efe6] hover:bg-[#4a453e]"}`}
+        >
+          {editing ? "Done editing" : "Edit text"}
+          {editCount ? ` (${editCount} edited)` : ""}
+        </button>
+        {editCount > 0 && (
+          <button
+            onClick={async () => {
+              const out: string[] = [];
+              Object.keys(boards).forEach((k) =>
+                boards[k].blocks.forEach((bl) => {
+                  const h = edits[`${k}:${bl.id}`];
+                  if (h !== undefined) out.push(`${boards[k].title} · block ${bl.id}`, `WAS: ${bl.text}`, `NOW: ${textOf(h).replace(/\s+/g, " ")}`, "");
+                }),
+              );
+              flash((await copy(out.join("\n").trim())) ? "All edits copied" : "Copy failed");
+            }}
+            className="rounded-full border border-[#6a645c] px-3 py-1.5 text-[12px] font-semibold text-[#f3efe6] hover:bg-[#4a453e]"
+          >
+            Copy all edits
+          </button>
+        )}
+        {noteCount > 0 && (
+          <button
+            onClick={() => setShowList((v) => !v)}
+            className="rounded-full border border-[#6a645c] px-3 py-1.5 text-[12px] font-semibold text-[#f3efe6] hover:bg-[#4a453e]"
+          >
+            {showList ? "Back to canvas" : "List notes"}
+          </button>
+        )}
+        <div className="hidden items-center gap-1 rounded-full border border-[#6a645c] bg-[#4a453e] p-0.5 text-[12px] font-semibold text-[#f3efe6] md:flex">
+          <button onClick={() => zoomBy(1 / 1.25)} className="h-7 w-7 rounded-full hover:bg-[#5a544c]">−</button>
+          <button onClick={fit} className="h-7 min-w-[52px] rounded-full px-2 hover:bg-[#5a544c]">{pct}%</button>
+          <button onClick={() => zoomBy(1.25)} className="h-7 w-7 rounded-full hover:bg-[#5a544c]">+</button>
+        </div>
+        {noteCount > 0 && (
+          <button
+            onClick={() => {
+              Object.keys(stored).forEach((id) => push(id, ""));
+              save({});
+              setOpen(null);
+              flash("Notes cleared");
+            }}
+            className="rounded-full border border-[#6a645c] px-3 py-1.5 text-[12px] font-semibold text-[#f3efe6] hover:bg-[#4a453e]"
+          >
+            Clear notes
+          </button>
+        )}
+        <button
+          onClick={async () => {
+            if (!noteCount) return flash("No notes yet");
+            flash((await copy(allNotes())) ? "All notes copied" : "Copy failed");
+          }}
+          className="rounded-full bg-[#e4531d] px-4 py-1.5 text-[12px] font-semibold text-white hover:bg-[#f0622b]"
+        >
+          Copy all notes{noteCount ? ` (${noteCount})` : ""}
+        </button>
+      </header>
+
+      <div
+        ref={vp}
+        onPointerDown={mobile ? undefined : onPointerDown}
+        onPointerMove={mobile ? undefined : onPointerMove}
+        onPointerUp={mobile ? undefined : onPointerUp}
+        onPointerCancel={mobile ? undefined : onPointerUp}
+        className={`relative flex-1 ${mobile ? "overflow-y-auto overflow-x-hidden" : "overflow-hidden"} ${space ? "cursor-grab" : ""} ${drag.current ? "cursor-grabbing" : ""}`}
+        style={
+          mobile
+            ? { WebkitOverflowScrolling: "touch" }
+            : {
+                backgroundImage: "radial-gradient(#5a544c 1px, transparent 1px)",
+                backgroundSize: `${24 * view.s}px ${24 * view.s}px`,
+                backgroundPosition: `${view.x}px ${view.y}px`,
+                touchAction: "none",
+              }
+        }
+      >
+        <div
+          className={mobile ? "flex flex-col gap-10 px-3 py-4" : "absolute left-0 top-0 flex origin-top-left flex-col gap-[200px]"}
+          style={mobile ? undefined : { transform: `translate(${view.x}px, ${view.y}px) scale(${view.s})`, width: worldW }}
+        >
+          {rows.map((r) => (
+          <section key={r.group} className={mobile ? "flex flex-col gap-10" : "flex flex-col gap-10"}>
+          <div className={mobile ? "border-b border-[#6a645c] pb-2" : "border-b-2 border-[#6a645c] pb-4"}>
+            <div className={`font-bold text-[#f3efe6] ${mobile ? "text-[20px]" : "text-[44px]"}`}>{r.label}</div>
+            <div className={`text-[#b8b0a2] ${mobile ? "text-[13px]" : "text-[20px]"}`}>{r.sub}</div>
+          </div>
+          <div className={mobile ? "flex flex-col gap-10" : "flex items-start"} style={mobile ? undefined : { gap: GAP }}>
+          {r.keys.map((k) => {
+            const b = boards[k];
+            const ads = b.kind === "ads";
+            const marks = ads ? {} as Record<number, number> : cutMarks(boardHtml(k));
+            return (
+              <div key={k} className={mobile ? "relative w-full" : "relative shrink-0"} style={mobile ? undefined : { width: BOARD_W }}>
+                <div className="mb-2 flex items-end justify-between px-0.5">
+                  <div>
+                    <div className="text-[14px] font-bold text-[#f3efe6]">{b.title}</div>
+                    <div className="text-[12px] text-[#b8b0a2]">{b.sub}</div>
+                  </div>
+                  <button
+                    onClick={async () =>
+                      flash((await copy(ads ? buildAdCopy(boardHtml(k)) : buildPrompt(boardHtml(k)))) ? (ads ? "Ad copy copied" : "Prompt copied") : "Copy failed")
+                    }
+                    className="rounded-full border border-[#8a8074] px-2.5 py-1 text-[11px] font-semibold text-[#f3efe6] hover:bg-[#f3efe6] hover:text-[#1c1814]"
+                  >
+                    {ads ? "Copy all" : "Copy prompt"}
+                  </button>
+                </div>
+                <div data-board data-page={k} className="wf rounded-sm shadow-[0_6px_30px_rgba(0,0,0,.45)]" style={{ pointerEvents: space ? "none" : "auto" }}>
+                  <div className="sheet">
+                    {b.blocks.map((bl, i) => {
+                      const id = `${k}:${bl.id}`;
+                      const note = notes[id] ?? "";
+                      const tight = isRow(bl) && i > 0 && isRow(b.blocks[i - 1]);
+                      const silent = isSilent(bl);
+                      const showNote = (open === id || note.trim()) && !silent && !mobile;
+                      return (
+                        <div key={bl.id} className={`blk group relative ${mobile ? "" : "-mr-[76px] pr-[76px]"} ${tight ? "-mt-[22px]" : ""} ${marks[i] ? "mt-[18px]" : ""}`}>
+                          {marks[i] && (
+                            <div className={`pointer-events-none absolute -top-[22px] left-0 ${mobile ? "right-0" : "right-[76px]"} flex items-center gap-2 select-none`} aria-hidden>
+                              <span className="text-[10px] font-bold uppercase tracking-[.14em] text-[#c9a48a]">~{marks[i]}s · cut</span>
+                              <span className="h-0 flex-1 border-t border-dashed border-[#e2c6b2]" />
+                            </div>
+                          )}
+                          <div
+                            key={`${id}:${edits[id] === undefined ? "o" : "e"}:${editing}`}
+                            contentEditable={editing && !silent}
+                            suppressContentEditableWarning
+                            spellCheck={editing}
+                            onPaste={(e) => {
+                              e.preventDefault();
+                              document.execCommand("insertText", false, e.clipboardData.getData("text/plain"));
+                            }}
+                            onKeyDown={(e) => {
+                              if (e.key === "Escape") (e.target as HTMLElement).blur();
+                            }}
+                            onBlur={(e) => {
+                              if (!editing) return;
+                              const h = e.currentTarget.innerHTML;
+                              if (h === htmlOf(k as string, bl)) return;
+                              saveEdit(id, h === bl.html ? null : h);
+                            }}
+                            className={`rounded-sm ${editing && !silent ? "cursor-text outline-none focus:bg-[#fffbe6] focus:outline focus:outline-2 focus:outline-offset-4 focus:outline-[#e4531d]" : ""} ${edits[id] !== undefined ? "border-l-4 border-[#e4531d] -ml-[14px] pl-[10px]" : ""} ${showNote ? "outline outline-2 outline-offset-4 outline-[#f0d95a]" : "group-hover:outline group-hover:outline-1 group-hover:outline-offset-4 group-hover:outline-[#c4b39a]"}`}
+                            dangerouslySetInnerHTML={{ __html: htmlOf(k as string, bl) }}
+                          />
+                          {!silent && !mobile && (
+                            <div className="absolute right-0 top-0 z-10 flex w-[68px] flex-col gap-1 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100">
+                              <button
+                                onClick={async () => flash((await copyRich([htmlOf(k as string, bl)])) ? "Copied" : "Copy failed")}
+                                className="rounded bg-[#1c1814] px-2 py-1 text-[11px] font-semibold text-white shadow hover:bg-[#3a322b]"
+                              >
+                                Copy
+                              </button>
+                              <button
+                                onClick={() => setOpen(open === id ? null : id)}
+                                className="rounded bg-[#f0d95a] px-2 py-1 text-[11px] font-semibold text-[#1c1814] shadow hover:bg-[#f6e27a]"
+                              >
+                                {note.trim() ? "Edit note" : "Note"}
+                              </button>
+                              {edits[id] !== undefined && (
+                                <button
+                                  onClick={() => {
+                                    saveEdit(id, null);
+                                    flash("Back to the original");
+                                  }}
+                                  className="rounded bg-white px-2 py-1 text-[11px] font-semibold text-[#9c3d22] shadow hover:bg-[#fbeee6]"
+                                >
+                                  Undo edit
+                                </button>
+                              )}
+                            </div>
+                          )}
+                          {showNote && (
+                            <div
+                              className={`absolute top-0 z-20 w-[230px] rotate-[-1deg] bg-[#fff3a6] p-3 shadow-[2px_4px_14px_rgba(60,45,20,.22)] ${open === id ? "" : "cursor-text"}`}
+                              style={{ left: BOARD_W - 56 + 40 }}
+                              onClick={() => open !== id && setOpen(id)}
+                            >
+                              {open === id ? (
+                                <>
+                                  <textarea
+                                    autoFocus
+                                    value={note}
+                                    onChange={(e) => save({ ...notes, [id]: e.target.value }, id)}
+                                    onKeyDown={(e) => {
+                                      if (e.key === "Escape" || (e.key === "Enter" && (e.metaKey || e.ctrlKey))) setOpen(null);
+                                    }}
+                                    onBlur={() => {
+                                      if (!note.trim()) {
+                                        const n = { ...notes };
+                                        delete n[id];
+                                        save(n, id);
+                                      }
+                                      setOpen(null);
+                                    }}
+                                    placeholder="Your note on this block"
+                                    rows={Math.max(3, Math.min(10, note.split("\n").length + 1))}
+                                    className="w-full resize-none bg-transparent leading-snug text-[#3b3128] outline-none placeholder:text-[#a89f6a]"
+                                    style={{ fontFamily: "Caveat, var(--font-inter), cursive", fontSize: 19 }}
+                                  />
+                                  <div className="mt-1 flex items-center justify-between text-[11px] font-semibold" style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
+                                    <span className="text-[#a89f6a]">Saves as you type</span>
+                                    <button
+                                      onMouseDown={(e) => e.preventDefault()}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        const n = { ...notes };
+                                        delete n[id];
+                                        save(n, id);
+                                        setOpen(null);
+                                      }}
+                                      className="text-[#8a7a62] hover:text-[#9c3d22]"
+                                    >
+                                      Delete
+                                    </button>
+                                  </div>
+                                </>
+                              ) : (
+                                <div className="whitespace-pre-wrap leading-snug text-[#3b3128]" style={{ fontFamily: "Caveat, var(--font-inter), cursive", fontSize: 19 }}>
+                                  {note}
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+                {b.videos.length > 0 && (
+                  <div className="mt-4 rounded-sm bg-[#2f2b26] p-5 text-[#f3efe6]">
+                    <div className="mb-3 text-[12px] font-bold uppercase tracking-[.12em] text-[#e4b89a]">Video drafts</div>
+                    <div className="grid grid-cols-2 gap-4">
+                      {b.videos.map((v) => (
+                        <div key={v.file}>
+                          <video src={v.play} controls playsInline preload="metadata" className="aspect-[9/16] w-full rounded-sm bg-black object-contain" />
+                          <div className="mt-2 flex items-center justify-between gap-2">
+                            <span className="text-[13px] leading-snug text-[#d8d0c2]">{v.label}</span>
+                            <a
+                              href={v.file}
+                              download
+                              className="shrink-0 rounded-full border border-[#8a8074] px-2.5 py-1 text-[11px] font-semibold text-[#f3efe6] hover:bg-[#f3efe6] hover:text-[#1c1814]"
+                            >
+                              Download
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {!ads && <div className="mt-4 rounded-sm border-2 border-dashed border-[#8a8074] bg-[#2f2b26] p-5 text-[#f3efe6]">
+                  <div className="mb-2 flex items-center justify-between">
+                    <div className="text-[12px] font-bold uppercase tracking-[.12em] text-[#e4b89a]">Continuation prompt · for extends</div>
+                    <button
+                      onClick={async () => flash((await copy(buildContinuation(boardHtml(k)))) ? "Continuation copied" : "Copy failed")}
+                      className="rounded-full border border-[#8a8074] px-2.5 py-1 text-[11px] font-semibold text-[#f3efe6] hover:bg-[#f3efe6] hover:text-[#1c1814]"
+                    >
+                      Copy continuation
+                    </button>
+                  </div>
+                  <div className="mb-3 text-[13px] text-[#b8b0a2]">Paste this, then paste the script lines from where your last clip stopped.</div>
+                  <div className="whitespace-pre-wrap text-[15px] leading-relaxed">{mounted ? buildContinuation(boardHtml(k)) : ""}</div>
+                </div>}
+              </div>
+            );
+          })}
+          </div>
+          </section>
+          ))}
+        </div>
+      </div>
+
+      {showList && (
+        <div className="absolute inset-x-0 bottom-0 top-[52px] z-20 overflow-auto bg-[#f3efe6] px-6 py-6 text-[#1c1814]">
+          <div className="mx-auto max-w-[820px]">
+            {(Object.keys(boards) as (keyof Boards)[]).map((k) => {
+              const b = boards[k];
+              const mine = b.blocks.filter((bl) => notes[`${k}:${bl.id}`]?.trim());
+              if (!mine.length) return null;
+              return (
+                <section key={k} className="mb-8">
+                  <h2 className="mb-3 text-[13px] font-bold uppercase tracking-[.12em] text-[#8a7a62]">{b.title}</h2>
+                  {mine.map((bl) => (
+                    <div key={bl.id} className="mb-3 rounded-md border border-[#d9d2c5] bg-white p-4">
+                      <div className="mb-2 text-[12px] text-[#6b6358]">
+                        <span className="font-bold text-[#1c1814]">{bl.id}</span> · {bl.text.length > 140 ? bl.text.slice(0, 140) + "…" : bl.text}
+                      </div>
+                      <div className="whitespace-pre-wrap text-[15px] leading-snug">{notes[`${k}:${bl.id}`]}</div>
+                    </div>
+                  ))}
+                </section>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {toast && (
+        <div className="fixed bottom-6 left-1/2 z-40 -translate-x-1/2 rounded-full bg-[#1c1814] px-4 py-2 text-[13px] font-semibold text-white shadow-lg">{toast}</div>
+      )}
+    </div>
+  );
+}
+
