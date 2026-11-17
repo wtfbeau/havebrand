@@ -5,14 +5,15 @@ import type { Board, Block } from "./copy";
 
 type Boards = Record<string, Board>;
 type Notes = Record<string, string>;
-const KEY = "dowo-notes-v1";
-const DOC = "dowo-scripts";
-// Hand edits to the script text: same store, own doc, value = the block's edited HTML.
-const EDIT_DOC = "dowo-scripts-edits";
-const EDIT_KEY = "dowo-edits-v1";
 type Sync = "local" | "syncing" | "synced" | "error";
 const BOARD_W = 760;
 const GAP = 280;
+// Rows on the canvas, top to bottom. Each board's group comes from make-delivery.py.
+const ROWS = [
+  { group: "new", label: "New scripts", sub: "Not live yet" },
+  { group: "running", label: "Running", sub: "Live on Meta, best first" },
+  { group: "stopped", label: "Stopped", sub: "Paused on Meta" },
+] as const;
 
 function textOf(html: string) {
   const el = document.createElement("div");
@@ -191,7 +192,13 @@ function sig(s: string) {
 const isRow = (b: Block) => /^<div class="wrow"/.test(b.html);
 const isSilent = (b: Block) => b.text.length === 0;
 
-export default function Reviewer({ boards }: { boards: Boards }) {
+// `store` keeps each page's notes and edits apart ("dowo" for the v3 page, "dowo-v4" for the fresh set).
+export default function Reviewer({ boards, store = "dowo", heading = "New Meta scripts · 15 video scripts" }: { boards: Boards; store?: string; heading?: string }) {
+  const KEY = `${store}-notes-v1`;
+  const DOC = `${store}-scripts`;
+  // Hand edits to the script text: same store, own doc, value = the block's edited HTML.
+  const EDIT_DOC = `${store}-scripts-edits`;
+  const EDIT_KEY = `${store}-edits-v1`;
   const [stored, setNotes] = useState<Notes>({});
   const [storedEdits, setEdits] = useState<Notes>({});
   const sigs = useMemo(() => {
@@ -327,7 +334,8 @@ export default function Reviewer({ boards }: { boards: Boards }) {
   };
   const noteCount = useMemo(() => Object.values(notes).filter((v) => v.trim()).length, [notes]);
 
-  const n = Object.keys(boards).length;
+  const rows = ROWS.map((r) => ({ ...r, keys: (Object.keys(boards) as (keyof Boards)[]).filter((k) => boards[k].group === r.group) })).filter((r) => r.keys.length);
+  const n = Math.max(...rows.map((r) => r.keys.length));
   const worldW = BOARD_W * n + GAP * (n - 1) + 80;
 
   const fit = useCallback(() => {
@@ -428,7 +436,7 @@ export default function Reviewer({ boards }: { boards: Boards }) {
       <header className="z-30 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#55504a] bg-[#3f3a34] px-4 py-2.5 text-[#f3efe6]">
         <div className="mr-auto">
           <div className="text-[10px] font-bold uppercase tracking-[.14em] text-[#b8b0a2]">DOWO · Windows and doors</div>
-          <div className="text-[15px] font-bold leading-tight">New Meta scripts · 10 video scripts</div>
+          <div className="text-[15px] font-bold leading-tight">{heading}</div>
         </div>
         <div className="hidden text-[12px] text-[#b8b0a2] md:block">
           Drag the background to move · ⌘ or Ctrl + scroll to zoom · Hover a block to copy or note ·{" "}
@@ -517,15 +525,22 @@ export default function Reviewer({ boards }: { boards: Boards }) {
         }
       >
         <div
-          className={mobile ? "flex flex-col gap-10 px-3 py-4" : "absolute left-0 top-0 origin-top-left"}
+          className={mobile ? "flex flex-col gap-10 px-3 py-4" : "absolute left-0 top-0 flex origin-top-left flex-col gap-[200px]"}
           style={mobile ? undefined : { transform: `translate(${view.x}px, ${view.y}px) scale(${view.s})`, width: worldW }}
         >
-          {(Object.keys(boards) as (keyof Boards)[]).map((k, bi) => {
+          {rows.map((r) => (
+          <section key={r.group} className={mobile ? "flex flex-col gap-10" : "flex flex-col gap-10"}>
+          <div className={mobile ? "border-b border-[#6a645c] pb-2" : "border-b-2 border-[#6a645c] pb-4"}>
+            <div className={`font-bold text-[#f3efe6] ${mobile ? "text-[20px]" : "text-[44px]"}`}>{r.label}</div>
+            <div className={`text-[#b8b0a2] ${mobile ? "text-[13px]" : "text-[20px]"}`}>{r.sub}</div>
+          </div>
+          <div className={mobile ? "flex flex-col gap-10" : "flex items-start"} style={mobile ? undefined : { gap: GAP }}>
+          {r.keys.map((k) => {
             const b = boards[k];
             const ads = b.kind === "ads";
             const marks = ads ? {} as Record<number, number> : cutMarks(boardHtml(k));
             return (
-              <div key={k} className={mobile ? "relative w-full" : "absolute top-0"} style={mobile ? undefined : { left: bi * (BOARD_W + GAP), width: BOARD_W }}>
+              <div key={k} className={mobile ? "relative w-full" : "relative shrink-0"} style={mobile ? undefined : { width: BOARD_W }}>
                 <div className="mb-2 flex items-end justify-between px-0.5">
                   <div>
                     <div className="text-[14px] font-bold text-[#f3efe6]">{b.title}</div>
@@ -699,7 +714,9 @@ export default function Reviewer({ boards }: { boards: Boards }) {
               </div>
             );
           })}
-
+          </div>
+          </section>
+          ))}
         </div>
       </div>
 
